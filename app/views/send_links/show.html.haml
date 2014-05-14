@@ -1,0 +1,24 @@
+
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+   
+    = link_to 'بازگشت', send_links_path
+.set-center{:style => "margin-top:100px; width:95%"}
+  %p
+    %b= t('link.sender_email')
+    = @send_link.sender_email
+  %p
+    %b= t('link.receiver_email')
+    = @send_link.receiver_email
+  %p
+    %b= t('link.current_link')
+    = link_to @send_link.current_link, @send_link.current_link
+  %p
+    %b= t('link.subject') 
+    = @send_link.subject
+
+  %p
+    %b= t('link.text')
+    = @send_link.text

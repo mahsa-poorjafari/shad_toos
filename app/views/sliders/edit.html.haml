@@ -1,0 +1,50 @@
+
+.edi-slider-holder.fa  
+  %h2= 'تنظیم اندازه تصویر'
+  = form_for @slider, :html => {:multipart => true} do |f| 
+    .col-sm-9
+      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "350", :width => "750"
+      = f.hidden_field :crop_x
+      = f.hidden_field :crop_y
+      = f.hidden_field :crop_w
+      = f.hidden_field :crop_h
+    .col-sm-3
+      .form-group        
+        = f.label "توضیحات به انگلیسی", :class => "control-label"
+        = f.text_area :description_en, :class => "form-control"    
+        
+      .form-group        
+        = f.label "توضیحات به فارسی", :class => "control-label"
+        = f.text_area :description_fa, :class => "form-control"    
+            
+      .form-group
+        = f.submit 'ثبت', :class => "btn"
+  
+      = link_to 'بازگشت', sliders_path
+
+:javascript
+  $( '.crop' ).each( function () {
+    var image = $( this )
+    , crop  = image
+    .crop( {
+      controls : 'Drag to move, scroll to zoom'
+    } )
+    .on( 'crop', function( event ) {
+      console.log("golabi");
+      $("#slider_crop_x").val(event.cropX);
+      $("#slider_crop_y").val(event.cropY);  
+      $("#slider_crop_h").val(event.cropH);
+      $("#slider_crop_w").val(event.cropW);
+    })
+    .data('crop');
+      image
+      .on( 'dblclick', $.proxy( crop.zoomIn, crop ) )
+      .on( 'mousewheel', function ( event ) {
+      return event.originalEvent.wheelDelta < 0 ?
+      crop.zoomIn() :
+      crop.zoomOut();
+    } );
+  } );
+      
+    
+

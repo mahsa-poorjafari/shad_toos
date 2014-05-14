@@ -1,0 +1,68 @@
+.footer-admin
+  - if is_admin?
+    .admin_menu
+      %h3= 'منوی مدیرسایت'
+      = render 'shared/admin_menu'
+.footer-menu{:class => I18n.locale}
+  %ul          
+    %li.first
+      %ul
+        %li.head
+          %b= t('statistics')
+        %li.pointer.noline 
+          = t('visit_site') 
+
+    %li
+      %ul
+        %li.head
+          %b= t('gallery')
+        - Category.all.each do |category|
+          %li= link_to category.title, category        
+        
+    %li
+      %ul
+        %li.head
+          %b= t('downloads')
+        %li Movie
+        %li= t('catalog')
+    %li
+      %ul
+        %li.head
+          %b= t('contact')
+        %li= link_to t('send-msg'), Page.first
+        %li= link_to t('resellers'), Page.first
+        %li        
+          = link_to  t('send-mail'), '#', "data-toggle" => "modal", "data-target" => ".bs-example-modal-sm"
+            
+
+
+.modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title 
+          = t ('send-mail')          
+      .modal-body
+        = render 'send_links/form'
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        
+          
+
+        
+#footer-bottom.en
+  © Copyright RLfloor | RLfloor GROUP 2014 | Powered by 
+  = link_to 'Raush.ir', url_with_protocol('www.raush.net'), :target => "_blank"
+  #social-buttons
+    = link_to '#', :class => "noline" do
+      = image_tag "facebook-icon.png"
+      = image_tag "twitter-icon.png"
+      = image_tag "in-icon.png"            
+      = image_tag "gplus-icon.png"            
+  #quick-bar
+    %span 
+      Language
+      = link_to 'ENG', locale: :en
+      \|
+      = link_to 'FA', locale: :fa

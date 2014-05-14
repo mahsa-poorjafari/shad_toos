@@ -1,0 +1,26 @@
+.category-info.fa{:style => "min-width:20%; max-width:20%"}
+  %h1= 'تعریف گروه جدید '
+  
+ 
+
+  %br
+  = link_to 'نصب و راه اندازی', '#install'
+  %br
+  = link_to 'شرایط نگهداری', '#maintaion'
+  %br
+  = link_to 'گارانتی', '#warranty'
+  %br
+  = link_to 'گواهینامه ها', '#certification'
+  %br
+  %p= 'برای اضافه کردن مدلهای هر محصول ابتدا فرم مقابل را به طور کامل پر کنید و دکمه ثبت را بزنید. '
+  = link_to 'تنوع مدلها', Product
+  %hr
+  = link_to 'بازگشت', categories_path
+  \|
+  = link_to '#general' do
+    = image_tag "go-up.png"    
+    %span= 'بازگشت به بالا صفحه'
+#category-details{:style => "min-width:80%; max-width:80%"}
+  = render 'form'
+
+

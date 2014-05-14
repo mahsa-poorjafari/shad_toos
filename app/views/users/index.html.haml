@@ -1,0 +1,27 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'تعریف مدیر جدید', new_user_path
+.fa
+  %h1= 'پروفایل  مدیر سایت'
+
+  
+  - @users.each do |user|
+    .col-sm-4      
+      %b ایمیل
+      = user.email
+    .col-sm-2
+      %b نام کاربری
+      = user.user_name
+    .col-sm-2
+      %b رمز عبور
+      = user.password
+    .col-sm-2
+      = link_to 'مشاهده', user
+      \|
+      = link_to 'ویرایش', edit_user_path(user)
+      
+
+
+ 

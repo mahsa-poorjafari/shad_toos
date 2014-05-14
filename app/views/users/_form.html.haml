@@ -1,0 +1,19 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %ul
+        - @user.errors.each do |attr, msg|
+          %li= msg
+
+  .field
+    = f.label 'ایمیل', :class => "col-sm-5 control-label"    
+    = f.text_area :email, :class => "form-control"
+  .field
+    = f.label 'نام کاربری', :class => "col-sm-5 control-label"    
+    = f.text_field :user_name, :class => "form-control",  :disabled => true
+    
+  .field
+    = f.label 'تغییر رمزعبور', :class => "col-sm-5 control-label"    
+    = f.text_field :password, :class => "form-control"
+  .actions
+    = f.submit 'ثبت', :class=> "btn btn-default"

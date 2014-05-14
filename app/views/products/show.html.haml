@@ -1,0 +1,29 @@
+%p#notice= notice
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'ویرایش', edit_product_path(@product)       
+    \|
+    = link_to 'بازگشت', products_path 
+      
+
+    
+.col-sm-4
+  %p   
+    = @product.title
+  %p    
+    = @product.description
+  %p    
+    = @product.category.title
+  
+.col-sm-4
+  - @product.pictures.each do |pic|
+    .product-pics-large
+      =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
+      .download
+        = link_to  download_product_path(:image_id => pic.id) do
+          = image_tag 'dnwn.png'
+          = t ('download')
+          
+

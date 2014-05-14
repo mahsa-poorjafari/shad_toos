@@ -1,0 +1,20 @@
+= form_for @slider, :html => {:multipart => true} do |f|
+  - if @slider.errors.any?
+    #error_explanation      
+      %ul
+        - @slider.errors.each do |attr, msg|
+          %li= msg
+
+  .form-group
+    .s-upload-img
+      = f.file_field :image, :id => "slide_img"    
+  .form-group    
+    = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"    
+    = f.text_area :description_en, :id => "slide_des", :class => "form-control"
+  .form-group
+    = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"    
+    = f.text_area :description_fa, :id => "slide_des", :class => "form-control"
+  
+    
+  .form-group
+    = f.submit 'ثبت تصویر', :class => "btn btn-default"

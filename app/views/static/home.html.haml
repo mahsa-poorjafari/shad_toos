@@ -1,0 +1,12 @@
+.slider
+  .cycle-overlay.center{ :class => I18n.locale}                
+    %p= t('about')
+  = render "sliders/slider"
+
+:javascript 
+  $(".item").first().addClass("active");
+  $(".slide-indicator").first().addClass("active");
+  $('.carousel').carousel();
+
+
+

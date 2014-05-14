@@ -1,0 +1,22 @@
+.col-sm-6{:style => "margin:20px"}
+  %p#notice= notice
+
+  %p
+    %b= t('reseller.title')
+    = @reseller.title
+
+  %p
+    %b= t('reseller.CEO')
+    = @reseller.Management_name
+
+  %p
+    %b= t('reseller.Phone')
+    = @reseller.phone
+  %p
+    %b=  t('reseller.address')
+    = @reseller.address
+
+
+  = link_to 'ویرایش', edit_reseller_path(@reseller)
+  \|
+  = link_to 'بازگشت', resellers_path

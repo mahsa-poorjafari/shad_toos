@@ -1,0 +1,10 @@
+.fa.set-center{:style => "width:90%; overflow-y:scroll; height:430px;"}
+  %h1
+    ویرایش صفحه
+    = @page.title
+
+  = render 'form'
+
+  = link_to 'مشاهده', @page
+  \|
+  = link_to 'بازگشت', pages_path

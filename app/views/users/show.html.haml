@@ -1,0 +1,22 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'ویرایش', edit_user_path(@user)
+    \|
+    = link_to 'بازگشت', users_path
+
+.fa.set-center{:style => "width:50%"}
+  %p#notice= notice
+
+  %p
+    %b ایمیل
+    = @user.email
+  %p
+    %b نام کاربری
+    = @user.user_name
+  %p
+    %b رمز عبور
+    = @user.password
+
+ 

@@ -1,0 +1,17 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to content_tag("span", "عکس جدید"), new_slider_path
+.fa
+  %h2.heading2 
+    = "اسلایدر"
+  
+  .index-slider.set-center 
+    = render 'slider'            
+    
+      
+      
+  :javascript
+    $(".item").first().addClass("active");
+    $('.carousel').carousel();

@@ -1,0 +1,25 @@
+.product-bg
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'تعریف مدل جدید', new_product_path
+  
+  .products.set-center
+    - @products.each do |product|      
+      .pro_wrapper{align: "center", :id => I18n.locale}                
+        = link_to product, :class => "model-link" do
+          .pro-info.set-center  
+            = image_tag product.pictures.first.image(:small)
+          .robbin
+            = image_tag 'cat-title2.png'
+            .model-title= product.title 
+        
+      
+
+   
+
+
+
+
+

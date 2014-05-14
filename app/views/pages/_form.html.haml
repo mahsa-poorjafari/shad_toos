@@ -1,0 +1,22 @@
+= form_for @page do |f|
+  - if @page.errors.any?
+    #error_explanation
+      %ul
+        - @page.errors.each do |attr, msg|
+          %li= msg
+
+  .form-group   
+    = f.label "عنوان صفحه به فارسی", :class => "control-label"
+    = @page.title_fa
+  .form-group   
+    = f.label "عنوان صفحه به انگلیسی", :class => "control-label"
+    = @page.title
+  
+  .editor.form-group   
+    = f.label "متن صفحه به فارسی:", :class => "control-label"
+    = f.text_area :html_text_fa, :class => "form-control ckeditor"
+  .editor.form-group   
+    = f.label "متن صفحه به انگلیسی:", :class => "control-label"
+    = f.text_area :html_text, :class => "form-control ckeditor"
+  .form-group   
+    = f.submit 'ثبت', :class=> "btn btn-default"

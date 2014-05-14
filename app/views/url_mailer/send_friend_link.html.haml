@@ -1,0 +1,21 @@
+%h2= 'Rainbow Web site'
+
+%h3
+  =@link.subject
+  
+%h4
+  =@link.sender_email
+  %br
+  =@link.current_link
+
+
+%br
+%h4
+  =@link.text
+
+%b
+  تاریخ ارسال
+  %br
+  = JalaliDate.new(@link.created_at).strftime("%y/%m/%e %X")
+  
+  

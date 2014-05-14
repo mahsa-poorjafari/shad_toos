@@ -1,0 +1,104 @@
+.info-holder
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'ویرایش', edit_category_path(@category)
+      \|
+      = link_to 'بازگشت', categories_path
+  %p#notice= notice  
+  
+  .category-info.general
+    .row.col-sm-12
+      .line.set-center  
+        = image_tag 'cat-title.png'
+        .go-up.set-center= @category.title
+      .cat-link
+        %p= @category.description          
+        %ul#banner          
+          - if @category.products.present?
+            %li
+              = link_to t('model'), '#pictures', :id => "show-model"
+          
+          - if @category.maintaion.present?
+            %li
+              = link_to t('maintain'), '#maintaion', :id => "show-main"
+          
+          - if @category.installation.present?
+            %li
+              = link_to t('technical'), '#installation', :id => "show-inst"
+          
+          - if @category.warranty.present?
+            %li
+              = link_to t('warranty'), '#installation', :id => "show-war"
+          
+          - if @category.certifications.present?
+            %li
+              = link_to t('certificate'), '#cer', :id => "show-cer"          
+          
+         
+  #category-details    
+    .col-sm-8.details.bg-opacity#installation
+      %b= 'نصب'
+      %p=raw @category.installation
+      
+    .col-sm-8.details.bg-opacity#maintaion
+      %b= 'شرایط'
+      %p=raw @category.maintaion
+      
+    .col-sm-8.details.bg-opacity#warranty
+      %b= 'گارانتی'
+      %p=raw @category.warranty
+      
+    .row.details.col-sm-8#pictures
+      - @category.products.each do |product|         
+        - product.pictures.each do |pic|  
+          .product-pics 
+            =link_to (image_tag pic.image(:small)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
+            .download
+              = link_to download_product_path(:image_id => pic.id) do
+                = image_tag 'dnwn.png'
+                = t ('download')
+      
+    .row.details.col-sm-8#certification
+      = link_to "", "#",:name => "cer"
+      %b= 'گواهینامه ها'
+      %br
+      - @category.certifications.each do |certification|      
+        .col-sm-3.box-3{:style => "text-align:center"}
+          =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
+          .cer-title= certification.title
+            
+
+      
+:javascript
+  $('#show-cer').click(function(){   
+    $('#category-details  #scroll').children().hide(); 
+    $('#certification').show(1000);
+    
+  });
+  $('#show-model').click(function(){   
+    $('#category-details').children().hide(); 
+    $('#pictures').show(1000);
+    
+  });
+
+  $('#show-main').click(function(){          
+    $('#category-details').children().hide(); 
+    $('#maintaion').fadeIn(1000);
+    
+  });
+
+  $('#show-inst').click(function(){          
+    $('#category-details  #scroll').children().hide(); 
+    $('#installation').fadeIn(1000);
+    
+  });
+
+  $('#show-war').click(function(){          
+    $('#category-details').children().hide(); 
+    $('#warranty').fadeIn(1000);    
+  });
+
+
+

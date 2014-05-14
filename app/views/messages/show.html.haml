@@ -1,0 +1,21 @@
+.fa
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'بازگشت', messages_path
+
+%p
+  %b= t('msg.contact-email')
+  = @message.email
+%p
+  %b= t('msg.contact-name')
+  = @message.name
+%p
+  %b= t('msg.contact-phone')
+  = @message.phone
+%p
+  %b= t('msg.contact-msg')
+  = @message.text
+
+

@@ -1,0 +1,42 @@
+.col-sm-5
+  %fieldset
+    %legend
+      %span= t('msg.contact-title')
+         
+      
+  = form_for @message ||= Message.new, :html => {:class => "contact"} do |f|
+    - if @message.errors.any?
+      #error_explanation
+        %ul
+          - @message.errors.each do |attr, msg|
+            %li= msg
+    
+        
+    -if flash[:notice]        
+      .alert.alert-success= notice
+        
+    
+    .form-group
+      = f.label t('msg.contact-name'),  :class => "control-label"    
+      %span.Necessary= t('msg.Required')
+      = f.text_field :name, :class => "form-control"  
+      
+      
+    .form-group
+      = f.label t('msg.contact-email'),  :class => "control-label"
+      %span.Necessary= t('msg.Required')
+      = f.text_field :email, :class => "form-control"          
+      
+    .form-group
+      = f.label t('msg.contact-phone'),  :class => "control-label"
+      = f.text_field :phone, :class => "form-control"
+      
+    .form-group
+      = f.label t('msg.contact-msg'),  :class => "control-label"
+      %span.Necessary=  t('msg.Required')
+      = f.text_area :text, :class => "form-control"
+      
+           
+    .form-group
+      = f.submit t('msg.contact-btn'), :class=> "btn btn-default"
+%br

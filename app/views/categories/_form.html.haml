@@ -1,0 +1,110 @@
+= nested_form_for @category, :html => { :multipart => true  }  do |f|
+  - if @category.errors.any?
+    #error_explanation      
+      %ul
+        - @category.errors.each do |attr, msg|
+          %li= msg
+  
+  .info-form.fa
+    .col-sm-6
+      = link_to ' ', '#', :name => "general"
+      .form-group
+        = f.label "عنوان گروه به فارسی", :class => "col-sm-5 control-label"    
+        = f.text_field :title_fa, :class => "form-control"
+      .form-group
+        = f.label "عنوان گروه به انگلیسی", :class => "col-sm-5 control-label"      
+        = f.text_field :title_en, :class => "form-control"    
+    .col-sm-6
+      .form-group        
+        = f.label " تصویر نمونه:", :class => "col-sm-3 control-label"      
+        = f.file_field :image     
+        -if @category.image.present?              
+          = image_tag @category.image(:small) 
+    .clr-float    
+    .form-group.col-sm-6
+      = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"      
+      = f.text_area :description_fa, :class => "form-control"
+    .form-group.col-sm-6
+      = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"      
+      = f.text_area :description_en, :class => "form-control"       
+  
+    
+    .clr-float
+      .form-group        
+        = link_to ' ', '#', :name => "install"
+        %h3.fa= 'نصب و راه اندازی فنی'
+        
+      .form-group           
+        %hr
+        .editor.col-sm-6.fa
+          = f.label 'به فارسی', :class => "control-label"
+          = f.text_area :installation, :class => "form-control ckeditor"
+        
+        .editor.col-sm-6.fa
+          = f.label 'به انگلیسی', :class => "control-label"
+          = f.text_area :installation, :class => "form-control ckeditor"
+          
+      .form-group                
+        = link_to ' ', '#', :name => "maintaion"
+        %h3.fa= 'شرایط نگهداری'
+        
+      .form-group
+        %hr
+        .editor.col-sm-6.fa
+          = f.label 'به فارسی', :class => "control-label "
+          = f.text_area :maintaion, :class => "form-control ckeditor"      
+        .editor.col-sm-6.fa
+          = f.label 'به انگلیسی', :class => "control-label "
+          = f.text_area :maintaion, :class => "form-control ckeditor"      
+          
+      .form-group                
+        = link_to ' ', '#', :name => "warranty"
+        %h3.fa= 'گارانتی'
+        
+      .form-group
+        %hr
+        .editor.col-sm-6.fa
+          = f.label 'به فارسی', :class => "control-label"
+          = f.text_area :warranty, :class => "form-control ckeditor"      
+          
+        .editor.col-sm-6.fa
+          = f.label 'به انگلیسی', :class => "control-label"
+          = f.text_area :warranty, :class => "form-control ckeditor"      
+    .form-group     
+      .col-sm-12
+        
+        = link_to ' ', '#', :name => "certification"
+        %h3.fa= 'گواهینامه'
+        = f.link_to_add content_tag(:span, "افزودن گواهینامه", :class => "btn"), :certifications, :id => "add_new_picture"    
+      .clr-float
+      .form-group 
+        -if @category.certifications.present?
+          .col-sm-6     
+            - @category.certifications.each do |cer|
+              = image_tag cer.image(:small)
+        = f.fields_for :certifications do |certificate|  
+          = render "certifications/form", :f => certificate
+      
+  .col-sm-4
+    = f.submit 'ثبت', :class=> "btn btn-default"
+  
+
+
+:javascript
+  function enable_file_select(){
+    $(".enable_file_select").unbind('click').click(function(){
+      console.log("enable_file_select");
+      $(this).parent().find("input:file").click();
+      console.log("enable_file_select2");
+    });
+   }
+
+  enable_file_select();
+
+  $("#add_new_picture").click(function(){
+    $(".enable_file_select").unbind('click');
+    window.setTimeout('enable_file_select()', 1000);
+  });
+  
+  
+  

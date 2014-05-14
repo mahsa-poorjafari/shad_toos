@@ -1,0 +1,15 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'تعریف مدیر جدید', new_user_path
+    %hr
+    = link_to 'مشاهده', @user
+    \|
+    = link_to 'بازگشت', users_path
+.fa
+  %h1= 'ویرایش اطلاعات مدیرسایت'
+  .fa.set-center{:style => "width:50%;"}
+    = render 'form'
+
+  

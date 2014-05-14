@@ -1,0 +1,99 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  download: 'Download'
+  rainbow: 'Rainbow Trading Co'
+  title: 'Rainbow Co'
+  back: "back"
+  show: "Show"
+  home: "Home"  
+  More: "More"
+  products: "Products"
+  gallery: "Gallery"
+  SignUp: "Sign Up"  
+  category: "Category of Products"
+  product: "Product"  
+  resellers: "Resellers"
+  messages: "Message"
+  downloads: "DOWNLOADS"
+  contact: "CONTACT"
+  about: " Rainbow was up from 86 years in the field of interior and exterior decoration on Iran has begun, Rainbow was up from 86 years in the field of interior and exterior decoration on Iran has begun"
+  model: "Model Varients"
+  technical: "Technical instalation "
+  maintain: "Maintain"
+  warranty: "Warranty"
+  certificate: "Certification"
+  send-msg: "Leave a Message"
+  send-mail: "Email This Link To a Friend"
+  
+  catalog: "Catalogue"
+  certificate: "Certification"
+  
+  statistics: 'Site Statistics'
+  visit_site: "Read the site"
+  link:
+    sender_email: "Sender Email"
+    receiver_email: "Receiver Email"
+    text: "Text"
+    subject: "Subject"
+    send: "Send"
+    current_link: 'link'
+  
+  form:
+    title: "Title:"
+    Description: "Description"
+    New: "New"
+    save: "Save"    
+    reseller: "Reseller"
+    edit: "Edit"
+    delete: "Delete"
+    web: "WebSite:"   
+  
+  
+  reseller:
+    title: 'Title'
+    CEO: "CEO"
+    Phone: "Phone"
+    address: "Address"
+
+  send-url:
+    sender: 'Sender Email'
+    receiver: 'Receiver Email'
+    text: 'Text'  
+  
+  msg:
+    contact-name: "Name:"
+    contact-email: "Email:"
+    contact-phone: "Phone:"
+    contact-msg: "Your Message:"    
+    contact-date: "Date:"
+    contact-btn: "Send"
+    contact-title: "Contact us"
+  Required: "Required"
+  
+  
+  user:
+    email: "Email:"
+    user_name: "User Name:"
+    password: "Password:"
+    password_confirmation: "Password Confirmation:"
+    

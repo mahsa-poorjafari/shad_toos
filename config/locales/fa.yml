@@ -1,0 +1,86 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting point
+
+fa:
+  download: 'دانلود'
+  rainbow: 'شرکت بازرگانی رنگین کمان'
+  title: 'شرکت رنگین کمان'
+  back: "بازگشت"
+  show: "مشاهده"
+  home: "صفحه اصلی"
+  More: "مشاهده"
+  products: "محصولات"
+  gallery: "گالری"
+  SignUp: "افزودن مدیرسایت"
+  page: "صفحات متنی"
+  category: "گروه بندی محصولات"
+  contact: "ارتباط"
+  product: "محصولات"
+  resellers: "نمایندگی های فروش"  
+  messages: "پیام ها"
+  downloads: "دانلودها"
+  about: "شرکت رنگین کمان فعالیت خود را از سال ۸۶ در زمینه دکوراسیون داخلی و خارجی در ایران آغاز نموده و تا کنون محصولات مختلفی را ارائه نموده است که می توان به انواع کف پوش ، پارکت ، کاغذ دیواری  و دیگر محصولات لوکس دکوراسیون داخلی وخارجی اشاره نمود و نیز دستاوردهای اخیر این شرکت انواع محصولات مایع رنگی می باشد که منحصرا توسط این شرکت ارائه گردیده است و مفتخر است که این محصول را به اقصی نقاط دنیا صادر نماید."
+  
+  model: "تنوع مدلها"
+  technical: "نصب و راه اندازی فنی"
+  maintain: "شرایط نگهداری"
+  warranty: "گارانتی "
+  certificate: "گواهینامه"
+  send-msg: "ارسال پیام به مدیر"
+  send-mail: "ارسال لینک جاری به دوستان"
+  
+  catalog: 'کاتالوگ '
+  certificate: "گواهینامه ها"
+  
+  statistics: 'آمار سایت'
+  visit_site: 'دفعات بازدید از سایت'
+  
+  link:
+    sender_email: "ایمیل فرستنده"
+    receiver_email: "ایمیل گیرنده"
+    text: "متن"
+    subject: "موضوع"
+    send: "ارسال"
+    current_link: 'لینک ارسال شده'
+    
+  
+  
+  form:
+    title: "عنوان:"
+    Description: "توضیحات"
+    New: "جدید"
+    save: "ثبت"
+    reseller: "نمایندگی های فروش"
+    edit: "ویرایش"
+    delete: "حذف"
+    web: "وب سایت:"
+  
+  reseller:
+    title: 'عنوان'
+    CEO: "مدیر عامل"
+    Phone: "تلفن تماس"
+    address: "آدرس"
+  
+  send-url:
+    sender: 'ایمیل فرستنده'
+    receiver: 'ایمیل گیرنده'
+    text: 'متن پیام'
+
+  
+  msg:
+    contact-name: "نام:"
+    contact-email: "ایمیل:"
+    contact-phone: "تلفن:"
+    contact-msg: "پیام شما:"
+    contact-date: "تاریخ ارسال:"
+    contact-btn: "ارسال"
+    contact-title: "تماس با ما"
+    Required: "ضروری"
+    
+  
+  user:
+    email: "ایمیل:"
+    name: "نام:"
+    password: "رمزعبور:"
+    password_confirmation: "تکرار رمزعبور:"
+    

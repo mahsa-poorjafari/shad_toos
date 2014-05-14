@@ -1,0 +1,15 @@
+= form_for @picture do |f|
+  - if @picture.errors.any?
+    #error_explanation
+      %ul
+        - @picture.errors.each do |attr, msg|
+          %li= msg
+
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :product_id
+    = f.number_field :product_id
+  .actions
+    = f.submit 'Save'
