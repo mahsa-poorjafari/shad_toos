@@ -2,14 +2,13 @@
 %html
   %head
     %title 
-      = t("rainbow") + ', ' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
+      = t("shadtoos") + ', ' + t('hotel')
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
     = csrf_meta_tags
-    %meta{:charset => "utf-8"}
-    %meta{:name => "keywords", :content => Category.all.collect(&:title_fa).join(" ") } 
-    %meta{:name => "description", :content => "Rainbow, شرکت رنگین کمان, پارکت ، کاغذ دیواری، کفپوش"}
+    %meta{:charset => "utf-8"}    
+    %meta{:name => "description", :content => "hotel, shadtoos, مجتمع هتل آپارتمان های شادتوس"}
     %meta{content: "no", "http-equiv" => "imagetoolbar"}
     = yield(:refresh_meta) if content_for?(:refresh_meta)
     -#
@@ -30,22 +29,27 @@
         // -->
           
   %body     
-    .overlay
-      %header
-        #header-top        
-        #logo-menu
-          #logo
-            = image_tag "logo.png"          
-          .title-site
-            %h3= t('rainbow')
-          #mainmenu
-            %nav
-              -if I18n.locale == :fa        
-                .menu_fa{:class => I18n.locale}
-                  = render "shared/menu"
-              - else
-                .menu_en{:class => I18n.locale}
-                  = render "shared/menu"
+    
+    %header
+      #header-top        
+     
+      .language
+        = link_to (image_tag 'flag/en.png'), locale: :en          
+        = link_to (image_tag 'flag/fa.png'), locale: :fa
+        = link_to (image_tag 'flag/ar.png'), locale: :ar
+      #logo-menu    
+        #logo
+          = image_tag "logo.png"          
+        .title-site
+          %h3= t('shadtoos')
+        #mainmenu
+          %nav
+            -if I18n.locale == :fa        
+              .menu_fa{:class => I18n.locale}
+                = render "shared/menu"
+            - else
+              .menu_en{:class => I18n.locale}
+                = render "shared/menu"
     #content{:class => I18n.locale}        
       = yield
     %footer{:class => I18n.locale}
