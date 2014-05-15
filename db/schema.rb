@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515084929) do
+ActiveRecord::Schema.define(version: 20140515114325) do
 
   create_table "activities", force: true do |t|
     t.string   "title_fa"
@@ -44,18 +44,8 @@ ActiveRecord::Schema.define(version: 20140515084929) do
     t.text     "installation"
     t.text     "maintaion"
     t.text     "warranty"
-  end
-
-  create_table "certifications", force: true do |t|
-    t.string   "title_fa"
-    t.string   "title_en"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "category_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string   "title_ar"
+    t.text     "description_ar"
   end
 
   create_table "messages", force: true do |t|
@@ -75,6 +65,8 @@ ActiveRecord::Schema.define(version: 20140515084929) do
     t.datetime "updated_at"
     t.string   "title_fa"
     t.text     "html_text_fa"
+    t.string   "title_ar"
+    t.text     "html_text_ar"
   end
 
   create_table "pictures", force: true do |t|
@@ -96,7 +88,6 @@ ActiveRecord::Schema.define(version: 20140515084929) do
     t.datetime "updated_at"
     t.string   "title_fa"
     t.text     "description_fa"
-    t.boolean  "coming_soon"
   end
 
   create_table "resellers", force: true do |t|

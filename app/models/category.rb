@@ -6,8 +6,8 @@ class Category < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
                                             :message =>  "فرمت عکس صحیح نیست"
   has_many :products
-  has_many :certifications
-  accepts_nested_attributes_for :certifications, :allow_destroy => true
+  
+  
   validates :title_fa, :title_en, :uniqueness => {:message => 'عنوان گروه را تکراری است.'}
   validates :title_fa, :title_en, :presence => {:message => 'عنوان گروه را وارد کنید.'}
   

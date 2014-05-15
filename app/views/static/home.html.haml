@@ -4,6 +4,15 @@
       %li
         = image_tag category.image
         %div= category.description
+.new-box
+  .activities
+    - Activity.all.each do |activity|
+      .vertical-box
+        %div= activity.title
+        = image_tag activity.image(:small)
+        %div= activity.description
+  .haram-pic
+  
         
     
 

@@ -1,14 +1,10 @@
-PrepareProject::Application.routes.draw do
-  
-
-  resources :activities
+PrepareProject::Application.routes.draw do  
 
   resources :send_links
 
-scope "(:locale)", :locale => /en|fa/ do
-  resources :certifications
-  resources :resellers
+scope "(:locale)", :locale => /en|fa|ar/ do  resources :resellers
   resources :sliders
+  resources :activities
   resources :messages  
   resources :pictures
   resources :products do

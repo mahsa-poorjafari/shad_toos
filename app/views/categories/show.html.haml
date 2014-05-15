@@ -32,9 +32,7 @@
             %li
               = link_to t('warranty'), '#installation', :id => "show-war"
           
-          - if @category.certifications.present?
-            %li
-              = link_to t('certificate'), '#cer', :id => "show-cer"          
+          
           
          
   #category-details    
@@ -60,16 +58,7 @@
                 = image_tag 'dnwn.png'
                 = t ('download')
       
-    .row.details.col-sm-8#certification
-      = link_to "", "#",:name => "cer"
-      %b= 'گواهینامه ها'
-      %br
-      - @category.certifications.each do |certification|      
-        .col-sm-3.box-3{:style => "text-align:center"}
-          =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
-          .cer-title= certification.title
-            
-
+    
       
 :javascript
   $('#show-cer').click(function(){   

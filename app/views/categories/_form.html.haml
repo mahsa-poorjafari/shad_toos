@@ -5,14 +5,14 @@
         - @category.errors.each do |attr, msg|
           %li= msg
   
-  .info-form.fa
+  .fa
     .col-sm-6
       = link_to ' ', '#', :name => "general"
       .form-group
-        = f.label "عنوان گروه به فارسی", :class => "col-sm-5 control-label"    
+        = f.label "عنوان بخش به فارسی", :class => "col-sm-5 control-label"    
         = f.text_field :title_fa, :class => "form-control"
       .form-group
-        = f.label "عنوان گروه به انگلیسی", :class => "col-sm-5 control-label"      
+        = f.label "عنوان بخش به انگلیسی", :class => "col-sm-5 control-label"      
         = f.text_field :title_en, :class => "form-control"    
     .col-sm-6
       .form-group        
@@ -70,21 +70,7 @@
         .editor.col-sm-6.fa
           = f.label 'به انگلیسی', :class => "control-label"
           = f.text_area :warranty, :class => "form-control ckeditor"      
-    .form-group     
-      .col-sm-12
-        
-        = link_to ' ', '#', :name => "certification"
-        %h3.fa= 'گواهینامه'
-        = f.link_to_add content_tag(:span, "افزودن گواهینامه", :class => "btn"), :certifications, :id => "add_new_picture"    
-      .clr-float
-      .form-group 
-        -if @category.certifications.present?
-          .col-sm-6     
-            - @category.certifications.each do |cer|
-              = image_tag cer.image(:small)
-        = f.fields_for :certifications do |certificate|  
-          = render "certifications/form", :f => certificate
-      
+ 
   .col-sm-4
     = f.submit 'ثبت', :class=> "btn btn-default"
   

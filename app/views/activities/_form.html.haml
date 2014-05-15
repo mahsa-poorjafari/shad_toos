@@ -1,28 +1,30 @@
 = form_for @activity do |f|
   - if @activity.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@activity.errors.count, "error")} prohibited this activity from being saved:"
+    #error_explanation      
       %ul
         - @activity.errors.full_messages.each do |msg|
           %li= msg
 
   .field
-    = f.label :title_fa
+    = f.label 'تصویر'
+    = f.file_field :image
+  .field
+    = f.label 'عنوان به فارسی'
     = f.text_field :title_fa
   .field
-    = f.label :title_en
+    = f.label "عنوان به انگلیسی"
     = f.text_field :title_en
   .field
-    = f.label :title_ar
+    = f.label "عنوان به عربی"
     = f.text_field :title_ar
   .field
-    = f.label :description_fa
+    = f.label "توضیحات به فارسی"
     = f.text_area :description_fa
   .field
-    = f.label :description_en
+    = f.label "توضیحات به انگلیسی"
     = f.text_area :description_en
   .field
-    = f.label :description_ar
+    = f.label "توضیحات به عربی"
     = f.text_area :description_ar
   .actions
-    = f.submit 'Save'
+    = f.submit 'ثبت', :class => "btn btn-default"

@@ -6,10 +6,25 @@ class Page < ActiveRecord::Base
   validates :title, :title_fa, :uniqueness => {:message => 'عنوان صفحه تکراری است'}
   
   def title
-    I18n.locale == :fa ? self.read_attribute("title_fa") : self.read_attribute("title")
+    if I18n.locale == :ar
+      self.read_attribute("title_ar")
+    elsif I18n.locale == :en
+      self.read_attribute("title_en")
+    else
+      self.read_attribute("title_fa")
+    end
+    
   end
+  
   def html_text
-    I18n.locale == :fa ? self.read_attribute("html_text_fa") : self.read_attribute("html_text")
+    if I18n.locale == :ar
+      self.read_attribute("html_text_ar")
+    elsif I18n.locale == :en
+      self.read_attribute("html_text")
+    else
+      self.read_attribute("html_text_fa")
+    end
+    
   end
   
 end

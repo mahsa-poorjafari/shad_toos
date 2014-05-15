@@ -58,7 +58,7 @@
           - else
             .menu_fa{:class => I18n.locale}
               = render "shared/menu"
-            
-      = yield
+      .content.set-center{:class => I18n.locale}     
+        = yield
     %footer{:class => I18n.locale}
       = render "shared/footer"
