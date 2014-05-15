@@ -1,7 +1,12 @@
-.slider
-  .cycle-overlay.center{ :class => I18n.locale}                
-    %p= t('about')
-  = render "sliders/slider"
+.AccordionBox
+  %ul
+    - Category.all.each do |category|
+      %li
+        = image_tag category.image
+        %div= category.description
+        
+    
+
 
 :javascript 
   $(".item").first().addClass("active");

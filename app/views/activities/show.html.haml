@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title fa:
+  = @activity.title_fa
+%p
+  %b Title en:
+  = @activity.title_en
+%p
+  %b Title ar:
+  = @activity.title_ar
+%p
+  %b Description fa:
+  = @activity.description_fa
+%p
+  %b Description en:
+  = @activity.description_en
+%p
+  %b Description ar:
+  = @activity.description_ar
+
+= link_to 'Edit', edit_activity_path(@activity)
+\|
+= link_to 'Back', activities_path

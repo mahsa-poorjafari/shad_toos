@@ -1,6 +1,5 @@
 body {
-  margin-top:-10px;
-
+  
   scrollbar-base-color: #C0C0C0;
   scrollbar-base-color: #C0C0C0;
   scrollbar-3dlight-color: #C0C0C0;
@@ -11,6 +10,7 @@ body {
   scrollbar-dark-shadow-color: #C0C0C0;
   ::-webkit-scrollbar {
     width: 12px;
+  background:#1A1A1A;
   }
  
   ::-webkit-scrollbar-track {
