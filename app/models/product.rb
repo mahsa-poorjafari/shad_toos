@@ -10,9 +10,25 @@ class Product < ActiveRecord::Base
   validates :title, :title_fa, :uniqueness => {:message => 'عنوان محصول تکراری است'}
   
   def title
-    I18n.locale == :fa ? self.read_attribute("title_fa") : self.read_attribute("title")
+    if I18n.locale == :ar
+      self.read_attribute("title_ar")
+    elsif I18n.locale == :en
+      self.read_attribute("title")
+    else
+      self.read_attribute("title_fa")
+    end
+    
   end
+  
   def description
-    I18n.locale == :fa ? self.read_attribute("description_fa") : self.read_attribute("description")
+    if I18n.locale == :ar
+      self.read_attribute("description_ar")
+    elsif I18n.locale == :en
+      self.read_attribute("description")
+    else
+      self.read_attribute("description_fa")
+    end
+    
   end
+  
 end

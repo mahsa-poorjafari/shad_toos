@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
@@ -28,7 +29,7 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
+        format.html { redirect_to @activity, notice: 'فعالیت جدید اضافه شد.' }
         format.json { render action: 'show', status: :created, location: @activity }
       else
         format.html { render action: 'new' }
@@ -42,7 +43,7 @@ class ActivitiesController < ApplicationController
   def update
     respond_to do |format|
       if @activity.update(activity_params)
-        format.html { redirect_to @activity, notice: 'Activity was successfully updated.' }
+        format.html { redirect_to @activity, notice: 'ویرایش اطلاعات انجام شد.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -64,11 +65,11 @@ class ActivitiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_activity
-      @activity = Activity.find(params[:id])
+      @activity = Activity.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:title_fa, :title_en, :title_ar, :description_fa, :description_en, :description_ar)
+      params.require(:activity).permit(:title_fa, :title_en, :title_ar, :description_fa, :description_en, :description_ar, :image)
     end
 end

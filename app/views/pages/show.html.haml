@@ -5,11 +5,11 @@
     = link_to 'تعریف نمایندگی جدید', new_reseller_path
     %hr
     = link_to 'ویرایش صفحه', edit_page_path(@page)
-.page-bg
+%div
   -if @page.read_attribute("title") == "Contact us"
    
     = render "shared/msg_form"
-    = render 'resellers/index'
+    
 
 
 

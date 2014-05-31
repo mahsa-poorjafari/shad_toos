@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Description fa:
+  = @haram.description_fa
+%p
+  %b Description en:
+  = @haram.description_en
+%p
+  %b Description ar:
+  = @haram.description_ar
+
+= link_to 'Edit', edit_haram_path(@haram)
+\|
+= link_to 'Back', harams_path

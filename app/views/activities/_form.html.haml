@@ -2,29 +2,29 @@
   - if @activity.errors.any?
     #error_explanation      
       %ul
-        - @activity.errors.full_messages.each do |msg|
+        - @activity.errors.each do |attr, msg|
           %li= msg
-
-  .field
-    = f.label 'تصویر'
-    = f.file_field :image
-  .field
-    = f.label 'عنوان به فارسی'
-    = f.text_field :title_fa
-  .field
-    = f.label "عنوان به انگلیسی"
-    = f.text_field :title_en
-  .field
-    = f.label "عنوان به عربی"
-    = f.text_field :title_ar
-  .field
-    = f.label "توضیحات به فارسی"
-    = f.text_area :description_fa
-  .field
-    = f.label "توضیحات به انگلیسی"
-    = f.text_area :description_en
-  .field
-    = f.label "توضیحات به عربی"
-    = f.text_area :description_ar
-  .actions
-    = f.submit 'ثبت', :class => "btn btn-default"
+  .col-sm-6
+    .form-group
+      = f.label 'تصویر', :class => "col-sm-5 control-label"    
+      = f.file_field :image
+    .form-group
+      = f.label 'عنوان به فارسی', :class => "col-sm-5 control-label"    
+      = f.text_field :title_fa, :class => "form-control"
+    .form-group
+      = f.label "عنوان به انگلیسی", :class => "col-sm-5 control-label"    
+      = f.text_field :title_en, :class => "form-control"
+    .form-group
+      = f.label "عنوان به عربی", :class => "col-sm-5 control-label"    
+      = f.text_field :title_ar, :class => "form-control"
+    .form-group
+      = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"    
+      = f.text_area :description_fa, :class => "form-control"
+    .form-group
+      = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"    
+      = f.text_area :description_en, :class => "form-control"
+    .form-group
+      = f.label "توضیحات به عربی", :class => "col-sm-5 control-label"    
+      = f.text_area :description_ar, :class => "form-control"
+    .form-group
+      = f.submit 'ثبت', :class => "btn btn-default"

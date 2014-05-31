@@ -12,17 +12,4 @@
           %p= category.title 
           .category-image
             = image_tag category.image(:small)
-        .box-menu 
-          .arrow-vertical
-          %ul
-            - if category.products.present?
-              %li= link_to t('model'), category#pictures
-            - if category.installation.present?
-              %li= link_to t('technical'), category#installation
-            - if category.maintaion.present?
-              %li= link_to t('maintain'), category#maintaion
-            - if category.warranty.present?
-              %li= link_to t('warranty'), category#warranty
-        
-          
         

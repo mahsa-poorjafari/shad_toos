@@ -1,0 +1,24 @@
+%div
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'افزودن آیتم جدید', new_haram_path
+  %h1= 'مدیریت اسلایدر حرم مطهر'
+
+  %table
+    %tr
+      %th Description      
+      %th
+      %th
+
+    - @harams.each do |haram|
+      %tr
+        %td= haram.description        
+        %td= link_to 'مشاهده', haram
+        %td= link_to 'ویرایش', edit_haram_path(haram)
+        %td= link_to 'حذف', haram, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+
+  %br
+
+  

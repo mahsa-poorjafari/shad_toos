@@ -1,10 +1,10 @@
-.product-bg
+.main-bg
   -if is_admin?
     .admin-link.fa
       %p= 'منوی صفحه'
       %hr
-      = link_to 'تعریف مدل جدید', new_product_path
-  
+      = link_to 'تعریف آیتم جدید', new_product_path
+  %h1= 'تعریف آیتم جدید'
   .products.set-center
     - @products.each do |product|      
       .pro_wrapper{align: "center", :id => I18n.locale}                

@@ -1,20 +1,21 @@
--if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
-    = link_to 'New Activity', new_activity_path
-%h1 Listing activities
+.main-bg
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'فعالیت جدید', new_activity_path
+  %h1= 'لیست فعالیتها تاکنون'
 
-%table 
+  %table 
 
-  - @activities.each do |activity|
-    %tr
-      %td= image_tag activity.image(:small)
-      %td= activity.title     
-      %td= activity.description     
+    - @activities.each do |activity|
+      %tr
+        %td= image_tag activity.image(:small)
+        %td= activity.title     
+        %td= activity.description     
 
-      %td= link_to 'Show', activity
-      %td= link_to 'Edit', edit_activity_path(activity)
-      %td= link_to 'Destroy', activity, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'مشاهده', activity
+        %td= link_to 'ویرایش', edit_activity_path(activity)
+        %td= link_to 'حذف', activity, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
 

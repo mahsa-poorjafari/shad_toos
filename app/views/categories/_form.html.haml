@@ -6,14 +6,16 @@
           %li= msg
   
   .fa
-    .col-sm-6
-      = link_to ' ', '#', :name => "general"
+    .col-sm-6      
       .form-group
         = f.label "عنوان بخش به فارسی", :class => "col-sm-5 control-label"    
         = f.text_field :title_fa, :class => "form-control"
       .form-group
         = f.label "عنوان بخش به انگلیسی", :class => "col-sm-5 control-label"      
         = f.text_field :title_en, :class => "form-control"    
+      .form-group
+        = f.label "عنوان بخش به عربی", :class => "col-sm-5 control-label"      
+        = f.text_field :title_ar, :class => "form-control"  
     .col-sm-6
       .form-group        
         = f.label " تصویر نمونه:", :class => "col-sm-3 control-label"      
@@ -27,70 +29,16 @@
     .form-group.col-sm-6
       = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"      
       = f.text_area :description_en, :class => "form-control"       
+    .form-group.col-sm-6
+      = f.label "توضیحات به عربی", :class => "col-sm-5 control-label"      
+      = f.text_area :description_ar, :class => "form-control"       
   
     
-    .clr-float
-      .form-group        
-        = link_to ' ', '#', :name => "install"
-        %h3.fa= 'نصب و راه اندازی فنی'
-        
-      .form-group           
-        %hr
-        .editor.col-sm-6.fa
-          = f.label 'به فارسی', :class => "control-label"
-          = f.text_area :installation, :class => "form-control ckeditor"
-        
-        .editor.col-sm-6.fa
-          = f.label 'به انگلیسی', :class => "control-label"
-          = f.text_area :installation, :class => "form-control ckeditor"
-          
-      .form-group                
-        = link_to ' ', '#', :name => "maintaion"
-        %h3.fa= 'شرایط نگهداری'
-        
-      .form-group
-        %hr
-        .editor.col-sm-6.fa
-          = f.label 'به فارسی', :class => "control-label "
-          = f.text_area :maintaion, :class => "form-control ckeditor"      
-        .editor.col-sm-6.fa
-          = f.label 'به انگلیسی', :class => "control-label "
-          = f.text_area :maintaion, :class => "form-control ckeditor"      
-          
-      .form-group                
-        = link_to ' ', '#', :name => "warranty"
-        %h3.fa= 'گارانتی'
-        
-      .form-group
-        %hr
-        .editor.col-sm-6.fa
-          = f.label 'به فارسی', :class => "control-label"
-          = f.text_area :warranty, :class => "form-control ckeditor"      
-          
-        .editor.col-sm-6.fa
-          = f.label 'به انگلیسی', :class => "control-label"
-          = f.text_area :warranty, :class => "form-control ckeditor"      
- 
+    
+    
   .col-sm-4
     = f.submit 'ثبت', :class=> "btn btn-default"
   
 
 
-:javascript
-  function enable_file_select(){
-    $(".enable_file_select").unbind('click').click(function(){
-      console.log("enable_file_select");
-      $(this).parent().find("input:file").click();
-      console.log("enable_file_select2");
-    });
-   }
 
-  enable_file_select();
-
-  $("#add_new_picture").click(function(){
-    $(".enable_file_select").unbind('click');
-    window.setTimeout('enable_file_select()', 1000);
-  });
-  
-  
-  

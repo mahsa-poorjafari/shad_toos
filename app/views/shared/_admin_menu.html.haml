@@ -1,12 +1,13 @@
-
+.col-sm-6  
+  %div= link_to 'مدیریت بخش ها', Category
+  %div= link_to 'افزودن آیتم به هر بخش', new_product_path
+  %div= link_to 'مدیریت اسلایدر اصلی', Slider
+  %div= link_to 'مدیریت اسلایدر حرم مطهر', Haram  
+  %div= link_to 'مدیریت فعالیت ها', Activity
+  
+  
 .col-sm-6
   %div= link_to 'پیام های ارسالی', Message
-  %div= link_to 'مدیریت محصولات', Category
-  %div= link_to 'تنوع مدل محصولات', Product
-  
-  %div= link_to 'مدیریت اسلایدر', Slider
-  
-.col-sm-6
   %div= link_to 'مدیریت صفحات متنی', Page  
   %div= link_to 'مشاهده ارسال لینکها', SendLink
   %div= link_to 'پروفایل مدیر', edit_user_path(current_user)

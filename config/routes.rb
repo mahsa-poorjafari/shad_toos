@@ -1,5 +1,7 @@
 PrepareProject::Application.routes.draw do  
 
+  resources :harams
+
   resources :send_links
 
 scope "(:locale)", :locale => /en|fa|ar/ do  resources :resellers
