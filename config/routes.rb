@@ -9,6 +9,7 @@ scope "(:locale)", :locale => /en|fa|ar/ do  resources :resellers
   resources :activities
   resources :messages  
   resources :pictures
+  get 'test' => 'static#test'
   resources :products do
     member do
       get :download
@@ -20,6 +21,7 @@ end
   resources :users
 
   root :to => 'static#home'
+  
   get "login" => "users#login"  
   post "create_session" => "users#create_session", :as => :create_session
   get "delete_session" => "users#delete_session", :as => :delete_session

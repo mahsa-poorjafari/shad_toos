@@ -88,7 +88,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 /* AccordionBox  */
 
 
-.AccordionBox {width:70%;
+.AccordionBox {width:100%;
   position:relative;
   min-height:340px;
   max-height:340px;    
@@ -111,15 +111,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin-left: 4px;
-  width: 72px;
+  width: 12%;
   height: 440px;
   transition: all 0.5s ease;
 }
-.AccordionBox ul li:hover {width:420px}
+.AccordionBox ul li.active {width:420px}
 
 .new-box {width:100%; padding:10px; min-height:400px; border-top:#BFBFBF; border-bottom:#BFBFBF}
-.new-box  .activities {width:65%; float:right; margin-left:5%; overflow:hidden; min-height:200px; background:#4D4D4D}
-.new-box  .haram-pic{width:30%; float:right; background:#FFA500; min-height:200px}
+.new-box  .activities {width:69%; float:right; margin-left:1%; overflow:hidden; min-height:200px; background:#4D4D4D; color:#fff}
+.new-box  .haram-pic{width:30%; float:right; background:#FFA500; min-height:200px; padding:2px}
+.new-box  .haram-pic .haram-box{width:95%; max-height:95%; min-height:95%; overflow:hidden}
 
 
 
@@ -391,7 +392,7 @@ ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0; }
 /* footer   */
 
 footer {
-position:relative;
+position:absolute;
 width:100%;
 background: rgb(69,72,77); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
@@ -405,7 +406,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 }
 footer .footer-menu {float:left; width:70%; height:100px}
 footer .footer-menu ul.total{width:90%; list-style:none;}
-footer .footer-menu ul.total li{width:20%; float:right}
+footer .footer-menu ul.total li{width:30%; float:right}
 footer .footer-menu ul.total li ul{width:100%; list-style:none;}
 footer .footer-menu ul.total li ul li{width:100%;}
 footer .footer-admin {float:right; width:30%; height:100px}

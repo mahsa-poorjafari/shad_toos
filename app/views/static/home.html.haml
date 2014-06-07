@@ -2,26 +2,40 @@
   %ul
     - Category.all.each do |category|
       %li
-        = image_tag category.image
+        = image_tag category.image(:large)
         %div= category.description
-.new-box
-  -#
-    .activities
+.new-box  
+  .activities
+    #makeMeScrollable
       - Activity.all.each do |activity|
-        .vertical-box
+        .vertical-box.col-sm-6
           %div= activity.title
-          = image_tag activity.image(:small)
+          = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name
           %div= activity.description
+      .clr-float
   .haram-pic
-  
+    = render 'harams/haram_slider'
+    = link_to 'Go test', test_path
         
+:javascript
+
+  $('.AccordionBox ul li:first').addClass('active');
+  
+  $('.AccordionBox ul li').mouseover(function(){
+    $('.AccordionBox ul li').removeClass( "active" );
+    $(this).addClass('active');
+  });
+      
+   
+  $(document).ready(function () {
+  	$("#makeMeScrollable").smoothDivScroll({
+  		mousewheelScrolling: "allDirections",
+  		manualContinuousScrolling: true,
+  		autoScrollingMode: "onStart"
+  	});
+  })    
     
 
-
-:javascript 
-  $(".item").first().addClass("active");
-  $(".slide-indicator").first().addClass("active");
-  $('.carousel').carousel();
 
 
 

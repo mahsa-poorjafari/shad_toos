@@ -46,9 +46,7 @@
       = auto_discovery_link_tag(:rss, "http://www.khorasannews.com")
         
     .main      
-      .slider
-        .cycle-overlay.center{ :class => I18n.locale}                
-          %p= t('about')
+      .slider        
         = render "sliders/slider"
 
       #mainmenu.set-center
@@ -97,3 +95,8 @@
       = render "shared/footer"
 
   
+:javascript 
+  $(".item").first().addClass("active");
+  $(".slide-indicator").first().addClass("active");
+  $('.carousel').carousel();
+

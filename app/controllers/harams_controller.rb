@@ -69,6 +69,6 @@ class HaramsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def haram_params
-      params.require(:haram).permit(:description_fa, :description_en, :description_ar)
+      params.require(:haram).permit(:description_fa, :description_en, :description_ar, :image)
     end
 end
