@@ -9,22 +9,21 @@
     %li
       %ul
         %li.head
-          %b= t('gallery')
+          %b= t('session')
         - Category.all.each do |category|
           %li= link_to category.title, category        
         
     %li
       %ul
         %li.head
-          %b= t('downloads')
-        %li Movie
-        %li= t('catalog')
+          %b= t('‌Rreserve')
+        %li
+        %li
     %li
       %ul
         %li.head
           %b= t('contact')
-        %li= link_to t('send-msg'), Page.first
-        %li= link_to t('resellers'), Page.first
+        %li= link_to t('send-msg'), Page.first        
         %li        
           = link_to  t('send-mail'), '#', "data-toggle" => "modal", "data-target" => ".bs-example-modal-sm"
             

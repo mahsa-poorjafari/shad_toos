@@ -14,7 +14,8 @@
   .form-group
     = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"    
     = f.text_area :description_fa, :id => "slide_des", :class => "form-control"
-  
-    
+  .form-group
+    = f.label "بخش مربوطه", :class => "col-sm-5 control-label"    
+    = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش  را انتخاب کنید.')  
   .form-group
     = f.submit 'ثبت تصویر', :class => "btn btn-default"

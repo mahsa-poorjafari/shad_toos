@@ -1,14 +1,8 @@
-%div{:style => "width => 300%; overflow:hidden"}
-  #makeMeScrollable
-    - Haram.all.each do |haram|
-      = image_tag haram.image(:medium), :id => haram.image_file_name, :alt => haram.image_file_name
-
-  
-:javascript
-  $(document).ready(function () {
-  	$("#makeMeScrollable").smoothDivScroll({
-  		mousewheelScrolling: "allDirections",
-  		manualContinuousScrolling: true,
-  		autoScrollingMode: "onStart"
-  	});
-  });
+= auto_discovery_link_tag(:rss, "http://www.khorasannews.com")
+%div
+  / Begin ParsTools.com RSSREADER Code
+  %script{language: "javascript", src: "http://parstools.com/rss/?url=http://www.khorasannews.com/RSS.aspx&n=1&link=y&date=y&width=400&dir=rtl&bgcolor=000000&bdcolor=ffffff"}
+  %div{style: "display:none;"}
+    %a{href: "http://parstools.com/"}
+      %h1 فید خوان rss reader
+  / End RSSREADER code

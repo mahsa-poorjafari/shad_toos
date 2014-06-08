@@ -39,56 +39,50 @@
         = link_to (image_tag 'flag/fa.png'), locale: :fa
         = link_to (image_tag 'flag/ar.png'), locale: :ar
       #logo-menu    
-        #logo
-          = image_tag "logo.png"          
-        .title-site
-          %h3= t('shadtoos')
-      = auto_discovery_link_tag(:rss, "http://www.khorasannews.com")
+        = link_to root_path do
+          #logo
+            
+          .title-site
+            %h3= t('shadtoos')
+      = auto_discovery_link_tag(:atom, "/feeds.atom")
         
-    .main      
+    .main            
       .slider        
         = render "sliders/slider"
-
-      #mainmenu.set-center
-        %nav
-          -if I18n.locale == :en       
-            .menu_en{:class => I18n.locale}
-              = render "shared/menu"
-          - else
-            .menu_fa{:class => I18n.locale}
-              = render "shared/menu"
-        %div
-          / Begin ParsTools.com RSSREADER Code
-          %script{language: "javascript", src: "http://parstools.com/rss/?url=http://www.khorasannews.com/RSS.aspx&n=1&link=y&date=y&width=400&dir=rtl&bgcolor=000000&bdcolor=ffffff"}
-          %div{style: "display:none;"}
-            %a{href: "http://parstools.com/"}
-              %h1 فید خوان rss reader
-          / End RSSREADER code
-              
-      .col-sm-2
-        .weather
-          %script{src: "http://pichak.net/blogcod/weather/cod.php?width=0&style=2&textcolor=30301C&bgcolor=F7FFF2&city=IRXX0008&border=4C8C27", type: "text/javascript"}
-          %div{style: "display:none"}
-            %h1
-              %a{href: "http://pichak.net"} کد نمایش آب و هوا
-            %h1
-              %a{href: "http://pichak.net/blogcod/weather"} کد نمایش آب و هوا
-        .calender  
-          
-          / Begin RoozGozar.com oghat Code
-          %script{language: "javascript", src: "http://roozgozar.com/blogcode/owghat2/8.js", type: "text/javascript"}
-          / End RoozGozar.com oghat code
-          
-          %script{language: "javascript", src: "http://taktatools.com/date/date.php?454545AX000000BXtahomaCX9DX1EXsolidFXECFF42GX0HX0IX000000JX000000KX000000LX000000MX", type: "text/javascript"}
-          
-          %script{language: "javascript", src: "http://roozgozar.com/blogcode/arz/arz.php?FFFFFFAX000000BXtahomaCX9DX1EXsolidFXDEDE14GX0HX0IX000000JX000000KX011000010001101010110000LX", type: "text/javascript"}
-          / Design By taktatools.com
-          %center
-            %script{src: "http://taktatools.com/amar/stat/index.php?Stat=1250&Border=000000&BackColor=FFFFFF&TextColor=000000&action=True", type: "text/javascript"}
-          / Design By taktatools.com
-          .clr-float
-      .col-sm-9.content.set-center{:class => I18n.locale}
-        = yield
+      .background
+        #mainmenu.set-center
+          %nav
+            -if I18n.locale == :en       
+              .menu_en{:class => I18n.locale}
+                = render "shared/menu"
+            - else
+              .menu_fa{:class => I18n.locale}
+                = render "shared/menu"
+                       
+        .col-sm-2
+          .weather
+            %script{src: "http://pichak.net/blogcod/weather/cod.php?width=0&style=2&textcolor=30301C&bgcolor=F7FFF2&city=IRXX0008&border=4C8C27", type: "text/javascript"}
+            %div{style: "display:none"}
+              %h1
+                %a{href: "http://pichak.net"} کد نمایش آب و هوا
+              %h1
+                %a{href: "http://pichak.net/blogcod/weather"} کد نمایش آب و هوا
+          .calender  
+            
+            / Begin RoozGozar.com oghat Code
+            %script{language: "javascript", src: "http://roozgozar.com/blogcode/owghat2/8.js", type: "text/javascript"}
+            / End RoozGozar.com oghat code
+            
+            %script{language: "javascript", src: "http://taktatools.com/date/date.php?454545AX000000BXtahomaCX9DX1EXsolidFXECFF42GX0HX0IX000000JX000000KX000000LX000000MX", type: "text/javascript"}
+            
+            %script{language: "javascript", src: "http://roozgozar.com/blogcode/arz/arz.php?FFFFFFAX000000BXtahomaCX9DX1EXsolidFXDEDE14GX0HX0IX000000JX000000KX011000010001101010110000LX", type: "text/javascript"}
+            / Design By taktatools.com
+            %center
+              %script{src: "http://taktatools.com/amar/stat/index.php?Stat=1250&Border=000000&BackColor=FFFFFF&TextColor=000000&action=True", type: "text/javascript"}
+            / Design By taktatools.com
+            .clr-float
+        .col-sm-9.content.set-center{:class => I18n.locale, :style => "min-height:300px"}
+          = yield
       
       .clr-float
     %footer{:class => I18n.locale}

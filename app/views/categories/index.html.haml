@@ -5,11 +5,21 @@
       %hr
       = link_to 'تعریف محصول جدید', new_category_path
   = image_tag 'slide4.jpg', :style => "z-index:-20; position:fixed"
-  .show-pro.set-center 
-    - @categories.each do |category|
-      .box-3.set-center{align: "center", :class => I18n.locale}                
-        = link_to category do         
-          %p= category.title 
-          .category-image
-            = image_tag category.image(:small)
-        
+  
+  .AccordionBox
+    %ul
+      - @categories.each do |category|
+        = link_to category do
+          %li
+            = image_tag category.image(:large)
+            %div= category.title
+            %div= category.description
+:javascript
+
+  $('.AccordionBox ul li:first').addClass('active');
+  
+  $('.AccordionBox ul li').mouseover(function(){
+    $('.AccordionBox ul li').removeClass( "active" );
+    $(this).addClass('active');
+  });
+      

@@ -1,22 +1,20 @@
 
 - @haram = Haram.all
-- @haram.each do |slide|
-  .item-row.item
-    = link_to (image_tag slide.image(:medium), :id =>  slide.id ), slide, :class => "slide", :id => "right"
-    -if is_admin?
-      .row-controls
-        = link_to edit_haram_path(slide) do
-          %i.icon-edit
-        = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
-          %i.icon-trash
-          
-
-= image_tag 'prev-icon.png', :id => "arrow-next"
+#banner-fade
+  %ul.bjqs
+    - @haram.each do |slide|
+      %li
+        = image_tag slide.image(:medium)
+      
 
 :javascript
-  
-  $('#right').cycle();
+  $(document).ready(function($) {
 
+    $('#banner-fade').bjqs({
+      height      : 320,
+      width       : 620,
+      responsive  : true
+    });
 
-  
-    
+  });
+

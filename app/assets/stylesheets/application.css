@@ -68,7 +68,7 @@ header #logo-menu .title-site{ float:left; width:50%; color:#FFFF00}
 
 
 
-.main {position:relative; }
+.main {position:relative; background:#1A1A1Ass}
 .main #mainmenu {width:60%;
 border-radius:2em;
   background: rgb(149,149,149); /* Old browsers */
@@ -81,7 +81,7 @@ background: linear-gradient(to bottom,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
 
 }
-
+.main .background {}
 .main #mainmenu  ul {list-style:none}
 .main #mainmenu  ul li{display:inline; width:150px}
 
@@ -117,12 +117,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 }
 .AccordionBox ul li.active {width:420px}
 
-.new-box {width:100%; padding:10px; min-height:400px; border-top:#BFBFBF; border-bottom:#BFBFBF}
-.new-box  .activities {width:69%; float:right; margin-left:1%; overflow:hidden; min-height:200px; background:#4D4D4D; color:#fff}
-.new-box  .haram-pic{width:30%; float:right; background:#FFA500; min-height:200px; padding:2px}
-.new-box  .haram-pic .haram-box{width:95%; max-height:95%; min-height:95%; overflow:hidden}
+.new-box {width:100%; padding:10px; border-top:#BFBFBF; border-bottom:#BFBFBF}
+.new-box  .activities {width:100%;  margin-left:1%; overflow:hidden; min-height:200px; background:#4D4D4D; color:#fff; max-height:200px}
+.haram-pic{width:30%; float:right; border:#332B2B 2px solid; border-radius:2px; min-height:200px; padding:2px; margin:10px; overflow:hidden}
+.haram-pic .haram-box{width:95%; max-height:95%; min-height:95%; overflow:hidden}
 
-
+.new-box  .activities .vertical-box {width:17%; float:right; text-align:center}
 
 
 .category-info {
@@ -138,7 +138,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
   }
 .category-info p {text-align:justify}
 .product-pics { margin:5px; float:right; min-width:200px; max-width:200px; text-align:center; }
-.product-pics-large {margin:5px; float:right; min-width:80%; max-width:80%; text-align:center; }
+
 .download {background:#7F7F7F; opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */
   color:#e5ec6f}
@@ -253,7 +253,7 @@ span.Necessary {color:#F33535}
 
 .pro_wrapper .line b {color:#4D4D4D; margin-top:10px; }
 .line {width:100%;  text-align:center; }
-.slider {height:580px}
+.slider {height:450px}
 .slider  img {width: 100%}
 .slider  .cycle-overlay {
   text-align:center; 
@@ -375,9 +375,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 border-top-right-radius:1.5em;
 border-top-left-radius:1.5em;
 
-  opacity:.8; 
-  filter:alpha(opacity=80); /* For IE8 and earlier */}
-.admin_menu a {color:#4d4d4d; }
+ }
+.admin_menu a {color:#F1F19B; }
 .admin_menu a:hover {color:#E7F804; }
 .admin_menu:hover {height:200px; margin-top:-100px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
@@ -412,4 +411,29 @@ footer .footer-menu ul.total li ul li{width:100%;}
 footer .footer-admin {float:right; width:30%; height:100px}
 
 .input-form {background:#4D4D4D;}
-.main-bg {background:#4D4D4D}
+.main-bg {background:#302929}
+
+
+
+/* slider haram   */
+#slideshow {
+    position:relative;
+    height:350px;
+}
+
+#slideshow IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:8;
+    opacity:0.0;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+    opacity:1.0;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}

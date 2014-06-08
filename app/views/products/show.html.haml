@@ -10,16 +10,15 @@
 
     
 .col-sm-4
-  %p   
-    = @product.title
-  %p    
-    = @product.description
-  %p    
-    = @product.category.title
+  %h2= @product.category.title   
+  %h3= @product.title
+  %p= @product.description
   
-.col-sm-4
+  
+  
+.col-sm-12
   - @product.pictures.each do |pic|
-    .product-pics-large
+    .col-sm-4
       =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
       .download
         = link_to  download_product_path(:image_id => pic.id) do

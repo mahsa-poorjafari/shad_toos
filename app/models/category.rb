@@ -6,6 +6,7 @@ class Category < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
                                             :message =>  "فرمت عکس صحیح نیست"
   has_many :products
+  has_many :sliders
   
   
   validates :title_fa, :title_ar,  :title_en, :uniqueness => {:message => 'عنوان گروه را تکراری است.'}
@@ -18,8 +19,7 @@ class Category < ActiveRecord::Base
       self.read_attribute("title_en")
     else
       self.read_attribute("title_fa")
-    end
-    
+    end    
   end
   
   def description
@@ -29,8 +29,7 @@ class Category < ActiveRecord::Base
       self.read_attribute("description_en")
     else
       self.read_attribute("description_fa")
-    end
-    
+    end    
   end
   
   

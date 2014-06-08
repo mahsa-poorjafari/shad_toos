@@ -17,6 +17,9 @@ scope "(:locale)", :locale => /en|fa|ar/ do  resources :resellers
   end
   resources :pages
   resources :categories
+  # config/routes.rb (Rails 2.0)
+  resources :feeds, :only => [:index]
+
 end
   resources :users
 

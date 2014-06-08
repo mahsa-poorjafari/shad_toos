@@ -11,8 +11,9 @@
   .col-sm-12
     .col-sm-12
       .set-center          
-        .set-center= @category.title      
+        %h1.set-center= @category.title      
         %p= @category.description          
+    .clr-float
     .col-sm-12
       - @category.products.each do |item|        
         .main-bg
