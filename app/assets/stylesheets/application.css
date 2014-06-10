@@ -70,6 +70,7 @@ header #logo-menu .title-site{ float:left; width:50%; color:#FFFF00}
 
 .main {position:relative; background:#1A1A1Ass}
 .main #mainmenu {width:60%;
+  height:30px;
 border-radius:2em;
   background: rgb(149,149,149); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(149,149,149,1) 0%, rgba(13,13,13,1) 46%, rgba(1,1,1,1) 50%, rgba(10,10,10,1) 53%, rgba(78,78,78,1) 76%, rgba(56,56,56,1) 87%, rgba(27,27,27,1) 100%); /* FF3.6+ */
@@ -82,9 +83,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 
 }
 .main .background {}
-.main #mainmenu  ul {list-style:none}
-.main #mainmenu  ul li{display:inline; width:150px}
-
+.main #mainmenu  ul {list-style:none;
+  padding-top:5px}
+.main #mainmenu  ul li{display:inline; min-width:150px; padding:10px;
+  border-radius:30px;  
+  font-size:11px;font-weight:bold;
+  margin:10px;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.main #mainmenu  ul li:hover, .main #mainmenu  ul li.active{
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px #FFA500;
+  
+}
+.main #mainmenu  ul a:hover {color:#FFFFff; margin-top:-1px }
 /* AccordionBox  */
 
 
@@ -309,23 +323,23 @@ table.table tr.visited {font-weight:bold}
 
 .admin-link {
   height:20px; 
-  margin:5px;   
+  margin-top: -5%;
+margin-right: 60%;   
   width:200px; 
  z-index:10;
-  overflow:hidden; 
+  direction:ltr;
   border-top-right-radius:1.5em;
   border-top-left-radius:1.5em;
-  position:absolute;
-  color:#DEFF00;   
-  transition:all 1s; overflow:hidden; color:#DEFF00; 
-background: rgb(125,126,125); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(125,126,125,1) 0%, rgba(14,14,14,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,126,125,1)), color-stop(100%,rgba(14,14,14,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+  position:absolute;  
+  overflow:hidden; 
+background: rgb(251,223,147); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(251,223,147,1) 0%, rgba(248,181,0,1) 55%, rgba(252,205,77,1) 56%, rgba(252,234,187,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,223,147,1)), color-stop(55%,rgba(248,181,0,1)), color-stop(56%,rgba(252,205,77,1)), color-stop(100%,rgba(252,234,187,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbdf93', endColorstr='#fceabb',GradientType=0 ); /* IE6-9 */
 
   opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */
@@ -333,51 +347,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
   -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
   transition:all 1s;}
 .admin-link:hover{ min-height:150px ; cursor:pointer; display:block}
-.admin-link a {color:#F8FD9F}
-.admin-link a:hover {color:#DEFF00}
+.admin-link a {color:#1A1A1A}
+.admin-link a:hover {color:#4D4D4D}
 .category-bg { 
   height:100%; 
  /* background:url('vintage-wallpaper-2.jpg') ; */
   }
-.product-bg {
-  height:100%; 
-  background:url('Elizabeth_Dow__0_52ff809486c18.jpg');
-}
-.page-bg {
-  height:100%; 
-  background:url('contact.jpg');
-}
+
 .info-holder{ 
   width:100%; 
   height:100%;
  
 }
-.cer-bg {width:100%; 
-  height:400px;
-  color:#fff;
-  background:url('vintage-wallpaper-2.jpg');
-  opacity:.8;
-  filter:alpha(opacity=80); /* For IE8 and earlier */
-}
+
 #content form.new_category {height:400px}
 .edi-slider-holder {position:absolute; width:100%; height:100%; margin-top:20px}
 .show-slider {width:100%; height:100%}
 .index-slider {width:55%; height:80%}
 .admin_menu {min-width:20%; height:50px;  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
-  transition:all 1s; overflow:hidden; color:#DEFF00; 
- background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.62) 5%, rgba(0,0,0,0.47) 28%, rgba(0,0,0,0.27) 59%, rgba(0,0,0,0.03) 95%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(5%,rgba(0,0,0,0.62)), color-stop(28%,rgba(0,0,0,0.47)), color-stop(59%,rgba(0,0,0,0.27)), color-stop(95%,rgba(0,0,0,0.03)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.62) 5%,rgba(0,0,0,0.47) 28%,rgba(0,0,0,0.27) 59%,rgba(0,0,0,0.03) 95%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.62) 5%,rgba(0,0,0,0.47) 28%,rgba(0,0,0,0.27) 59%,rgba(0,0,0,0.03) 95%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.62) 5%,rgba(0,0,0,0.47) 28%,rgba(0,0,0,0.27) 59%,rgba(0,0,0,0.03) 95%,rgba(0,0,0,0) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.62) 5%,rgba(0,0,0,0.47) 28%,rgba(0,0,0,0.27) 59%,rgba(0,0,0,0.03) 95%,rgba(0,0,0,0) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  transition:all 1s; overflow:hidden; color:#1A1A1A; 
+background: rgb(251,223,147); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(251,223,147,1) 0%, rgba(248,181,0,1) 55%, rgba(252,205,77,1) 56%, rgba(252,234,187,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,223,147,1)), color-stop(55%,rgba(248,181,0,1)), color-stop(56%,rgba(252,205,77,1)), color-stop(100%,rgba(252,234,187,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(251,223,147,1) 0%,rgba(248,181,0,1) 55%,rgba(252,205,77,1) 56%,rgba(252,234,187,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbdf93', endColorstr='#fceabb',GradientType=0 ); /* IE6-9 */
+
 border-top-right-radius:1.5em;
 border-top-left-radius:1.5em;
 
  }
-.admin_menu a {color:#F1F19B; }
-.admin_menu a:hover {color:#E7F804; }
+.admin_menu a {color:#4D4D4D; }
+.admin_menu a:hover {color:#1A1A1A; text-shadow: 1px 1px 1px #000, 3px 3px 5px #F92323; }
 .admin_menu:hover {height:200px; margin-top:-100px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
 .go-up {margin-top:-75px; z-index:10; width:90%; text-align:center; color:#4d4d4d; font-weight:bold; margin-bottom:75px}
@@ -436,4 +439,26 @@ footer .footer-admin {float:right; width:30%; height:100px}
 
 #slideshow IMG.last-active {
     z-index:9;
+}
+
+
+
+a.button {
+   display: -moz-inline-stack;
+   display: inline-block;
+   width: 175px;
+   height: 47px;
+   background: url("http://dabuttonfactory.com/b.jpeg?t=Our%20Teem%20&f=Komika-Italic&ts=34&tc=ffffff00&it=jpeg&c=round&bgt=pyramid&bgc=e7eaf0&ebgc=274f08&bs=1&bc=b3b8af&hp=20&vp=11") no-repeat;
+   line-height: 47px;
+   vertical-align: text-middle;
+   text-align: center;
+   color: #ffffff;
+   font-family: Komika;
+   font-size: 34px;
+   font-weight: normal;
+   font-style: italic;
+   text-shadow: none;
+}
+a.button > span {
+   display: -moz-inline-block;
 }

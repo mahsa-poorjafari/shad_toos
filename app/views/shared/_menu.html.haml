@@ -1,10 +1,14 @@
 %ul
-  %li#home.first{style: "font-size:11px;font-weight:bold"}
-    = link_to t('home'), root_path
-  %li.gallery{style: "font-size:11px;font-weight:bold"} 
-    = link_to t('section'), Category
-  %li#ourprojects{style: "font-size:11px;font-weight:bold"} 
-    = link_to t('gallery'), Product
+  = link_to root_path do
+    %li#home.first{:class => ('active' if current_page?(root_path)) }
+      = t('home')
+  = link_to Category do
+    %li.gallery
+      =t('section')
+  = link_to Product do
+    %li#ourprojects
+      = t('gallery') 
   - Page.all.each do |page|    
-    %li#contact{style: "font-size:11px;font-weight:bold"} 
-      = link_to page.title, page
+    = link_to page do
+      %li
+        = page.title
