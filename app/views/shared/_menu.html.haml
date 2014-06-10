@@ -5,9 +5,10 @@
   = link_to Category do
     %li.gallery
       =t('section')
-  = link_to Product do
-    %li#ourprojects
-      = t('gallery') 
+  = link_to '#' do
+    %li= 'اخبار'
+  = link_to Activity do
+    %li= 'فعالیت ها'
   - Page.all.each do |page|    
     = link_to page do
       %li

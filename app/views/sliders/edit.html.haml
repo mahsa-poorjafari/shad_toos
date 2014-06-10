@@ -3,7 +3,8 @@
   %h2= 'تنظیم اندازه تصویر'
   = form_for @slider, :html => {:multipart => true} do |f| 
     .col-sm-9
-      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "350", :width => "750"
+      sdkn fkjn lkjn 
+      = image_tag @slider.image(:original), :class => "crop cropImage", :height => "350", :width => "750"
       = f.hidden_field :crop_x
       = f.hidden_field :crop_y
       = f.hidden_field :crop_w
@@ -20,7 +21,7 @@
       .form-group
         = f.submit 'ثبت', :class => "btn"
   
-      = link_to 'بازگشت', sliders_path
+      = link_to 'بازگشت', root_path
 
 :javascript
   $( '.crop' ).each( function () {

@@ -18,7 +18,7 @@
         = f.text_field :title_ar, :class => "form-control"  
     .col-sm-6
       .form-group        
-        = f.label " تصویر نمونه:", :class => "col-sm-3 control-label"      
+        = f.label " تصویر نمونه:", :class => "col-sm-6 control-label"      
         = f.file_field :image     
         -if @category.image.present?              
           = image_tag @category.image(:small) 

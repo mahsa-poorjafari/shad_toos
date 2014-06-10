@@ -14,11 +14,12 @@
         %h1.set-center= @category.title      
         %p= @category.description          
     .clr-float
+    %hr
     .col-sm-12
       - @category.products.each do |item|        
         .main-bg
           = link_to item do
-            .col-sm-4
+            .col-sm-5
               = image_tag item.pictures.first.image(:medium)
             .col-sm-6
               %b= item.title

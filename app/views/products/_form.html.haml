@@ -31,7 +31,7 @@
       = f.fields_for :pictures do |picture|  
         = render "shared/upload_image_form", :picture => picture
     .col-sm-12
-      = f.link_to_add content_tag(:span, "افزودن تصویر"), :pictures, :id => "add_new_picture"    
+      = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn btn-default"), :pictures, :id => "add_new_picture"    
   .clr-float
   .form-group
     = f.submit 'ثبت', :class=> "btn btn-default"

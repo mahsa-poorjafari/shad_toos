@@ -9,7 +9,7 @@
       
 
     
-.col-sm-4
+.col-sm-12
   %h2= @product.category.title   
   %h3= @product.title
   %p= @product.description
@@ -18,9 +18,10 @@
   
 .col-sm-12
   - @product.pictures.each do |pic|
-    .col-sm-4
+    .col-sm-5.show-room
+      = image_tag 'top-left.jpg', :class => "border-top-left"
       =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
-      .download
+      .download.set-center
         = link_to  download_product_path(:image_id => pic.id) do
           = image_tag 'dnwn.png'
           = t ('download')

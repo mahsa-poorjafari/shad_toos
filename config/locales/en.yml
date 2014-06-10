@@ -36,17 +36,11 @@ en:
   messages: "Message"
   downloads: "DOWNLOADS"
   contact: "CONTACT"
-  about: " Rainbow was up from 86 years in the field of interior and exterior decoration on Iran has begun, Rainbow was up from 86 years in the field of interior and exterior decoration on Iran has begun"
-  model: "Model Varients"
-  technical: "Technical instalation "
-  maintain: "Maintain"
-  warranty: "Warranty"
-  certificate: "Certification"
+ 
   send-msg: "Leave a Message"
   send-mail: "Email This Link To a Friend"
   
-  catalog: "Catalogue"
-  certificate: "Certification"
+  more: More
   
   statistics: 'Site Statistics'
   visit_site: "Read the site"
@@ -69,12 +63,7 @@ en:
     web: "WebSite:"   
   
   
-  reseller:
-    title: 'Title'
-    CEO: "CEO"
-    Phone: "Phone"
-    address: "Address"
-
+  
   send-url:
     sender: 'Sender Email'
     receiver: 'Receiver Email'

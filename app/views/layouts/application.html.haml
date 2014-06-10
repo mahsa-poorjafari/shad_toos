@@ -47,8 +47,12 @@
       = auto_discovery_link_tag(:atom, "/feeds.atom")
         
     .main            
-      .slider        
+      .slider  
         = render "sliders/slider"
+        .reserv
+          .text-box
+            %b= t('رزرو آنلاین')
+        
       .background
         #mainmenu.set-center
           %nav

@@ -8,15 +8,13 @@
       = link_to 'بازگشت', activities_path
   %p#notice= notice
   
-  %div= image_tag @activity.image(:small)
+  %div= image_tag @activity.image(:large)
   
-  %p
-    %b عنوان فعالیت
-    = @activity.title
-  
-  %p
-    %b توضیحات
-    = @activity.description
+  .col-gl-12   
+    %h4= @activity.title
+    
+    %p  
+      = @activity.description
   
 
   

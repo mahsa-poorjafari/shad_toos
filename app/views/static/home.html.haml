@@ -2,21 +2,34 @@
 .AccordionBox
   %ul
     - Category.all.each do |category|
-      %li
-        = image_tag category.image(:large)
-        %div= category.description
+      = link_to category do
+        %li
+          = image_tag category.image(:large)        
+          .cat-title
+            %h3= category.title
+            %p= category.description
+          
+.col-sm-12          
+  .col-sm-6
+    .about-us
+      %h2= 'درباره شادتوس'
+      = image_tag 'Gold-line.jpg'
+      %p= 'روي هر پله اي كه ايستاده باشي ، خدا يك پله بالاتر از توست . نه بخاطر اينكه خداست...بخاطر اينكه ميخواد دستت رو بگيره!'
+  .haram-pic.col-sm-4
+    = render 'harams/haram_slider'
+  
+    
 .new-box  
   .activities
     #makeMeScrollable
       - Activity.all.each do |activity|
         .vertical-box
-          %div= activity.title
-          = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name
-          %div= activity.description
+          .col-sm-9.set-center.activity-title= activity.title
+          = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "activity-img"
+          .col-sm-10.set-center.activity-des= activity.description
+          .col-gl-3.more= link_to t('more'), activity
       .clr-float
-.haram-pic
-  = render 'harams/haram_slider'
-  
+
         
 :javascript
 
