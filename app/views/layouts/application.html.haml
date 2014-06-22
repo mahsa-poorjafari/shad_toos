@@ -8,7 +8,7 @@
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
     = csrf_meta_tags
     %meta{:charset => "utf-8"}    
-    %meta{:name => "description", :content => "hotel, shadtoos, مجتمع هتل آپارتمان های شادتوس"}
+    %meta{:name => "description", :content => "hotel, shadtoos, مجتمع تجاری-اقامتی شادتوس"}
     %meta{content: "no", "http-equiv" => "imagetoolbar"}
     = yield(:refresh_meta) if content_for?(:refresh_meta)
     -#
@@ -47,22 +47,26 @@
       = auto_discovery_link_tag(:atom, "/feeds.atom")
         
     .main            
-      .slider  
+      #mainmenu.set-center
+        %nav
+          
+          -if I18n.locale == :en       
+            .menu_en{:class => I18n.locale}
+              = render "shared/menu"
+          - else
+            .menu_fa{:class => I18n.locale}
+              = render "shared/menu"
+      .top-vin.set-center    
+        = image_tag 'top-slide.png'
+      .slider          
         = render "sliders/slider"
         .reserv
           .text-box
             %b= t('رزرو آنلاین')
-        
-      .background
-        #mainmenu.set-center
-          %nav
-            -if I18n.locale == :en       
-              .menu_en{:class => I18n.locale}
-                = render "shared/menu"
-            - else
-              .menu_fa{:class => I18n.locale}
-                = render "shared/menu"
-                       
+      .bottom-vin.set-center
+        = image_tag 'bottom-slider.png'
+      .clr-float
+      .background                      
         .col-sm-2
           .weather
             %script{src: "http://pichak.net/blogcod/weather/cod.php?width=0&style=2&textcolor=30301C&bgcolor=F7FFF2&city=IRXX0008&border=4C8C27", type: "text/javascript"}

@@ -9,7 +9,15 @@
     %li= 'اخبار'
   = link_to Activity do
     %li= 'فعالیت ها'
-  - Page.all.each do |page|    
-    = link_to page do
-      %li
-        = page.title
+  %li#contact
+    = t('contact')
+.col-sm-7.submenu
+  - Page.all.each do |page|
+    .col-sm-3
+      = image_tag 'missing.png'
+      %div= page.title
+  .clr-float
+:javascript 
+  $('#contact').click(function(){
+    
+  });

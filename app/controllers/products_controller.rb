@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_filter :check_autentication, only: [ :edit, :update, :destroy]
   # GET /products
   # GET /products.json
   def index

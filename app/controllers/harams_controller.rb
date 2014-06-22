@@ -1,6 +1,6 @@
 class HaramsController < ApplicationController
   before_action :set_haram, only: [:show, :edit, :update, :destroy]
-
+  before_filter :check_autentication
   # GET /harams
   # GET /harams.json
   def index

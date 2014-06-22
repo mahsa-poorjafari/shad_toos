@@ -5,6 +5,9 @@
         - @product.errors.each do |attr, msg|
           %li= msg
   .col-sm-6
+    .form-group 
+      = f.label "بخش مربوطه" , :class => "col-sm-4 control-label"      
+      = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش را انتخاب کنید.')        
     .form-group  
       = f.label "عنوان به فارسی:", :class => "col-sm-4 control-label"      
       = f.text_field :title_fa, :class => "form-control"
@@ -23,9 +26,7 @@
     .form-group 
       = f.label "توضیحات به عربی:", :class => "col-sm-4 control-label"      
       = f.text_area :description_ar, :class => "form-control"
-    .form-group 
-      = f.label "بخش مربوطه" , :class => "col-sm-4 control-label"      
-      = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش را انتخاب کنید.')        
+    
   .col-sm-6
     .form-group 
       = f.fields_for :pictures do |picture|  

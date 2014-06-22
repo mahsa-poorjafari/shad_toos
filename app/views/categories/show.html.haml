@@ -1,12 +1,12 @@
 .main-bg
-  -if is_admin?
-    .admin-link.fa
-      %p= 'منوی صفحه'
-      %hr
+  -if is_admin? 
+    .admin-edit-del
       = link_to 'ویرایش', edit_category_path(@category)
       \|
       = link_to 'بازگشت', categories_path
-  %p#notice= notice  
+    .admin-edit-del
+      = link_to 'افزودن آیتم جدید', new_product_path
+  
   
   .col-sm-12
     .col-sm-12
@@ -15,16 +15,24 @@
         %p= @category.description          
     .clr-float
     %hr
-    .col-sm-12
+    .col-sm-12.index-category
       - @category.products.each do |item|        
-        .main-bg
+        .show-item
+        
+          .col-sm-5
+            = link_to (image_tag item.pictures.first.image(:medium)), item
           = link_to item do
-            .col-sm-5
-              = image_tag item.pictures.first.image(:medium)
-            .col-sm-6
+            .col-sm-7.category-show-description
               %b= item.title
               %p= item.description
-            .clr-float
+          .see-more
+            .border-see-more.set-center
+              = link_to 'مشاهده بیشتر', item
+          .clr-float
+            - if is_admin?
+              .admin-edit-del
+                = link_to 'ویرایش', edit_product_path(item)
+                = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
         
             
           
