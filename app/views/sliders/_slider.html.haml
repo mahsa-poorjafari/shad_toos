@@ -3,7 +3,8 @@
     .carousel-inner
       - @sliders = Slider.all
       - @sliders.each do |slide|
-        .item-row.item
+        
+        .item-row.item          
           = link_to (image_tag slide.image(:gallery_size), :id =>  slide.id ), slide, :class => "slide"
           -if is_admin?
             .row-controls
@@ -11,6 +12,7 @@
                 %i.icon-edit
               = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
                 %i.icon-trash
+        
           
     -if @sliders.count > 1          
       .carousel-controls

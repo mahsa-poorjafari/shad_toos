@@ -64,7 +64,7 @@ text-shadow: 1px 1px 1px #000, 3px 3px 5px #FFA500;
 color:#F4F4A1;
 background:url('bg.png');
 }
-.main #mainmenu {width:60%;
+.main #mainmenu {width:75%;
   height:43px;
   padding-top:1%;
   padding-right:9%;  
@@ -72,17 +72,20 @@ background:url('bg.png');
   background-image:url('MENU.png');
   margin-bottom:3%;
 }
-/*
-.main  .top-vin {background-image:url('top-slide.png');
-background-repeat:no-repeat;
 
- width:70%; height:9%; text-align:center}
-.main  .bottom-vin {background:url('bottom-slider.png'); width:70%; height:15%; margin-top:-3%; text-align:center}
-*/
+.main  .top-vin {background-image:url('top-slide.png');}
+.main .slider-vintage {
+left:12%; right:15%;
+background-repeat:no-repeat;
+ width:70%; height:85px; text-align:center; position:absolute; z-index:20}
+ 
+.main  .bottom-vin {background:url('bottom-slider.png');  margin-top:-3.4%; }
+
 
 .main #mainmenu  ul {list-style:none;
   width:60%;
   float:right;
+  margin-right: 15%;
   padding-top:5px}
 .main #mainmenu  ul li{display:inline; min-width:150px; padding:10px;
   border-radius:30px;  
@@ -94,7 +97,7 @@ background-repeat:no-repeat;
   transition: all .5s ease;
 }
 .main #mainmenu  ul li:hover, .main #mainmenu  ul li.active{
-  text-shadow: 1px 1px 1px #000, 3px 3px 5px #FFA500;
+  text-shadow: 1px 1px 1px #F6D231, 3px 3px 5px #63007B;
   
 }
 .main #mainmenu  ul a:hover {color:#FFFFff; margin-top:-1px }
@@ -367,7 +370,7 @@ span.Necessary {color:#F33535}
 
 .pro_wrapper .line b {color:#4D4D4D; margin-top:10px; }
 .line {width:100%;  text-align:center; }
-.slider {height:600px}
+.slider {height:445px; margin-top: 6%; z-index:10}
 .slider  img {width: 100%}
 .slider  .cycle-overlay {
   text-align:center; 
