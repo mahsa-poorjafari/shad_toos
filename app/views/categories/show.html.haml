@@ -17,10 +17,9 @@
     %hr
     .col-sm-12.index-category
       - @category.products.each do |item|        
-        .show-item
-        
+        .show-item        
           .col-sm-5
-            = link_to (image_tag item.pictures.first.image(:medium)), item
+            = link_to (image_tag item.pictures.first.image(:medium)), item.pictures.first.image(:medium), :class => "resize-img"
           = link_to item do
             .col-sm-7.category-show-description
               %b= item.title
@@ -37,3 +36,5 @@
             
           
  
+:javascript
+  
