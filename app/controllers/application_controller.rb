@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
     def default_url_options
       { :locale => I18n.locale }
     end
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "foo" && password == "bar"
+      end
+    end
   private
     def set_locale     
       if params[:locale] == "en" 
@@ -23,12 +28,6 @@ class ApplicationController < ActionController::Base
         I18n.locale = "fa"
       end
       Rails.application.routes.default_url_options[:locale] = I18n.locale 
-    end   
-    def authenticate
-      authenticate_or_request_with_http_basic do |username, password|
-        username == "foo" && password == "bar"
-    end
+    end      
 
-
-  
 end
