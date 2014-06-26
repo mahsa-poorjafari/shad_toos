@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception 
   before_filter :set_locale
+  before_filter :authenticate
   
   protected
     def check_autentication
@@ -23,6 +24,10 @@ class ApplicationController < ActionController::Base
       end
       Rails.application.routes.default_url_options[:locale] = I18n.locale 
     end   
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "foo" && password == "bar"
+    end
 
 
   
