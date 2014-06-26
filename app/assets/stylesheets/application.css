@@ -33,7 +33,9 @@ header {
 	left: 0;
 	top: 0;
 	z-index: 15;  
-  background:#110014;
+  background:#291105;
+  
+  
 
 }
 
@@ -70,7 +72,7 @@ width: 100%;
 		bottom: 0;
 		left: 0;
     
-		background-image: radial-gradient(circle, #3D0C46,#34103A, #291105,#000000,#000000, #000000);
+		background-image: radial-gradient(circle, #3D0C46,#34103A, #291105, #000000);
 		opacity: .8; 
 
 }
@@ -513,7 +515,7 @@ ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0; }
 footer {
 position:absolute;
 width:100%;
-background:#110014;
+background:#000;
 }
 footer .footer-menu {float:left; width:70%; height:100px}
 footer .footer-menu ul.total{width:90%; list-style:none;}
