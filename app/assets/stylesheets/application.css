@@ -219,7 +219,7 @@ text-align:center;
   min-height:300px;  
   color:#fff; 
   max-height:300px}
-.haram-pic{width:30%; float:right; border:#332B2B 2px solid; border-radius:2px; height:200px; padding:2px; margin:10px; overflow:hidden}
+.haram-pic{width:30%; float:right; border:#332B2B 2px solid; border-radius:2px; height:300px; padding:2px; margin:10px; overflow:hidden}
 .haram-pic .haram-box{width:95%; max-height:95%; min-height:95%; overflow:hidden}
 
 .new-box .activities .vertical-box {
@@ -672,3 +672,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 color:#1a1a1a;
 }
 .see-more:hover .border-see-more a {color:#1a1a1a}
+#banner-fade ul {list-style:none; margin:1%; text-align:center}
+#banner-fade ul li{list-style:none; margin:1%; width:90%}

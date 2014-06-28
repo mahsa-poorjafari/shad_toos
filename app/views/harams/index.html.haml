@@ -1,4 +1,4 @@
-%div
+.fa
   -if is_admin?
     = link_to new_haram_path, :class => "admin-access" do
       .admin-edit-del
@@ -6,18 +6,17 @@
     
   %h1= 'مدیریت اسلایدر حرم مطهر'
 
-  %table
-    %tr
-      %th Description      
-      %th
-      %th
-
+  .col-sm-12
     - @harams.each do |haram|
-      %tr
-        %td= haram.description        
-        %td= link_to 'مشاهده', haram
-        %td= link_to 'ویرایش', edit_haram_path(haram)
-        %td= link_to 'حذف', haram, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+      .col-sm-3{:style => "margin:1%"}
+        = image_tag haram.image(:small)
+        %p{:style => "margin:1%"}= haram.description        
+        %p{:style => "margin:1%"}
+          = link_to 'مشاهده', haram
+          \|
+          = link_to 'ویرایش', edit_haram_path(haram)
+          \|
+          = link_to 'حذف', haram, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
   %br
 

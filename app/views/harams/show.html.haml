@@ -1,15 +1,15 @@
-%p#notice= notice
-
-%p
-  %b Description fa:
-  = @haram.description_fa
-%p
-  %b Description en:
-  = @haram.description_en
-%p
-  %b Description ar:
-  = @haram.description_ar
-
-= link_to 'Edit', edit_haram_path(@haram)
-\|
-= link_to 'Back', harams_path
+.col-sm-12.fa
+  = image_tag @haram.image(:small)
+  %p
+    %b توضیحات فارسی
+    = @haram.description
+  %p
+    %b توضیحات انگلیسی
+    = @haram.description_en
+  %p
+    %b توضیحات عربی
+    = @haram.description_ar
+  - if is_admin?
+    = link_to 'ویرایش', edit_haram_path(@haram)
+    \|
+    = link_to 'بازگشت', harams_path
