@@ -1,4 +1,3 @@
-
 .AccordionBox
   %ul
     - @category.each do |category|
@@ -24,10 +23,12 @@
     #makeMeScrollable
       - @activity.each do |activity|
         .vertical-box
-          .col-sm-9.set-center.activity-title= activity.title
+          .activity-title= activity.title
           = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "activity-img"
-          .col-sm-10.set-center.activity-des= activity.description
-          .col-gl-3.more= link_to t('more'), activity
+          .set-center.activity-des= activity.description
+          .col-gl-3.more
+            .inside-border
+              = link_to t('more'), activity
       .clr-float
 
         
