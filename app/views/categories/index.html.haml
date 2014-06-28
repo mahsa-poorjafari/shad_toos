@@ -1,7 +1,8 @@
 .category-bg
   -if is_admin?
-    .admin-edit-del
-      = link_to 'تعریف بخش جدید', new_category_path
+    = link_to new_category_path, :class => "admin-access" do
+      .admin-edit-del
+        %i= 'تعریف بخش جدید'
     %br
   
   .AccordionBox

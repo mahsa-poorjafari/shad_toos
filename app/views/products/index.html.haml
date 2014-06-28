@@ -1,7 +1,9 @@
 .main-bg
   -if is_admin?
-    .admin-edit-del
-      = link_to 'تعریف آیتم جدید', new_product_path
+    = link_to new_product_path, :class => "admin-access" do
+      .admin-edit-del
+        %i= 'تعریف آیتم جدید'
+    
   %h1= 'تعریف آیتم جدید'
   .products.set-center
     - @products.each do |product|      
