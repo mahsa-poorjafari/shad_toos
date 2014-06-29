@@ -17,6 +17,7 @@
     .form-group 
       = f.label "عنوان به عربی:", :class => "col-sm-4 control-label"      
       = f.text_field :title_ar, :class => "form-control"
+  .col-sm-6
     .form-group 
       = f.label "توضیحات به فارسی:", :class => "col-sm-4 control-label"      
       = f.text_area :description_fa, :class => "form-control"
@@ -26,7 +27,7 @@
     .form-group 
       = f.label "توضیحات به عربی:", :class => "col-sm-4 control-label"      
       = f.text_area :description_ar, :class => "form-control"
-    
+  .clr-float
   .col-sm-6
     .form-group 
       = f.fields_for :pictures do |picture|  
@@ -34,7 +35,7 @@
     .col-sm-12
       = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn btn-default"), :pictures, :id => "add_new_picture"    
   .clr-float
-  .form-group
+  .form-group.pull-left
     = f.submit 'ثبت', :class=> "btn btn-default"
   .clr-float
   

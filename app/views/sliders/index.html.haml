@@ -1,8 +1,14 @@
 .fa
   %h2.heading2 
     = "اسلایدر"
+  
   -if is_admin?
-    = link_to content_tag("span", "عکس جدید"), new_slider_path
+    = link_to new_slider_path, :class => "admin-access" do
+      .admin-edit-del
+        %i= 'عکس جدید'
+    
+    %p
+      %i= 'برای اضافه کردن عکس به اسلایدر بالای صفحات، دکمه عکس جدید را کلیک کنید/'
   .index-slider.set-center 
     = render 'slider'            
     

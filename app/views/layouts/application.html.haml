@@ -44,7 +44,10 @@
             
           .title-site
             %h3= t('shadtoos')
-      = auto_discovery_link_tag(:atom, "/feeds.atom")
+      - if is_admin?
+        .admin_menu
+          %h3= 'منوی مدیرسایت'
+          = render 'shared/admin_menu'
         
     .main            
       #mainmenu.set-center

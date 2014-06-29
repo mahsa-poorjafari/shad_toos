@@ -1,12 +1,11 @@
-%div
+.col-gl-12
   -if is_admin?
-    .admin-link.fa
-      %p= 'منوی صفحه'
-      %hr
+    .admin-edit-del
+      
       = link_to 'ویرایش', edit_activity_path(@activity)
       \|
       = link_to 'بازگشت', activities_path
-  %p#notice= notice
+  
   
   %div= image_tag @activity.image(:large)
   
