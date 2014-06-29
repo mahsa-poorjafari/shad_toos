@@ -1,12 +1,14 @@
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
-    = link_to 'تعریف مدیر جدید', new_user_path
-    %hr
-    = link_to 'مشاهده', @user
-    \|
-    = link_to 'بازگشت', users_path
+  = link_to new_user_path, :class => "admin-access" do
+    .admin-edit-del
+      %i= 'تعریف مدیر جدید'
+
+  %hr
+  = link_to 'مشاهده', @user
+  \|
+  = link_to 'بازگشت', users_path
+  %p
+    %i= 'می توانید اطلاعات مربوط به مدیرسایت را در این قسمت تغییر دهید. دقت فرمایید ایمیل را صحیح وارد کنید.'
 .fa
   %h1= 'ویرایش اطلاعات مدیرسایت'
   .fa.set-center{:style => "width:50%;"}

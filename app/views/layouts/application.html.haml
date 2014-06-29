@@ -59,13 +59,17 @@
           - else
             .menu_fa{:class => I18n.locale}
               = render "shared/menu"
-      .top-vin.set-center.slider-vintage            
-      .slider          
-        = render "sliders/slider"
-        .reserv
-          .text-box
-            %b= t('رزرو آنلاین')
-      .bottom-vin.set-center.slider-vintage        
+      - if is_admin?
+        %p{:style => "color:#fff; background:#4D4D4D;"}= 'اسلایدر در این مکان قرار می گیرد'
+      - else
+        
+        .top-vin.set-center.slider-vintage            
+        .slider          
+          = render "sliders/slider"
+          .reserv
+            .text-box
+              %b= t('رزرو آنلاین')
+        .bottom-vin.set-center.slider-vintage        
       .clr-float
       .background                      
         .col-sm-2

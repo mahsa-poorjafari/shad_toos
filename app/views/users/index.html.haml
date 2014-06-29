@@ -1,8 +1,8 @@
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
-    = link_to 'تعریف مدیر جدید', new_user_path
+  = link_to new_user_path, :class => "admin-access" do
+    .admin-edit-del
+      %i= 'تعریف مدیر جدید'
+    
 .fa
   %h1= 'پروفایل  مدیر سایت'
 
