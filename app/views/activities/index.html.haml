@@ -3,9 +3,11 @@
     = link_to new_activity_path , :class => "admin-access" do
       .admin-edit-del
         %i=  'فعالیت جدید'
+    %p
+      %i= 'جدید فعالیتهای هتل  را در این قسمت می توانید مشاهده و اضافه کنید.'
   %h1= 'لیست فعالیتها تاکنون'
 
-  %table 
+  %table.table
 
     - @activities.each do |activity|
       %tr

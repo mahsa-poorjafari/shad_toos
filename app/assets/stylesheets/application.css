@@ -23,7 +23,7 @@
 .set-center {margin-right:auto; margin-left:auto}
 .float-left {float:left;}
 .width50 {width:50%}
-.width80 {width:80%}
+.width80 {width:50%}
 
 
 
@@ -424,6 +424,9 @@ span.Necessary {color:#F33535}
 .pro_wrapper .line b {color:#4D4D4D; margin-top:10px; }
 .line {width:100%;  text-align:center; }
 .slider {height:445px; margin-top: 6%; z-index:10}
+.slider .carousel-controls,  .slider .carousel-control {display:none}
+.slider:hover .carousel-controls {display:block}
+.slider:hover .carousel-control {display:block}
 .slider  img {width: 100%}
 .slider  .cycle-overlay {
   text-align:center; 
