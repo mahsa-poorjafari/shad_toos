@@ -73,26 +73,27 @@
       .clr-float
       .background                      
         .col-sm-2
-          .weather
-            %script{src: "http://pichak.net/blogcod/weather/cod.php?width=0&style=2&textcolor=30301C&bgcolor=F7FFF2&city=IRXX0008&border=4C8C27", type: "text/javascript"}
-            %div{style: "display:none"}
-              %h1
-                %a{href: "http://pichak.net"} کد نمایش آب و هوا
-              %h1
-                %a{href: "http://pichak.net/blogcod/weather"} کد نمایش آب و هوا
-          .calender  
-            
-            / Begin RoozGozar.com oghat Code
-            %script{language: "javascript", src: "http://roozgozar.com/blogcode/owghat2/8.js", type: "text/javascript"}
-            / End RoozGozar.com oghat code
-            
-            %script{language: "javascript", src: "http://taktatools.com/date/date.php?454545AX000000BXtahomaCX9DX1EXsolidFXECFF42GX0HX0IX000000JX000000KX000000LX000000MX", type: "text/javascript"}
-            
-            %script{language: "javascript", src: "http://roozgozar.com/blogcode/arz/arz.php?FFFFFFAX000000BXtahomaCX9DX1EXsolidFXDEDE14GX0HX0IX000000JX000000KX011000010001101010110000LX", type: "text/javascript"}
-            / Design By taktatools.com
-            %center
-              %script{src: "http://taktatools.com/amar/stat/index.php?Stat=1250&Border=000000&BackColor=FFFFFF&TextColor=000000&action=True", type: "text/javascript"}
-            / Design By taktatools.com
+          -#
+            .weather
+              %script{src: "http://pichak.net/blogcod/weather/cod.php?width=0&style=2&textcolor=30301C&bgcolor=F7FFF2&city=IRXX0008&border=4C8C27", type: "text/javascript"}
+              %div{style: "display:none"}
+                %h1
+                  %a{href: "http://pichak.net"} کد نمایش آب و هوا
+                %h1
+                  %a{href: "http://pichak.net/blogcod/weather"} کد نمایش آب و هوا
+            .calender  
+              
+              / Begin RoozGozar.com oghat Code
+              %script{language: "javascript", src: "http://roozgozar.com/blogcode/owghat2/8.js", type: "text/javascript"}
+              / End RoozGozar.com oghat code
+              
+              %script{language: "javascript", src: "http://taktatools.com/date/date.php?454545AX000000BXtahomaCX9DX1EXsolidFXECFF42GX0HX0IX000000JX000000KX000000LX000000MX", type: "text/javascript"}
+              
+              %script{language: "javascript", src: "http://roozgozar.com/blogcode/arz/arz.php?FFFFFFAX000000BXtahomaCX9DX1EXsolidFXDEDE14GX0HX0IX000000JX000000KX011000010001101010110000LX", type: "text/javascript"}
+              / Design By taktatools.com
+              %center
+                %script{src: "http://taktatools.com/amar/stat/index.php?Stat=1250&Border=000000&BackColor=FFFFFF&TextColor=000000&action=True", type: "text/javascript"}
+              / Design By taktatools.com
             .clr-float
         .col-sm-9.content.set-center{:class => I18n.locale, :style => "min-height:300px"}
           = yield
