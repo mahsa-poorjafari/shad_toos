@@ -14,7 +14,16 @@
                 %i= 'حذف'
       
           = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide"
-        
+          
+          .slide-descript= 'توضیحات مربوط به هر اسلایدر در این  '
+            
+  .slider-boxes.set-center    
+    - Category.all.each do |session|        
+      .col-sm-1.slider-text-box{:style => "float:left"}    
+        = image_tag 'icn_otagh.png'
+        = session.title
+          
+          
             
           
     -if @sliders.count > 1          
@@ -29,4 +38,8 @@
       = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next" do
         = image_tag 'prev-icon.png'
       
-
+:javascript
+  $( document ).ready(function() {
+    options = { to: { width: 280, height: 185 } };
+    $( ".slider-text-box" ).show( "slow");
+  });
