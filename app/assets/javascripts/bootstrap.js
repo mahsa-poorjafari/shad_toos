@@ -334,7 +334,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
   Carousel.prototype.next = function () {
     if (this.sliding) return
-    return this.slide('next')
+    return this.slide('next');
+    
   }
 
   Carousel.prototype.prev = function () {
