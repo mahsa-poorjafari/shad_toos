@@ -1,35 +1,38 @@
-.AccordionBox
-  %ul
-    - @category.each do |category|
-      = link_to category do
-        %li
-          = image_tag category.image(:large)        
-          .cat-title
-            %h3= category.title
-            %p= category.description
-          
+.col-sm-3  
+  .about-us
+    = image_tag 'befor.png'
+    %h2= 'درباره شادتوس'    
+    %p= 'روي هر پله اي كه ايستاده باشي ، خدا يك پله بالاتر از توست . نه بخاطر اينكه خداست...بخاطر اينكه ميخواد دستت رو بگيره!'
+    = image_tag '1212.png'
+.col-sm-9
+  .AccordionBox
+    %ul
+      - @category.each do |category|
+        = link_to category do
+          %li
+            = image_tag category.image(:large)        
+            .cat-title
+              %h3= category.title
+              %p= category.description
+            
 .col-sm-12          
-  .col-sm-6
-    .about-us
-      %h2= 'درباره شادتوس'
-      = image_tag '1212.png'
-      %p= 'روي هر پله اي كه ايستاده باشي ، خدا يك پله بالاتر از توست . نه بخاطر اينكه خداست...بخاطر اينكه ميخواد دستت رو بگيره!'
-  .haram-pic.col-sm-4
+  
+  .haram-pic.col-sm-3
     = render 'harams/haram_slider'
   
     
-.new-box  
-  .activities
-    #makeMeScrollable
-      - @activity.each do |activity|
-        .vertical-box
-          .activity-title= activity.title
-          = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "activity-img"
-          .set-center.activity-des= activity.description
-          .col-gl-3.more
-            .inside-border
-              = link_to t('more'), activity
-      .clr-float
+  .new-box.col-sm-8
+    .activities
+      #makeMeScrollable
+        - @activity.each do |activity|
+          .vertical-box
+            .activity-title= activity.title
+            = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "activity-img"
+            .set-center.activity-des= activity.description
+            .col-gl-3.more
+              .inside-border
+                = link_to t('more'), activity
+        .clr-float
 
         
 :javascript

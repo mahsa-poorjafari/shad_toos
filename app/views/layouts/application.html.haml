@@ -71,9 +71,10 @@
               %b= t('رزرو آنلاین')
         .bottom-vin.set-center.slider-vintage        
       .clr-float
-      .background                      
-        .col-sm-2
-          -#
+      .background 
+        -#
+          .col-sm-2
+          
             .weather
               %script{src: "http://pichak.net/blogcod/weather/cod.php?width=0&style=2&textcolor=30301C&bgcolor=F7FFF2&city=IRXX0008&border=4C8C27", type: "text/javascript"}
               %div{style: "display:none"}
@@ -95,7 +96,7 @@
                 %script{src: "http://taktatools.com/amar/stat/index.php?Stat=1250&Border=000000&BackColor=FFFFFF&TextColor=000000&action=True", type: "text/javascript"}
               / Design By taktatools.com
             .clr-float
-        .col-sm-9.content.set-center{:class => I18n.locale, :style => "min-height:300px"}
+        .col-sm-10.content.set-center{:class => I18n.locale, :style => "min-height:300px; margin-right: 7%;"}
           = yield
       
       .clr-float
