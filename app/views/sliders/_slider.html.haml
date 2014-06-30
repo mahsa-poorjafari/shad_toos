@@ -5,14 +5,17 @@
       - @sliders.each do |slide|
         
         .item-row.item          
-          = link_to (image_tag slide.image(:gallery_size), :id =>  slide.id ), slide, :class => "slide"
           -if is_admin?
-            .row-controls
+            .row-controls.admin-edit-del
               = link_to edit_slider_path(slide) do
-                %i.icon-edit
+                %i= 'ویرایش'
+                \|
               = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
-                %i.icon-trash
+                %i= 'حذف'
+      
+          = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide"
         
+            
           
     -if @sliders.count > 1          
       .carousel-controls

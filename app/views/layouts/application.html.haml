@@ -60,7 +60,7 @@
             .menu_fa{:class => I18n.locale}
               = render "shared/menu"
       - if is_admin?
-        %p{:style => "color:#fff; background:#4D4D4D;"}= 'اسلایدر در این مکان قرار می گیرد'
+        %p.instead-slide-for-admin= 'اسلایدر در این مکان قرار می گیرد'
       - else
         
         .top-vin.set-center.slider-vintage            
@@ -96,7 +96,7 @@
                 %script{src: "http://taktatools.com/amar/stat/index.php?Stat=1250&Border=000000&BackColor=FFFFFF&TextColor=000000&action=True", type: "text/javascript"}
               / Design By taktatools.com
             .clr-float
-        .col-sm-10.content.set-center{:class => I18n.locale, :style => "min-height:300px; margin-right: 7%;"}
+        .col-sm-10.content.set-center{:class => I18n.locale, :style => "min-height:550px; margin-right: 7%;"}
           = yield
       
       .clr-float
