@@ -17,7 +17,7 @@
             
 .col-sm-12          
   
-  .haram-pic.col-sm-3
+  .haram-pic
     = render 'harams/haram_slider'
   
     
@@ -25,9 +25,9 @@
     .activities
       #makeMeScrollable
         - @activity.each do |activity|
-          .vertical-box
-            .activity-title= activity.title
+          .vertical-box            
             = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "activity-img"
+            .activity-title= activity.title
             .set-center.activity-des= activity.description
             .col-gl-3.more
               .inside-border

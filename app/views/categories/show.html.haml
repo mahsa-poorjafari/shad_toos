@@ -16,21 +16,26 @@
     .clr-float
     %hr
     .col-sm-12.index-category
-      - @category.products.each do |item|        
+      - @category.products.each do |item|                
         .show-item        
+          = image_tag 'bottom-right.png', :class => "bottom-right-corner"
           .col-sm-5
-            = link_to (image_tag item.pictures.first.image(:medium)), item.pictures.first.image(:medium), :class => "resize-img"
+            = image_tag item.pictures.first.image(:medium), :class => "resize-img"
+          
           = link_to item do
             .col-sm-7.category-show-description
               %b= item.title
               %p= item.description
+          = image_tag 'top-left.png', :class => "top-left-corner"
           .see-more
             .border-see-more.set-center
-              = link_to 'مشاهده بیشتر', item
+              = link_to 'مشاهده بیشتر', item          
           .clr-float
+          
             - if is_admin?
               .admin-edit-del
                 = link_to 'ویرایش', edit_product_path(item)
+                \|
                 = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
         
             
