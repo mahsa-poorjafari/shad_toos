@@ -25,7 +25,7 @@
     .activities
       .flexslider
         %ul.slides
-          - @activity.each do |activity|
+          - @activities.each do |activity|
             %li          
               = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name
               .activity-title= activity.title

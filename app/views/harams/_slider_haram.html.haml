@@ -14,17 +14,11 @@
                 \|
               = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
                 %i= 'حذف'
-      
-          
-          
-      
-            
-          
-    -if @sliders.count > 1                
-      = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev" do
-        = image_tag 'banner_go_left.png', :class => "haram-arrow", :style => "margin-right:-130%"
-      = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next" do
-        = image_tag 'banner_go_right.png', :class => "haram-arrow"
+      -if @sliders.count > 1                
+        = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev" do
+          = image_tag 'banner_go_left.png', :class => "haram-arrow", :style => "margin-right:-130%"
+        = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next" do
+          = image_tag 'banner_go_right.png', :class => "haram-arrow"
       
 :javascript   
  
