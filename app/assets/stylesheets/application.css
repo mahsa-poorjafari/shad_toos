@@ -77,8 +77,8 @@ width: 100%;
 		opacity: .8; 
 
 }
-.main #mainmenu {width:75%;
-  height:50px;
+.main #mainmenu {width:80%;
+  height:60px;
   padding-top:1%;
   position:relative;
   padding-right:9%;  
@@ -207,16 +207,20 @@ text-align:center;
   height: 415px;
   transition: all 0.5s ease;
 }
-.AccordionBox ul li img {height:370px;}
+.AccordionBox ul li img.sample-image {height:370px;}
 .AccordionBox ul li.active {width:420px}
-.AccordionBox ul li .cat-title {margin-top:-22%; background:#1A1A1A;
-  height:20%;
-  opacity:.7; 
+.AccordionBox ul li .cat-title {margin-top:-22%; 
+  height:25%;
+ background:#1A1A1A; opacity:.7; 
   filter:alpha(opacity=70); /* For IE8 and earlier */
   transition: all 0.5s ease;
 }
-.AccordionBox ul li.active .cat-title { margin-top:-50px}
-.AccordionBox ul li .cat-title  p {padding:1%}
+.AccordionBox ul li .cat-title p {
+  padding:1%;
+  margin:4%;
+  }
+.AccordionBox ul li.active .cat-title { margin-top:-40px}
+
 .new-box {width:100%; padding:10px; border-top:#BFBFBF; border-bottom:#BFBFBF}
 .new-box  .activities {
   width:100%;  

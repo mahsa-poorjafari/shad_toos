@@ -1,7 +1,4 @@
-$('.AccordionBox ul li').mouseover(function(){
-  $('.AccordionBox ul li').removeClass( "active" );
-  $(this).addClass('active');
-});
+
 
 function slideSwitch() {
   var AccordionBox = $('.AccordionBox ul li.active');

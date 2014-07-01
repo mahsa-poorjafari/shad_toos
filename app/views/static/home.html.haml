@@ -10,10 +10,10 @@
       - @category.each do |category|
         = link_to category do
           %li
-            = image_tag category.image(:large)        
+            = image_tag category.image(:original), :class => "sample-image"        
             .cat-title
-              %h3= category.title
-              %p= category.description
+              .col-sm-2= image_tag category.font_image(:small)              
+              %p.col-sm-9= category.description
             
 .col-sm-12          
   
@@ -35,6 +35,11 @@
                   = link_to t('more'), activity
               .clr-float
 
-        
+:javascript
+  
+  $('.AccordionBox ul li').mouseover(function(){
+    $('.AccordionBox ul li').removeClass( "active" );
+    $(this).addClass('active');
+  });
 
   

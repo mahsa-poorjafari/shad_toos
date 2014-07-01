@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630063804) do
+ActiveRecord::Schema.define(version: 20140701131749) do
 
   create_table "activities", force: true do |t|
     t.string   "title_fa"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20140630063804) do
     t.text     "description_en"
     t.string   "title_ar"
     t.text     "description_ar"
+    t.string   "font_image_file_name"
+    t.string   "font_image_content_type"
+    t.integer  "font_image_file_size"
+    t.datetime "font_image_updated_at"
   end
 
   create_table "harams", force: true do |t|
