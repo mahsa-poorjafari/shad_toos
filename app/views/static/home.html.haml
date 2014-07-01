@@ -18,69 +18,56 @@
 .col-sm-12          
   
   .haram-pic
-    = render 'harams/haram_slider'
+    = render 'harams/slider_haram'
   
     
   .new-box.col-sm-8
     .activities
-      #makeMeScrollable
-        - @activity.each do |activity|
-          .vertical-box            
-            = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "activity-img"
-            .activity-title= activity.title
-            .set-center.activity-des= activity.description
-            .col-gl-3.more
-              .inside-border
-                = link_to t('more'), activity
-        .clr-float
+      .flexslider
+        %ul.slides
+          - @activity.each do |activity|
+            %li          
+              = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name
+              .activity-title= activity.title
+              .set-center.activity-des= activity.description
+              .col-gl-3.more
+                .inside-border
+                  = link_to t('more'), activity
+              .clr-float
 
         
 :javascript
-
-  $('.AccordionBox ul li:first').addClass('active');
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationLoop: false,
+      itemWidth: 210,
+      itemMargin: 5
+    });
+  });
   
+  
+  $('.AccordionBox ul li:first').addClass('active');  
   $('.AccordionBox ul li').mouseover(function(){
     $('.AccordionBox ul li').removeClass( "active" );
     $(this).addClass('active');
   });
-      
+
+  
+  
    
-  $(document).ready(function () {
-  	$("#makeMeScrollable").smoothDivScroll({
-  		mousewheelScrolling: "allDirections",
-  		manualContinuousScrolling: true,
-  		autoScrollingMode: "onStart"
-  	});
-  })    
-    
-
   function slideSwitch() {
-      var $active = $('#slideshow IMG.active');
-
-      if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
-
-      // use this to pull the images in the order they appear in the markup
-      var $next =  $active.next().length ? $active.next()
-          : $('#slideshow IMG:first');
-
-      // uncomment the 3 lines below to pull the images in random order
-      
-      // var $sibs  = $active.siblings();
-      // var rndNum = Math.floor(Math.random() * $sibs.length );
-      // var $next  = $( $sibs[ rndNum ] );
-
-
-      $active.addClass('last-active');
-
-      $next.css({opacity: 0.0})
-          .addClass('active')
-          .animate({opacity: 1.0}, 1000, function() {            
-            $active.removeClass('active last-active');            
-          });
+    var AccordionBox = $('.AccordionBox ul li.active');
+    AccordionBox.removeClass('active');
+    AccordionBox.parent().next().children(':first').addClass('active');
+    if ($('.AccordionBox ul li:last').attr('class') == "" ){
+      $('.AccordionBox ul li:first').addClass('active');  
+    }
   }
 
+
   $(function() {
-      setInterval( "slideSwitch()", 5000 );
+      setInterval( "slideSwitch()", 3000 );
   });
 
 

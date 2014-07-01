@@ -1,13 +1,76 @@
-= auto_discovery_link_tag(:rss, "http://www.khorasannews.com")
-%div
-  / Begin ParsTools.com RSSREADER Code
-  %script{language: "javascript", src: "http://parstools.com/rss/?url=http://www.khorasannews.com/RSS.aspx&n=1&link=y&date=y&width=400&dir=rtl&bgcolor=000000&bdcolor=ffffff"}
-  %div{style: "display:none;"}
-    %a{href: "http://parstools.com/"}
-      %h1 فید خوان rss reader
-  / End RSSREADER code
-%div{:style => "background:#4d4d4d"}
-  = link_to 'btn', '#', :class => "button"
-.main 
-  #mainmenu
-    lk vlsfdkngkl
+.flexslider.carousel
+  %ul.slides
+    %li
+      = image_tag 'kitchen_adventurer_caramel.jpg'
+    %li
+      = image_tag 'kitchen_adventurer_cheesecake_brownie.jpg'
+    %li
+      = image_tag 'kitchen_adventurer_donut.jpg'
+    %li
+      = image_tag 'kitchen_adventurer_lemon.jpg'
+    / items mirrored twice, total of 12
+:javascript
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationLoop: false,
+      itemWidth: 210,
+      itemMargin: 5
+    });
+  });
+  
+  (function ($, undefined) {
+
+    $(function () {
+        $('.FaraAccordionUl').FaraAccordion({
+            speed: 7000,
+            rMargin: 4,
+            normalWidth: 420,
+            normalHeight: 345,
+            smallWidth: 72,
+            captionHeight: 80,
+            captionHoverHeight: 120,
+            duration: 4000,
+            effectDuration: 400
+        });
+    });
+
+  })(jQuery);
+#dnn_ctr701_ModuleContent  
+  .FaraAccordionBox
+    %ul.FaraAccordionUl
+      %li{style: "width: 72px; height: 345px;"}
+        %a.full-img{href: "http://www.darvishihotel.com/%DA%AF%D8%B1%D9%88%D9%87_%D9%87%D8%A7%DB%8C_%D8%A7%D8%AA%D8%A7%D9%82_%D9%87%D8%A7.aspx", target: "_blank"}
+          %img{alt: "اتاق ها", src: "./هتل مجلل درویشی,هتل 5 ستاره مشهد_files/31217183647226.jpg"}/
+        .caption{style: "height: 80px;"}
+          %a{href: "http://www.darvishihotel.com/%DA%AF%D8%B1%D9%88%D9%87_%D9%87%D8%A7%DB%8C_%D8%A7%D8%AA%D8%A7%D9%82_%D9%87%D8%A7.aspx"}
+          .PNGs_02.ATitle_0
+          %p هتل مجلل درویشی در حاشیه خیابان امام رضا (ع) که اصلی ترین خیابان منتهی به حرم مطهر است قرار دارد.
+      %li{style: "width: 72px; height: 345px;"}
+        %a.full-img{href: "http://www.darvishihotel.com/%D8%B3%D8%A7%D9%84%D9%86_%D9%87%D8%A7%DB%8C_%D9%BE%D8%B0%DB%8C%D8%B1%D8%A7%DB%8C%DB%8C.aspx", target: "_blank"}
+          %img{alt: "سالن های پذیرایی", src: "./هتل مجلل درویشی,هتل 5 ستاره مشهد_files/3121718372484.jpg"}/
+        .caption{style: "height: 80px;"}
+          %a{href: "http://www.darvishihotel.com/%D8%B3%D8%A7%D9%84%D9%86_%D9%87%D8%A7%DB%8C_%D9%BE%D8%B0%DB%8C%D8%B1%D8%A7%DB%8C%DB%8C.aspx"}
+          .PNGs_02.ATitle_1
+          %p هتل مجلل درویشی در حاشیه خیابان امام رضا (ع) که اصلی ترین خیابان منتهی به حرم مطهر است قرار دارد.
+      %li{style: "width: 72px; height: 345px;"}
+        %a.full-img{href: "http://www.darvishihotel.com/%DA%AF%D8%B1%D9%88%D9%87_%D9%87%D8%A7%DB%8C_%D9%87%D9%85%D8%A7%DB%8C%D8%B4_%D9%87%D8%A7.aspx", target: "_blank"}
+          %img{alt: "همایش و ضیافت", src: "./هتل مجلل درویشی,هتل 5 ستاره مشهد_files/31217183919375.jpg"}/
+        .caption{style: "height: 80px;"}
+          %a{href: "http://www.darvishihotel.com/%DA%AF%D8%B1%D9%88%D9%87_%D9%87%D8%A7%DB%8C_%D9%87%D9%85%D8%A7%DB%8C%D8%B4_%D9%87%D8%A7.aspx"}
+          .PNGs_02.ATitle_2
+          %p هتل مجلل درویشی در حاشیه خیابان امام رضا (ع) که اصلی ترین خیابان منتهی به حرم مطهر است قرار دارد.
+      %li{style: "width: 420px; height: 345px;"}
+        %a.full-img{href: "http://www.darvishihotel.com/%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87_%D8%A2%D8%A8%DB%8C.aspx", target: "_blank"}
+          %img{alt: "مجموعه آبی", src: "./هتل مجلل درویشی,هتل 5 ستاره مشهد_files/31217183933707.jpg"}/
+        .caption{style: "height: 120px;"}
+          %a{href: "http://www.darvishihotel.com/%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87_%D8%A2%D8%A8%DB%8C.aspx"}
+          .PNGs_02.ATitle_3
+          %p هتل مجلل درویشی در حاشیه خیابان امام رضا (ع) که اصلی ترین خیابان منتهی به حرم مطهر است قرار دارد.
+      %li{style: "width: 72px; height: 345px;"}
+        %a.full-img{href: "http://www.darvishihotel.com/%D9%85%D8%B1%DA%A9%D8%B2_%D8%AE%D8%B1%DB%8C%D8%AF.aspx", target: "_blank"}
+          %img{alt: "مرکز خرید", src: "./هتل مجلل درویشی,هتل 5 ستاره مشهد_files/31217183950297.jpg"}/
+        .caption{style: "height: 80px;"}
+          %a{href: "http://www.darvishihotel.com/%D9%85%D8%B1%DA%A9%D8%B2_%D8%AE%D8%B1%DB%8C%D8%AF.aspx"}
+          .PNGs_02.ATitle_4
+          %p هتل مجلل درویشی در حاشیه خیابان امام رضا (ع) که اصلی ترین خیابان منتهی به حرم مطهر است قرار دارد.
