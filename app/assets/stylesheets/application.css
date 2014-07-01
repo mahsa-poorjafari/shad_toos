@@ -209,8 +209,8 @@ text-align:center;
 }
 .AccordionBox ul li img.sample-image {height:370px;}
 .AccordionBox ul li.active {width:420px}
-.AccordionBox ul li .cat-title {margin-top:-22%; 
-  height:25%;
+.AccordionBox ul li .cat-title {margin-top:-30%; 
+  height:40%;
  background:#1A1A1A; opacity:.7; 
   filter:alpha(opacity=70); /* For IE8 and earlier */
   transition: all 0.5s ease;
@@ -219,7 +219,7 @@ text-align:center;
   padding:1%;
   margin:4%;
   }
-.AccordionBox ul li.active .cat-title { margin-top:-40px}
+.AccordionBox ul li.active .cat-title { margin-top:-20%}
 
 .new-box {width:100%; padding:10px; border-top:#BFBFBF; border-bottom:#BFBFBF}
 .new-box  .activities {
