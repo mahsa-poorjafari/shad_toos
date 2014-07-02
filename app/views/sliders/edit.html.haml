@@ -1,40 +1,39 @@
-%h1= 'تنظیم اندازه تصویر'
 
-%div
-  
-
+.edi-slider-holder.fa  
+  %h2= 'تنظیم اندازه تصویر'
   = form_for @slider, :html => {:multipart => true} do |f| 
-    .slider-edit-sull-screen
-      = image_tag @slider.image.url(:original), :class => "crop cropImage"
+    %div
+      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "440", :width => "1286", :style => "margin-right:-10%"
       = f.hidden_field :crop_x
       = f.hidden_field :crop_y
       = f.hidden_field :crop_w
       = f.hidden_field :crop_h
-    .col-sm-8
-              
+    .clr-float
+    %div{:style => "margin:10%;"}
+      .form-group        
+        = f.label "توضیحات به انگلیسی", :class => "control-label"
+        = f.text_area :description_en, :class => "form-control"    
+        
       .form-group        
         = f.label "توضیحات به فارسی", :class => "control-label"
         = f.text_area :description_fa, :class => "form-control"    
-      .form-group        
-        = f.label "توضیحات به انگلیسی", :class => "control-label"
-        = f.text_area :description_en, :class => "form-control"         
+        
       .form-group        
         = f.label "توضیحات به عربی", :class => "control-label"
-        = f.text_area :description_ar, :class => "form-control"     
+        = f.text_area :description_ar, :class => "form-control"       
       .form-group
-        = f.submit 'ثبت', :class => "form-control"
-
-  = link_to 'بازگشت', slider_path
-
+        = f.submit 'ثبت', :class => "btn btn-default"
+      .clr-float  
+      = link_to 'بازگشت', sliders_path
+    .clr-float 
 :javascript
-  
-  $('.crop').each( function () {
+  $('.crop' ).each( function () {
     var image = $( this )
     , crop  = image
     .crop( {
       controls : 'Drag to move, scroll to zoom'
     } )
-    .on( 'crop', function( event ) {
+    .on( 'crop', function( event ) {      
       $("#slider_crop_x").val(event.cropX);
       $("#slider_crop_y").val(event.cropY);  
       $("#slider_crop_h").val(event.cropH);

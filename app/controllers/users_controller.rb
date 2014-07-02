@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       redirect_to :root and return
     else
       session[:admin] = nil
-      flash[:partial] = "error"
+      flash[:partial] = "یوزر و رمز عبور را صحیح وارد کنید."
       render "login"
     end
   end

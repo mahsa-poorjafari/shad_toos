@@ -25,9 +25,6 @@
 .width50 {width:50%}
 .width80 {width:50%}
 
-
-
-
 header {
 	position: relative;
 	width: 100%;
@@ -539,8 +536,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbdf93', end
 }
 fieldset legend span {color:#F8F85F;}
 #content form.new_category {height:400px}
-.edi-slider-holder {position:absolute; width:100%; height:100%; margin-top:20px}
-.show-slider {width:100%; height:100%}
+.edi-slider-holder {margin-right:-11% }
+.show-slider {width:1286px; height:441px; margin-right: -10%;}
 .index-slider {width:100%;}
 .admin_menu {
 right:1px;
@@ -727,9 +724,9 @@ font-size: large;
 height: 440px;
 padding: 13%;}
 .slider-edit-sull-screen {width:1286px; height:440px; margin-right: -10%; overflow:hidden}
-.slider-edit-sull-screen .cropFrame {width:100%; height:100%}
+
 .slider-boxes {
-  margin-top:-15%;
+  margin-top:5%;
   width:80%;
   height:10%;
 }
@@ -887,10 +884,3 @@ padding: 13%;}
 
 
 
-
-
-
-.crop.cropImage {width:100%;
-height:100%
-
-}
