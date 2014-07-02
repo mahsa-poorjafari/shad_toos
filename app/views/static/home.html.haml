@@ -29,7 +29,7 @@
             = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "act-pic"
             .activity-title= activity.title
             .set-center.activity-des{:class => I18n.locale}= activity.description
-            .col-gl-3.more{:style => "margin-top:10%"}
+            .col-gl-3.more{:style => "margin-top:5%"}
               .inside-border
                 = link_to t('more'), activity
             .clr-float

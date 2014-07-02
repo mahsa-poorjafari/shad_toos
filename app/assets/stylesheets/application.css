@@ -81,7 +81,9 @@ width: 100%;
 		opacity: .8; 
 
 }
-.main #mainmenu {width:80%;
+.main #mainmenu {
+  min-width:80%;
+  max-width:80%;
   height:60px;
   padding-top:1.5%;
   position:relative;
@@ -105,7 +107,8 @@ background-repeat:no-repeat;
 
 
 .main #mainmenu  ul {list-style:none;
-  width:60%;
+  min-width:60%;
+  max-width:60%;
   
   margin-right: 15%;
   padding-top:5px}
@@ -255,7 +258,7 @@ text-align:center;
   transition: all 1s ease;
 }
 
-.new-box  .activities ul.slides li .activity-title {width:95%; height:5%; padding:1%; color:#FFA500; margin-top:1%; text-align:center; font-size:16px}
+.new-box  .activities ul.slides li .activity-title {width:95%; height:10%; padding:1%; color:#FFA500; margin-top:1%; text-align:center; font-size:16px}
 .new-box  .activities ul.slides li .activity-des {width:95%; height:25%; margin-top:5%; padding:1%; line-height:1.5em; overflow:hidden; text-align:justify}
 .new-box  .activities ul.slides li img.act-pic {width:95%; height:50%; border:#4D4D4D 2px solid;
   border-radius:9px;
