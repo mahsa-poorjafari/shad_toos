@@ -1,26 +1,24 @@
-.hero-unit
-  .carousel.slide#slide_show
-    .carousel-inner
-      - @sliders = Haram.all
-      - @sliders.each do |slide|
-        
-        .item-row.item          
-          = image_tag slide.image(:original), :id =>  slide.id ,  :class => "slide"          
-          .haram-description{:class => I18n.locale}= 'توضیحات مربوط به هر اسلایدر در این  '
-          -if is_admin?
-            .row-controls.admin-edit-del
-              = link_to edit_slider_path(slide) do
-                %i= 'ویرایش'
-                \|
-              = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
-                %i= 'حذف'
-      -if @sliders.count > 1                
-        = link_to "#slide_show", :class => "carousel-control left", "data-slide" => "prev" do
-          = image_tag 'banner_go_left.png', :class => "haram-arrow", :style => "margin-right:-130%"
-        = link_to "#slide_show", :class => "carousel-control right", "data-slide" => "next" do
-          = image_tag 'banner_go_right.png', :class => "haram-arrow"
+#haram_slide_show.slide
+  .carousel-inner
+    - @sliders = Haram.all
+    - @sliders.each do |slide|
+      .item-row.item          
+        = image_tag slide.image(:original), :id =>  slide.id ,  :class => "slide"          
+        .haram-description{:class => I18n.locale}= 'توضیحات مربوط به هر اسلایدر در این  '
+        -if is_admin?
+          .row-controls.admin-edit-del
+            = link_to edit_slider_path(slide) do
+              %i= 'ویرایش'
+              \|
+            = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
+              %i= 'حذف'
+  -if @sliders.count > 1                
+    = link_to "#haram_slide_show", :class => "carousel-control left", "data-slide" => "prev" do
+      = image_tag 'banner_go_left.png', :class => "haram-arrow", :style => "margin-right:-130%"
+    = link_to "#haram_slide_show", :class => "carousel-control right", "data-slide" => "next" do
+      = image_tag 'banner_go_right.png', :class => "haram-arrow"
       
 :javascript   
  
-  $(".item").first().addClass("active");  
-  $('#slide_show').carousel();
+  $("#haram_slide_show .item").first().addClass("active");  
+  $('#haram_slide_show').carousel();
