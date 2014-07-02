@@ -1,5 +1,5 @@
 .hero-unit
-  .carousel.slide#slide-show
+  #slider-carousel.carousel.slide
     .carousel-inner
       - @sliders = Slider.all
       - @sliders.each do |slide|
@@ -15,27 +15,26 @@
       
           = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide"
           
-          
+          .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '
           .slider-boxes.set-center    
-            .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '  
             - Category.all.each do |session|        
               .col-sm-1.slider-text-box{:style => "float:left"}    
                 = image_tag session.slider_box(:small)
                 = session.title
-            
-            
-
-      -if @sliders.count > 1          
-        .carousel-controls
-          .center
-            %ol.carousel-indicator-list.carousel-indicators
-              - if  @sliders.count != 1
-                -  @sliders.each_with_index do |slide, index|
-                  %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
-          = link_to "#slide-show", :class => "carousel-control left", "data-slide" => "prev" do
-            = image_tag 'next-icon.png'
-          = link_to "#slide-show", :class => "carousel-control right", "data-slide" => "next" do
-            = image_tag 'prev-icon.png'
+    -if @sliders.count > 1          
+      .carousel-controls
+        .center
+          %ol.carousel-indicator-list.carousel-indicators
+            - if  @sliders.count != 1
+              -  @sliders.each_with_index do |slide, index|
+                %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
+      = link_to "#slider-carousel", :class => "carousel-control left", "data-slide" => "prev" do
+        = image_tag 'next-icon.png'
+      = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
+        = image_tag 'prev-icon.png'      
+  
+          
+          
             
           
     
