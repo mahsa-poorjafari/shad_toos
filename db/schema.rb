@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701131749) do
+ActiveRecord::Schema.define(version: 20140702132613) do
 
   create_table "activities", force: true do |t|
     t.string   "title_fa"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 20140701131749) do
     t.string   "font_image_content_type"
     t.integer  "font_image_file_size"
     t.datetime "font_image_updated_at"
+    t.string   "slider_box_file_name"
+    t.string   "slider_box_content_type"
+    t.integer  "slider_box_file_size"
+    t.datetime "slider_box_updated_at"
   end
 
   create_table "harams", force: true do |t|

@@ -35,12 +35,16 @@
         -if @category.image.present?              
           = image_tag @category.image(:small) 
     .col-sm-6
-      .form-group        
+      .form-group.col-sm-6        
         = f.label " تصویر عنوان با فونت", :class => "control-label"      
         = f.file_field :font_image     
         -if @category.font_image.present?              
           = image_tag @category.font_image(:original) 
-    
+      .form-group.col-sm-6        
+        = f.label " آیکنی که برای باکس این بخش روی اسلایدر اصلی قرار می گیرد.", :class => "control-label"      
+        = f.file_field :slider_box     
+        -if @category.font_image.present?              
+          = image_tag @category.slider_box(:original) 
     
     
     .col-sm-4

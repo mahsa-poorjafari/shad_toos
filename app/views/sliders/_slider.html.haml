@@ -17,7 +17,7 @@
           .slider-boxes.set-center    
             - Category.all.each do |session|        
               .col-sm-1.slider-text-box{:style => "float:left"}    
-                = image_tag 'icn_otagh.png'
+                = image_tag session.slider_box(:small)
                 = session.title
     -if sliders.count > 1          
       .carousel-controls

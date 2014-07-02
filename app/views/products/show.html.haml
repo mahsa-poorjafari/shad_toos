@@ -17,7 +17,7 @@
   - @product.pictures.each do |pic|
     .col-sm-5.show-room     
       = image_tag 'top-left-small.png', :class => "pro-image"
-      =link_to (image_tag pic.image(:medium), :class => "show-room-pic"  ), pic.image(:large), :data => { :colorbox => true }, :title => pic.description, :class => "show-room-pic"         
+      =link_to (image_tag pic.image(:medium), :class => "show-room-pic"  ), pic.image(:large), :data => { :colorbox => true }, :title => pic.description, :class => "show-rooms"         
       
       - if is_admin?
         .admin-edit-del{:style => "font-size:1.5em"}
@@ -26,5 +26,5 @@
           = link_to 'حذف', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
           
 :javascript    
-  $('.show-room-pic').colorbox({title: $(this).attr('title') });   
+  $('.show-rooms').colorbox({title: 'title' });   
   

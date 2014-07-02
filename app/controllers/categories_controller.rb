@@ -71,7 +71,7 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:title_fa, :title_en, :description_fa, :description_en, :image, :title_ar, :description_ar, :font_image )
+      params.require(:category).permit(:title_fa, :title_en, :description_fa, :description_en, :image, :title_ar, :description_ar, :font_image, :slider_box )
     end
 
     def load_slides

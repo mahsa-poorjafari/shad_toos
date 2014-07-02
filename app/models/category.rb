@@ -10,6 +10,10 @@ class Category < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
                                             :message =>  "فرمت عکس صحیح نیست"
                                             
+  has_attached_file :slider_box, :styles => { :original => "300x300>", :small => "100x100>" }
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
+                                            :message =>  "فرمت عکس صحیح نیست"
+                                            
   has_many :products
   has_many :sliders
   
