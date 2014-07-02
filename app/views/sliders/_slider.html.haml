@@ -20,7 +20,7 @@
             .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '  
             - Category.all.each do |session|        
               .col-sm-1.slider-text-box{:style => "float:left"}    
-                = image_tag 'icn_otagh.png'
+                = image_tag session.slider_box(:small)
                 = session.title
             
             

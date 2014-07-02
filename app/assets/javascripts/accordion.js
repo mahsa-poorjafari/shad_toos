@@ -1,5 +1,3 @@
-
-
 function slideSwitch() {
   var AccordionBox = $('.AccordionBox ul li.active');
   AccordionBox.removeClass('active');
@@ -11,7 +9,5 @@ $(function() {
   setInterval("slideSwitch()",3000);
 });
 
-$(function() { 
-  setInterval("slideboxes()",3000);
-});
+
 
