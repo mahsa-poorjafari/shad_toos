@@ -28,7 +28,7 @@
 header {
 	position: relative;
 	width: 100%;
-	height: 200px;
+	height: 250px;
 	left: 0;
 	top: 0;
 	z-index: 15;  
@@ -42,7 +42,7 @@ header {
 }
 header .language {height:40px; width:100px; 
 position: absolute;
-margin-top:-16%;
+margin-top:-20%;
 background:url('blackorchid.png') repeat-x;
 float:left;
 text-align:center;
@@ -53,13 +53,13 @@ transition: all 0.5s ease;
 padding-top:2px;
 }
 header .language  .lan-title {font-size:9px; color:#fff; }
-header .language:hover {margin-top:-15.5%}
-header #logo-menu {  width:17%; text-align:center; height:150px; margin-top: -14%;
-margin-left: 40%;
+header .language:hover {margin-top:-19.5%}
+header #logo-menu {  width:17%; text-align:center; height:150px; margin-top: -20%;
+margin-left: 38%;
 margin-right: 40%;
 position:absolute;
  }
-header #logo-menu #logo{ float:left; width:100%; }
+header #logo-menu #logo{ float:left; width:100%;  }
 header #logo-menu .title-site{ float:left; width:70%; color:#FFFF00; text-align:center; 
 text-shadow: 1px 1px 1px #000, 3px 3px 5px #FFA500;
 
