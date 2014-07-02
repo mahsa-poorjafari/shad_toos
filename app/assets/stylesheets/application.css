@@ -726,9 +726,11 @@ padding: 13%;}
 .slider-edit-sull-screen {width:1286px; height:440px; margin-right: -10%; overflow:hidden}
 
 .slider-boxes {
-  margin-top:5%;
+  margin-top:-10%;
   width:80%;
   height:10%;
+  position:absolute;
+  left:10%
 }
 .slider-text-box { 
   width:8%;
@@ -744,14 +746,15 @@ padding: 13%;}
 }
 .slider-text-box:hover { margin-top: 1.5%; cursor: pointer}
 
-.slide-descript {
-  
+.slide-descript {  
+  font-family:entezar_slide_box;
   background:#72158A; 
-  font-size:2em; opacity:.7; margin-top:-50%; position:absolute; margin-left:20%;
+  font-size:2em; opacity:.7; position:absolute; margin-left:50%;
   text-align:center;
   padding:1%;
   color:#fff;
-  height:40px; width:30%;
+  height:40px; width:40%;
+  margin-top:-20%;
 }
 
 
