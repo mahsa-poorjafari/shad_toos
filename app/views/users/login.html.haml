@@ -1,6 +1,9 @@
 .middle-div.go-center
   .col-sm-4.col-lg-offset-1.fa
-    %p#notice= notice
+  
+    -if flash[:partial]        
+      .alert.alert-danger= flash[:partial] 
+      
     = form_tag create_session_path do 
       .form-group 
         %span.col-sm-4.lable=" نام کاربری:"

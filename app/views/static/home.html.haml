@@ -2,7 +2,7 @@
   .about-us
     = image_tag 'befor.png'
     %h2= 'درباره شادتوس'    
-    %p= 'روي هر پله اي كه ايستاده باشي ، خدا يك پله بالاتر از توست . نه بخاطر اينكه خداست...بخاطر اينكه ميخواد دستت رو بگيره!'
+    %p= 'در این کارد متن مورد نظر برای معرفی  هتل آپارتمان شادتوس قرار خواهد گرفت'
     = image_tag '1212.png'
 .col-sm-9
   .AccordionBox
@@ -10,10 +10,10 @@
       - @category.each do |category|
         = link_to category do
           %li
-            = image_tag category.image(:large)        
+            = image_tag category.image(:original), :class => "sample-image"        
             .cat-title
-              %h3= category.title
-              %p= category.description
+              .col-sm-3= image_tag category.font_image(:small)              
+              %p.col-sm-8= category.description
             
 .col-sm-12          
   
@@ -23,49 +23,26 @@
     
   .new-box.col-sm-8
     .activities
-      .flexslider
-        %ul.slides
-          - @activity.each do |activity|
-            %li          
-              = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name
-              .activity-title= activity.title
-              .set-center.activity-des= activity.description
-              .col-gl-3.more
-                .inside-border
-                  = link_to t('more'), activity
-              .clr-float
+      %ul.slides
+        - @activities.each do |activity|
+          %li          
+            = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "act-pic"
+            .activity-title= activity.title
+            .set-center.activity-des{:class => I18n.locale}= activity.description
+            .col-gl-3.more{:style => "margin-top:5%"}
+              .inside-border
+                = link_to t('more'), activity
+            .clr-float
 
-        
 :javascript
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-      animation: "slide",
-      animationLoop: false,
-      itemWidth: 210,
-      itemMargin: 5
-    });
-  });
   
-  
-  $('.AccordionBox ul li:first').addClass('active');  
   $('.AccordionBox ul li').mouseover(function(){
     $('.AccordionBox ul li').removeClass( "active" );
     $(this).addClass('active');
   });
 
-  
-  
-   
-  function slideSwitch() {
-    var AccordionBox = $('.AccordionBox ul li.active');
-    AccordionBox.removeClass('active');
-    var nextone = (AccordionBox.parent().next().children(':first').length == 0) ? $('.AccordionBox ul li:first') : AccordionBox.parent().next().children(':first')
-    nextone.addClass('active');
-  }
 
 
+ 
   
-  $(function() { 
-    setInterval("slideSwitch()",3000);
-  });
-
+  

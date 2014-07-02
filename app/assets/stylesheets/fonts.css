@@ -9,6 +9,19 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'entezar_slide_box';
+    src: url('/assets/entezar.eot');
+    src: url('/assets/entezarn.eot?#iefix') format('embedded-opentype'),
+         url('/assets/entezar.woff') format('woff'),
+         url('/assets/entezar.otf') format('otf'),
+         url('/assets/entezar.ttf') format('truetype'),
+         url('/assets/entezar.svg#entezar_slide_box') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 body {
   font-family: 'open_sansregular';

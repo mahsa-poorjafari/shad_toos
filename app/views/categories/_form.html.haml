@@ -30,14 +30,21 @@
     .clr-float
     .col-sm-6
       .form-group        
-        = f.label " تصویر نمونه:", :class => "col-sm-6 control-label"      
+        = f.label " تصویر نمونه:", :class => "control-label"      
         = f.file_field :image     
         -if @category.image.present?              
           = image_tag @category.image(:small) 
+    .col-sm-6
+      .form-group        
+        = f.label " تصویر عنوان با فونت", :class => "control-label"      
+        = f.file_field :font_image     
+        -if @category.font_image.present?              
+          = image_tag @category.font_image(:original) 
     
     
-  .col-sm-4
-    = f.submit 'ثبت', :class=> "btn btn-default"
+    
+    .col-sm-4
+      = f.submit 'ثبت', :class=> "btn btn-default"
   
 
 

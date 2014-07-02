@@ -15,4 +15,10 @@
 /log/*.log
 /tmp
 /public/assets/
+
+
+
+
+
+/test/
 /public/system/

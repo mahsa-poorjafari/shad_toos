@@ -38,18 +38,18 @@
         = link_to (image_tag 'flag/en.png'), locale: :en          
         = link_to (image_tag 'flag/fa.png'), locale: :fa
         = link_to (image_tag 'flag/ar.png'), locale: :ar
-      #logo-menu    
+      
+      #logo-menu.set-center   
         = link_to root_path do
-          #logo
+          #logo.set-center
+            = image_tag 'logo2.png'
             
-          .title-site
-            %h3= t('shadtoos')
       - if is_admin?
         .admin_menu
           %h3= 'منوی مدیرسایت'
           = render 'shared/admin_menu'
         
-    .main            
+    .main       
       #mainmenu.set-center
         %nav
           
@@ -101,6 +101,7 @@
       
       .clr-float
     %footer{:class => I18n.locale}
+      #footer-bottom 
       = render "shared/footer"
 
   
