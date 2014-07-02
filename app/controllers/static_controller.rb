@@ -4,6 +4,7 @@ class StaticController < ApplicationController
     @page = Page.all
     @category = Category.all
     @activities = Activity.all
+    @sliders = Slider.all
   end
   def test
     

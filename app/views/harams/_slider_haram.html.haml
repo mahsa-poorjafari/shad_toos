@@ -1,7 +1,7 @@
-#haram_slide_show.slide
+#haram-slide-show.slide
   .carousel-inner
-    - @sliders = Haram.all
-    - @sliders.each do |slide|
+    - @sliders_haram = Haram.all
+    - @sliders_haram.each do |slide|
       .item-row.item          
         = image_tag slide.image(:original), :id =>  slide.id ,  :class => "slide"          
         .haram-description{:class => I18n.locale}= 'توضیحات مربوط به هر اسلایدر در این  '
@@ -12,13 +12,13 @@
               \|
             = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
               %i= 'حذف'
-  -if @sliders.count > 1                
-    = link_to "#haram_slide_show", :class => "carousel-control left", "data-slide" => "prev" do
+  -if @sliders_haram.count > 1                
+    = link_to "#haram-slide-show", :class => "carousel-control left", "data-slide" => "prev" do
       = image_tag 'banner_go_left.png', :class => "haram-arrow", :style => "margin-right:-130%"
-    = link_to "#haram_slide_show", :class => "carousel-control right", "data-slide" => "next" do
+    = link_to "#haram-slide-show", :class => "carousel-control right", "data-slide" => "next" do
       = image_tag 'banner_go_right.png', :class => "haram-arrow"
       
 :javascript   
  
-  $("#haram_slide_show .item").first().addClass("active");  
-  $('#haram_slide_show').carousel();
+  $("#haram-slide-show .item").first().addClass("active");  
+  $('#haram-slide-show').carousel();

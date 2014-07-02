@@ -2,6 +2,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_filter :check_autentication, only: [ :edit, :update, :destroy]
+  before_filter :load_slides, only:[:show]
   # GET /categories
   # GET /categories.json
   def index
@@ -71,5 +72,10 @@ class CategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
       params.require(:category).permit(:title_fa, :title_en, :description_fa, :description_en, :image, :title_ar, :description_ar, :font_image )
+    end
+
+    def load_slides
+      @sliders = Slider.all
+      #TODO use current categories slides and if it's nill then do somthing for it
     end
 end
