@@ -1,9 +1,10 @@
-.slider-edit-sull-screen
+%h1= 'تنظیم اندازه تصویر'
+
+%div
   
-  %h1= 'تنظیم اندازه تصویر'
 
   = form_for @slider, :html => {:multipart => true} do |f| 
-    %div
+    .slider-edit-sull-screen
       = image_tag @slider.image.url(:original), :class => "crop cropImage"
       = f.hidden_field :crop_x
       = f.hidden_field :crop_y

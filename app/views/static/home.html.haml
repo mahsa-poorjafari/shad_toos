@@ -2,7 +2,7 @@
   .about-us
     = image_tag 'befor.png'
     %h2= 'درباره شادتوس'    
-    %p= 'روي هر پله اي كه ايستاده باشي ، خدا يك پله بالاتر از توست . نه بخاطر اينكه خداست...بخاطر اينكه ميخواد دستت رو بگيره!'
+    %p= 'در این کارد متن مورد نظر برای معرفی  هتل آپارتمان شادتوس قرار خواهد گرفت'
     = image_tag '1212.png'
 .col-sm-9
   .AccordionBox
@@ -23,17 +23,16 @@
     
   .new-box.col-sm-8
     .activities
-      .flexslider
-        %ul.slides
-          - @activities.each do |activity|
-            %li          
-              = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name
-              .activity-title= activity.title
-              .set-center.activity-des= activity.description
-              .col-gl-3.more
-                .inside-border
-                  = link_to t('more'), activity
-              .clr-float
+      %ul.slides
+        - @activities.each do |activity|
+          %li          
+            = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "act-pic"
+            .activity-title= activity.title
+            .set-center.activity-des{:class => I18n.locale}= activity.description
+            .col-gl-3.more{:style => "margin-top:10%"}
+              .inside-border
+                = link_to t('more'), activity
+            .clr-float
 
 :javascript
   
@@ -42,4 +41,8 @@
     $(this).addClass('active');
   });
 
+
+
+ 
+  
   

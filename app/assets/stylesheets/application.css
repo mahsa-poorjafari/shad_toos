@@ -27,6 +27,7 @@
 
 
 
+
 header {
 	position: relative;
 	width: 100%;
@@ -104,7 +105,7 @@ background-repeat:no-repeat;
   margin-right: 15%;
   padding-top:5px}
 .main #mainmenu  ul li{display:inline; min-width:150px; padding:10px;
-  border-radius:30px;  
+  
   font-size:11px;font-weight:bold;
   margin:10px;
   -webkit-transition: all .5s ease;
@@ -113,11 +114,20 @@ background-repeat:no-repeat;
   transition: all .5s ease;
 }
 .main #mainmenu  ul li:hover, .main #mainmenu  ul li.active{
-  text-shadow: 1px 1px 1px #F6D231, 3px 3px 5px #63007B;
-  
+  background: rgb(252,234,187); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,234,187,1) 0%, rgba(248,181,0,1) 19%, rgba(248,181,0,1) 50%, rgba(248,181,0,1) 87%, rgba(251,223,147,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,234,187,1)), color-stop(19%,rgba(248,181,0,1)), color-stop(50%,rgba(248,181,0,1)), color-stop(87%,rgba(248,181,0,1)), color-stop(100%,rgba(251,223,147,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(248,181,0,1) 19%,rgba(248,181,0,1) 50%,rgba(248,181,0,1) 87%,rgba(251,223,147,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(248,181,0,1) 19%,rgba(248,181,0,1) 50%,rgba(248,181,0,1) 87%,rgba(251,223,147,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(248,181,0,1) 19%,rgba(248,181,0,1) 50%,rgba(248,181,0,1) 87%,rgba(251,223,147,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(252,234,187,1) 0%,rgba(248,181,0,1) 19%,rgba(248,181,0,1) 50%,rgba(248,181,0,1) 87%,rgba(251,223,147,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+color:#1A1A1A;
+  opacity:.8; 
+  filter:alpha(opacity=80); /* For IE8 and earlier */
 }
 .main #mainmenu  ul a {color:#F6F694}
-.main #mainmenu  ul a:hover {color:#FFFFff; margin-top:-1px }
+.main #mainmenu  ul a:hover {color:#1A1A1A; margin-top:-1px }
 /* AccordionBox  */
 
 .main .slider  .reserv {
@@ -220,49 +230,52 @@ text-align:center;
   margin:4%;
   }
 .AccordionBox ul li.active .cat-title { margin-top:-30%}
+/* style for actitviteis*/
 
+.show {margin-right:-40%;}
 .new-box {width:100%; padding:10px; border-top:#BFBFBF; border-bottom:#BFBFBF}
 .new-box  .activities {
-  width:100%;  
+  width:200%;  
   margin-left:1%; 
   overflow:hidden; 
   min-height:300px;  
   color:#fff; 
   max-height:300px}
+.new-box  .activities ul.slides {list-style:none; width:60%; overflow:hidden; height:300px;}
+.new-box  .activities ul.slides li{float:right; width:30%; padding:.5%; height:100%;
+  text-align:center;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.new-box  .activities ul.slides li .activity-title {width:95%; height:5%; padding:1%; color:#FFA500; margin-top:1%; text-align:center; font-size:16px}
+.new-box  .activities ul.slides li .activity-des {width:95%; height:25%; margin-top:5%; padding:1%; line-height:1.5em; overflow:hidden; text-align:justify}
+.new-box  .activities ul.slides li img.act-pic {width:95%; height:50%; border:#4D4D4D 2px solid;
+  border-radius:9px;
+  padding:2%;
+}
+
 .haram-pic{
   width:30%; 
   float:right; border:#332B2B 2px solid; border-radius:2px; height:300px; padding:2px; margin:10px; overflow:hidden}
 .haram-pic .haram-box{width:95%; max-height:95%; min-height:95%; overflow:hidden}
-
-.new-box .activities .vertical-box {
-  width:200px; float:right; text-align:center; 
-  min-height:100%;
-  max-height:100%;
-  
-  margin:1%;
-  
-}
-.new-box .activities .vertical-box .activity-title { text-align:center; height:20px; margin:3%; font-size:14px; color:#e5ec6f;}
-.new-box  .activities .vertical-box .activity-des{
-  min-height:70px; 
-  max-height:70px; 
-  overflow:hidden;
-  text-align:justify;
-  
-  width:95;
-  padding:2%;
-  position: relative;
-}
-.new-box  .activities .vertical-box img.activity-img{
-  width:90%; height:150px; margin:1%;
-  border-radius:10px;
-  border:3px solid #1A1A1A;
-  padding:1%;
+ .haram-description {background:#1A1A1A; opacity:.8; 
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+  color:#fff;
+  margin-top:-13%;
+  padding:4%;  
+  height:50px;
   }
+.haram-pic  .item {text-align:center;}
+.haram-pic  .item img.slide{width:100%;}
+
 .more{
   color:#FFA500;
   width:45%;
   height:25px;
+  
   margin:2%;
   padding:1%;
   float:left;  
@@ -714,10 +727,11 @@ font-size: large;
 height: 440px;
 padding: 13%;}
 .slider-edit-sull-screen {width:1286px; height:440px; margin-right: -10%; overflow:hidden}
+.slider-edit-sull-screen .cropFrame {width:100%; height:100%}
 .slider-boxes {
   margin-top:-15%;
   width:80%;
-  
+  height:10%;
 }
 .slider-text-box { 
   width:8%;
@@ -870,90 +884,13 @@ padding: 13%;}
 .hero-unit .carousel.slide{height:100%}
 .hero-unit .carousel.slide .carousel-inner{height:100%}
 .carousel-contro  img.haram-arrow {margin-top:100px}
-    
-/**/
-  .ATitle_0 {
-background-position: -482px -135px;
-width: 66px;
-height: 70px;
-}
-.ATitle_1 {
-background-position: -335px -135px;
-width: 146px;
-height: 84px;
-}
-.ATitle_2 {
-background-position: -100px -135px;
-width: 145px;
-height: 100px;
-}
-.ATitle_3 {
-background-position: -245px -135px;
-width: 90px;
-height: 100px;
-}
-.ATitle_4 {
-background-position: 0 -120px;
-width: 99px;
-height: 100px;
-}
-/* Styles */
-.FaraAccordion {
-}
-.FaraAccordionUl {
-overflow: hidden;
-list-style: none;
-margin: 0;
-padding: 0;
-width: 740px;
-height: 345px;
-}
-.FaraAccordionUl li {
-float: right;
-cursor: pointer;
-position: relative;
-overflow: hidden;
-border: 1px solid #332E29;
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius: 10px;
-margin-left: 4px;
-width: 72px;
-height: 345px;
-}
-.FaraAccordionUl li:first-child {
-display: block;
-width: 420px;
-}
-.FaraAccordionUl .caption {
-position: absolute;
-bottom: 0;
-right: 0;
-color: #ddd;
-background-color: #282828;
-background-color: rgba(0, 0, 0, 0.6);
-padding: 10px;
-width: 400px;
-height: 80px;
-}
-.FaraAccordionUl .caption > a {
-display: inline-block;
-position: absolute;
-top: 0;
-right: 0;
-width: inherit;
-height: inherit;
-}
-.FaraAccordionUl .caption p {
-text-align: justify;
-}
-.FaraAccordionUl .caption > div {
-text-align: justify;
-float: right;
-margin-left: 10px;
-} 
-/**/
 
 
 
 
+
+
+.crop.cropImage {width:100%;
+height:100%
+
+}
