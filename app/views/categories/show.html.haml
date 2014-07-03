@@ -9,12 +9,15 @@
   
   
   .col-sm-12
-    .col-sm-12
+    .col-sm-12.category-define
       .set-center          
-        %h1.set-center= @category.title      
-        %p= @category.description          
-    .clr-float
-    %hr
+        %h1.cat-title= @category.title      
+        %p.cat-des= @category.description          
+      
+      -if I18n.locale == :en 
+        = image_tag 'en-line.png', :class => "gold-line"
+      - else 
+        = image_tag 'line.png', :class => "gold-line"
     .col-sm-12.index-category
       - @category.products.each do |item|                
         .show-item                  
