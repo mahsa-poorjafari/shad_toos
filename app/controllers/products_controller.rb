@@ -2,6 +2,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :check_autentication, only: [ :edit, :update, :destroy]
+  before_filter :load_slides, only:[:show]
   # GET /products
   # GET /products.json
   def index
@@ -77,6 +78,15 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :title_fa, :description_fa, :title_ar, :description_ar, :category_id, pictures_attributes: [:image])
+      params.require(:product).permit(:title, :description, :title_fa, :description_fa, :title_ar, :description_ar, :category_id, pictures_attributes: [:image, :title_fa, :title_ar, :title, :description_fa, :description_ar, :description, :_destroy, :id])
+    end
+    def load_slides
+      @category_id = params[:category_id]
+      if @category_id.present?
+        @category = Category.find(@category_id)
+        @sliders = @category.sliders
+      end
+      
+      #TODO use current categories slides and if it's nill then do somthing for it
     end
 end

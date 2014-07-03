@@ -203,12 +203,11 @@ text-align:center;
   z-index:50;
   text-align:center;
   display: none;  
-  margin-top:3%;
-  margin-right:7%;
-  
+  right:25%;    
+  padding:2%;
 }
 .main #mainmenu  .submenu .submenu-item {text-align:center}
-.main #mainmenu  .submenu .submenu-item:hover a{color:#FFA500;}
+.main #mainmenu  .submenu .submenu-item:hover a{color:#FFA500; cursor:pointer}
 
 .background {margin-top:5%}
 .AccordionBox ul { overflow: hidden;
@@ -687,12 +686,15 @@ a.button > span {
    display: -moz-inline-block;
 }
 .form-group select {color:#000}
-.show-room {margin:2%; text-align:center; height:200px; }
-.show-room img.pro-image{ position: absolute;
+.show-room { text-align:center; height:300px; }
+.show-room img.pro-image{
+ position: absolute;
 margin-right: 77%;
 margin-top: -3%;}
-.show-room img.show-room-pic{ width:90%; height:90%; border-radius:9px;
-border:2px solid #1A1A1A;
+.show-room img.show-room-pic{ 
+width:90%;  border-radius:9px;
+padding:2%;
+border:2px solid #4D4D4D;
 }
 .show-room img.border-top-left{float:left}
 
@@ -781,39 +783,35 @@ li.slider-text-box {
   border-radius:10px;   
   opacity:.7;
   background:#3B1345;
-  -webkit-animation: spin 2s infinite; /*Safari and Chrome*/
-  -webkit-animation-iteration-count: 1;  /* Safari and Chrome */
-  animation: spin 2s infinite;
-  animation-iteration-count: 1;  
+  -webkit-animation: mymove 2s infinite; /*Safari and Chrome*/
+  animation: mymove 2s infinite;
+  -webkit-animation-iteration-count: 1;  /* Safari and Chrome */  
+  animation-iteration-count: 1;
 }
 
-@-moz-keyframes spin {
-    from { left: 5% }
-    to { left:20%}
-}
-@-webkit-keyframes spin {
-    from { left:5%}
-    to { left:20%}
-}
-@keyframes spin {
-    from {left:5%}
-    to {left:20%}
-}
 /*Safari and Chrome*/
 @-webkit-keyframes mymove {
-    from {top: 10%; }
-    to {top: 30%; }
-    
+  from {left: 0px;}
+  to {left: 200px;}
 }
 
 @keyframes mymove {
-    from {top: 10%; }
-    to {top: 30%;}
+  from {left: 0px;}
+  to {left: 200px;}
+}
+
+/*Safari and Chrome*/
+@-webkit-keyframes moveup {
+  from {top: 10%; }
+  to {top: 30%; }
     
 }
-.animate-paused { 
-  -webkit-animation-play-state: paused; /* Safari and Chrome */
-    animation-play-state: paused;}
+
+@keyframes moveup {
+  from {top: 10%; }
+  to {top: 30%;}    
+}
+
 
 .slider-text-box:hover { margin-top: 1.5%; cursor: pointer}
 .slider-text-box img {width:90%; height:70%}
@@ -827,8 +825,8 @@ li.slider-text-box {
   color:#fff;
   height:40px; width:40%;
   top:30%;
-   -webkit-animation: mymove 2s infinite; /*Safari and Chrome*/
-    animation: mymove 2s infinite;
+  -webkit-animation: moveup 2s infinite; /*Safari and Chrome*/
+  animation: moveup 2s infinite;
   -webkit-animation-iteration-count: 1;  /* Safari and Chrome */  
   animation-iteration-count: 1;
 }
@@ -849,4 +847,15 @@ h1.cat-title {
 .cat-des {
   margin-right:20%;
   margin-left:20%;
-   margin-top:-1%}
+  margin-top:-1%;}
+.show-room p {width:90%;
+  min-height:20%;
+  max-height:20%;
+  text-align:justify;
+  margin:5%;
+  line-height: 1.5em;
+  color:#fff;
+}
+.product-info { padding:2%;
+  margin:2%;
+}

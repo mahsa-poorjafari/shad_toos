@@ -14,9 +14,14 @@
         %td= image_tag activity.image(:small)
         %td= activity.title     
         %td= activity.description     
-
-        %td= link_to 'مشاهده', activity
-        %td= link_to 'ویرایش', edit_activity_path(activity)
-        %td= link_to 'حذف', activity, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+      %tr
+        %td.more          
+          = link_to 'جزئیات بیشتر', activity
+        - if is_admin?
+          %td
+            = link_to 'مشاهده', activity
+            = link_to 'ویرایش', edit_activity_path(activity)
+            = link_to 'حذف', activity, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+          
 
 

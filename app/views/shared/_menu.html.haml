@@ -12,11 +12,12 @@
   = link_to '#' do
     %li#contact
       = t('contact')
-.col-sm-7.submenu.contact
+.col-sm-6.submenu.contact
   - Page.all.each do |page|
-    .col-sm-4.submenu-item
-      = image_tag 'missing.png'
-      =link_to page.title, page.title
+    .col-sm-3.submenu-item      
+      =link_to  page do
+        %i=page.title
+        = image_tag 'missing.png'
   .clr-float
   
 :javascript 

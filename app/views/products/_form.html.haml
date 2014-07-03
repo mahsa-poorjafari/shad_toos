@@ -17,18 +17,18 @@
     .form-group 
       = f.label "عنوان به عربی:", :class => "col-sm-4 control-label"      
       = f.text_field :title_ar, :class => "form-control"
-  .col-sm-6
-    .form-group 
-      = f.label "توضیحات به فارسی:", :class => "col-sm-4 control-label"      
-      = f.text_area :description_fa, :class => "form-control"
-    .form-group 
-      = f.label "توضیحات به انگلیسی:", :class => "col-sm-4 control-label"      
-      = f.text_area :description, :class => "form-control"
-    .form-group 
-      = f.label "توضیحات به عربی:", :class => "col-sm-4 control-label"      
-      = f.text_area :description_ar, :class => "form-control"
+  .col-sm-12
+    .form-group.editor 
+      = f.label "توضیحات به فارسی:", :class => "control-label"      
+      = f.text_area :description_fa, :class => "form-control ckeditor"
+    .form-group.editor 
+      = f.label "توضیحات به انگلیسی:", :class => "control-label"      
+      = f.text_area :description, :class => "form-control ckeditor"
+    .form-group.editor 
+      = f.label "توضیحات به عربی:", :class => "control-label"      
+      = f.text_area :description_ar, :class => "form-control ckeditor"
   .clr-float
-  .col-sm-6
+  .col-sm-12
     .form-group 
       = f.fields_for :pictures do |picture|  
         = render "shared/upload_image_form", :picture => picture

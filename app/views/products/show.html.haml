@@ -1,29 +1,26 @@
 
 -if is_admin?  
-  = link_to 'ویرایش', edit_product_path(@product)       
-  \|
-  = link_to 'بازگشت', products_path 
+  .admin-edit-del
+    = link_to 'ویرایش', edit_product_path(@product)       
+    \|
+    = link_to 'بازگشت', products_path 
       
 
     
-.col-sm-12
+.col-sm-12.product-info
   %h2= @product.category.title   
   %h3= @product.title
-  %p= @product.description
+  %p=raw @product.description
   
   
   
-.col-sm-12
-  - @product.pictures.each do |pic|
-    .col-sm-5.show-room     
-      = image_tag 'top-left-small.png', :class => "pro-image"
+.col-sm-12{:style => "height:350px"}
+  - @product.pictures.each do |pic|    
+    .col-sm-4.show-room                
       =link_to (image_tag pic.image(:medium), :class => "show-room-pic"  ), pic.image(:large), :data => { :colorbox => true }, :title => pic.description, :class => "show-rooms"         
+      %p{:class => I18n.locale}= pic.description
       
-      - if is_admin?
-        .admin-edit-del{:style => "font-size:1.5em"}
-          = link_to 'ویرایش', edit_picture_path(pic)
-         
-          = link_to 'حذف', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+      
           
 :javascript    
   $('.show-rooms').colorbox({title: 'title' });   

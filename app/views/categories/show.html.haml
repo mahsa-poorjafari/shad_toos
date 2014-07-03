@@ -20,18 +20,20 @@
         = image_tag 'line.png', :class => "gold-line"
     .col-sm-12.index-category
       - @category.products.each do |item|                
-        .show-item                  
+        .show-item{:class => I18n.locale}                  
           .col-sm-5
-            = image_tag item.pictures.first.image(:medium), :class => "resize-img"
-          
-          = link_to item do
+            - if item.pictures.present?
+              = image_tag item.pictures.first.image(:medium), :class => "resize-img"
+            - else 
+              = image_tag 'missing.png', :class => "resize-img"
+          = link_to product_path(item, :category_id => @category.id) do
             .col-sm-7.category-show-description
               %b= item.title
-              %p= item.description
+              %p=raw item.description
           
           .see-more
             .border-see-more.set-center
-              = link_to 'مشاهده بیشتر', item          
+              = link_to 'مشاهده بیشتر', product_path(item, :category_id => @category.id)
           .clr-float
           
             - if is_admin?

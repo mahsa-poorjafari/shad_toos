@@ -1,14 +1,14 @@
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
+  .admin-edit-del
     
-    %hr
     = link_to 'ویرایش صفحه', edit_page_path(@page)
-%div
-  -if @page.read_attribute("title") == "Contact us"
-   
-    = render "shared/msg_form"
-    
+.col-sm-12
+  %h1= @page.title
+  %div
+    -if @page.read_attribute("title") == "Contact us"
+     
+      = render "shared/msg_form"
+      
 
 
 
