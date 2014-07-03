@@ -42,7 +42,7 @@ header {
 }
 header .language {height:40px; width:100px; 
 position: absolute;
-top:0;
+top:-2%;
 background:url('blackorchid.png') repeat-x;
 float:left;
 text-align:center;
@@ -53,7 +53,7 @@ transition: all 0.5s ease;
 padding-top:2px;
 }
 header .language  .lan-title {font-size:9px; color:#fff; }
-header .language:hover {margin-top:-19.5%}
+header .language:hover {top:0; cursor:pointer}
 header #logo-menu {  width:30%; text-align:center; height:100%; top:0;
 margin-left: 38%;
 margin-right: 40%;
@@ -109,7 +109,7 @@ width: 100%;
   z-index:13;
   }
  
-.main  .bottom-vin {background-image:url('bottom-slider.png');  margin-top:-5%; }
+.main  .bottom-vin {background-image:url('bottom-slider.png');  margin-top:-4.5%; }
 
 
 .main #mainmenu  ul {list-style:none;
@@ -465,7 +465,7 @@ span.Necessary {color:#F33535}
 .line {width:100%;  text-align:center; }
 .slider {height:40%; margin-top: 6%; z-index:10}
 
-.slider  img {width: 100%}
+
 .slider  .cycle-overlay {
   text-align:center; 
   width: 40%; 
@@ -815,7 +815,8 @@ li.slider-text-box {
     animation-play-state: paused;}
 
 .slider-text-box:hover { margin-top: 1.5%; cursor: pointer}
-
+.slider-text-box img {width:90%; height:70%}
+.slider-text-box b {color:#fff;}
 .slide-descript {  
   font-family:entezar_slide_box;
   background:#72158A; 

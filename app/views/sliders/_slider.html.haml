@@ -19,7 +19,7 @@
               - Category.all.each do |session|        
                 %li.slider-text-box{:style => "float:left"}    
                   = image_tag session.slider_box(:small)
-                  = session.title
+                  %b= session.title
       -if sliders.count > 1          
         .carousel-controls
           .center
