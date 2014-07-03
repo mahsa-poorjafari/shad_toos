@@ -1,47 +1,39 @@
-.hero-unit
-  #slider-carousel.carousel.slide
-    .carousel-inner
-      - sliders.each do |slide|
-        .item-row.item          
-          -if is_admin?
-            .row-controls.admin-edit-del
-              = link_to edit_slider_path(slide) do
-                %i= 'ویرایش'
-                \|
-              = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
-                %i= 'حذف'
-      
-          = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide"
-          
-          .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '
-          .slider-boxes.set-center    
-            - Category.all.each do |session|        
-              .col-sm-1.slider-text-box{:style => "float:left"}    
-                = image_tag session.slider_box(:small)
-                = session.title
-    -if sliders.count > 1          
-      .carousel-controls
-        .center
-          %ol.carousel-indicator-list.carousel-indicators
-            - if  sliders.count != 1
-              -  sliders.each_with_index do |slide, index|
-                %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
-      = link_to "#slider-carousel", :class => "carousel-control left", "data-slide" => "prev" do
-        = image_tag 'next-icon.png'
-      = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
-        = image_tag 'prev-icon.png'      
-  
-          
-          
+-unless sliders.blank?
+  .hero-unit
+    #slider-carousel.carousel.slide
+      .carousel-inner
+        - sliders.each do |slide|
+          .item-row.item          
+            -if is_admin?
+              .row-controls.admin-edit-del
+                = link_to edit_slider_path(slide) do
+                  %i= 'ویرایش'
+                  \|
+                = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
+                  %i= 'حذف'
+        
+            = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide"
             
-          
-    
-      
-:javascript
-  
-  $( ".slider-text-box" ).show( 1000);
-    
- 
-  $("#slider-carousel .item").first().addClass("active");
-  $("#slider-carousel .slide-indicator").first().addClass("active");
-  $('.carousel').carousel();
+            .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '
+            .slider-boxes.set-center    
+              - Category.all.each do |session|        
+                .col-sm-1.slider-text-box{:style => "float:left"}    
+                  = image_tag session.slider_box(:small)
+                  = session.title
+      -if sliders.count > 1          
+        .carousel-controls
+          .center
+            %ol.carousel-indicator-list.carousel-indicators
+              - if  sliders.count != 1
+                -  sliders.each_with_index do |slide, index|
+                  %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
+        = link_to "#slider-carousel", :class => "carousel-control left", "data-slide" => "prev" do
+          = image_tag 'next-icon.png'
+        = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
+          = image_tag 'prev-icon.png'      
+  :javascript
+    $( ".slider-text-box" ).show( 1000);
+   
+    $("#slider-carousel .item").first().addClass("active");
+    $("#slider-carousel .slide-indicator").first().addClass("active");
+    $('.carousel').carousel();
