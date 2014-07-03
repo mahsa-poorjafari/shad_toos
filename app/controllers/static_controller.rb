@@ -4,7 +4,7 @@ class StaticController < ApplicationController
     @page = Page.all
     @category = Category.all
     @activities = Activity.all
-    @sliders = Slider.all
+    @sliders = Slider.where( "category_id is null")
   end
   def test
     
