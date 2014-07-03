@@ -10,10 +10,10 @@
     %p
       %i= 'برای اضافه کردن عکس به اسلایدر بالای صفحات، دکمه عکس جدید را کلیک کنید/'
   .index-slider.set-center 
-    = render 'slider'            
+    = render 'slider', :sliders => @sliders
     
       
       
-  :javascript
-    $(".item").first().addClass("active");
-    $('.carousel').carousel();
+:javascript
+  $(".item").first().addClass("active");
+  $('.carousel').carousel();
