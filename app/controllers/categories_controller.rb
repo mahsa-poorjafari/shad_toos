@@ -1,17 +1,19 @@
 # encoding: UTF-8
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy, :load_slides]
   before_filter :check_autentication, only: [ :edit, :update, :destroy]
   before_filter :load_slides, only:[:show]
   # GET /categories
   # GET /categories.json
   def index
     @categories = Category.all
+    @sliders = Slider.all
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    
   end
 
   # GET /categories/new
@@ -75,7 +77,7 @@ class CategoriesController < ApplicationController
     end
 
     def load_slides
-      @sliders = Slider.all
+      @sliders = @category.sliders
       #TODO use current categories slides and if it's nill then do somthing for it
     end
 end

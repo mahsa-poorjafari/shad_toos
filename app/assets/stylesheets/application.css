@@ -54,9 +54,10 @@ padding-top:2px;
 }
 header .language  .lan-title {font-size:9px; color:#fff; }
 header .language:hover {top:0; cursor:pointer}
-header #logo-menu {  width:30%; text-align:center; height:100%; top:0;
-margin-left: 38%;
-margin-right: 40%;
+header #logo-menu { 
+  width:40%; text-align:center; height:100%; top:0;
+left: 30%;
+right: 30%;
 position:absolute;
  }
 header #logo-menu #logo{ float:left; width:100%;  }
@@ -762,7 +763,7 @@ padding: 13%;}
 .slider-edit-sull-screen {width:1286px; height:440px; margin-right: -10%; overflow:hidden}
 
 ul.slider-boxes {
-  top:10%;
+  top:50%;
   width:80%;
   height:10%;
   position:absolute;
@@ -787,26 +788,26 @@ li.slider-text-box {
 }
 
 @-moz-keyframes spin {
-    from { -moz-transform: rotate(0deg); }
-    to { -moz-transform: rotate(360deg); }
+    from { left: 5% }
+    to { left:20%}
 }
 @-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
+    from { left:5%}
+    to { left:20%}
 }
 @keyframes spin {
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
+    from {left:5%}
+    to {left:20%}
 }
 /*Safari and Chrome*/
 @-webkit-keyframes mymove {
-    from {top: 20%; }
+    from {top: 10%; }
     to {top: 30%; }
     
 }
 
 @keyframes mymove {
-    from {top: 20%; }
+    from {top: 10%; }
     to {top: 30%;}
     
 }
