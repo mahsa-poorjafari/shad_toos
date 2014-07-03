@@ -32,7 +32,7 @@
     
     %header
       #header-top        
-     
+      
       .language
         .lan-title= 'LANGUAGE'
         = link_to (image_tag 'flag/en.png'), locale: :en          
@@ -51,8 +51,7 @@
         
     .main       
       #mainmenu.set-center
-        %nav
-          
+        %nav          
           -if I18n.locale == :en       
             .menu_en{:class => I18n.locale}
               = render "shared/menu"

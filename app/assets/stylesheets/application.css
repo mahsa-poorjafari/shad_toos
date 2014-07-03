@@ -28,7 +28,7 @@
 header {
 	position: relative;
 	width: 100%;
-	height: 250px;
+	height: 275px;
 	left: 0;
 	top: 0;
 	z-index: 15;  
@@ -42,7 +42,7 @@ header {
 }
 header .language {height:40px; width:100px; 
 position: absolute;
-margin-top:-20%;
+top:0;
 background:url('blackorchid.png') repeat-x;
 float:left;
 text-align:center;
@@ -54,7 +54,7 @@ padding-top:2px;
 }
 header .language  .lan-title {font-size:9px; color:#fff; }
 header .language:hover {margin-top:-19.5%}
-header #logo-menu {  width:17%; text-align:center; height:150px; margin-top: -20%;
+header #logo-menu {  width:30%; text-align:center; height:100%; top:0;
 margin-left: 38%;
 margin-right: 40%;
 position:absolute;
@@ -82,35 +82,42 @@ width: 100%;
 
 }
 .main #mainmenu {
-  min-width:80%;
-  max-width:80%;
+ 
   height:60px;
-  padding-top:1.5%;
+  padding-top:1.1%;
   position:relative;
   z-index:100;
-  margin-top:-3%;
-  padding-right:13%;  
+  margin-top:-3%;  
   border-radius:2em;
   background-image:url('MENU.png');
+  background-repeat:no-repeat;
+  background-position:center; 
   margin-bottom:3%;
 }
 
-.main  .top-vin {background:url('top-slide.png') no-repeat;
+.main  .top-vin {background-image:url('top-slide.png');
   margin-top:1%;
 }
 .main .slider-vintage {
-text-align:center;
-background-repeat:no-repeat;
- width:100%; height:85px; text-align:center; position:absolute; z-index:13}
+  text-align:center;
+  background-repeat:no-repeat;
+  background-position:center; 
+  width:100%; 
+  height:85px; 
+  text-align:center; 
+  position:absolute; 
+  z-index:13;
+  }
  
-.main  .bottom-vin {background:url('bottom-slider.png') no-repeat;  margin-top:-5%; }
+.main  .bottom-vin {background-image:url('bottom-slider.png');  margin-top:-5%; }
 
 
 .main #mainmenu  ul {list-style:none;
-  min-width:60%;
-  max-width:60%;
-  
-  margin-right: 15%;
+  min-width:50%;
+  max-width:50%;  
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
   padding-top:5px}
 .main #mainmenu  ul li{display:inline; min-width:150px; padding:10px;
   
@@ -456,7 +463,7 @@ span.Necessary {color:#F33535}
 
 .pro_wrapper .line b {color:#4D4D4D; margin-top:10px; }
 .line {width:100%;  text-align:center; }
-.slider {height:445px; margin-top: 6%; z-index:10}
+.slider {height:40%; margin-top: 6%; z-index:10}
 
 .slider  img {width: 100%}
 .slider  .cycle-overlay {
@@ -686,7 +693,7 @@ border:2px solid #1A1A1A;
 }
 .show-room img.border-top-left{float:left}
 
-.about-us { height:250px; overflow:hidden;}
+.about-us { height:250px; overflow:hidden; text-align:center;}
 .about-us img{width:90%}
 .about-us p{height:25%}
 .about-us h2{ padding-right:10%;}
@@ -752,25 +759,59 @@ height: 440px;
 padding: 13%;}
 .slider-edit-sull-screen {width:1286px; height:440px; margin-right: -10%; overflow:hidden}
 
-.slider-boxes {
+ul.slider-boxes {
   top:10%;
   width:80%;
   height:10%;
   position:absolute;
-  left:10%
+  left:10%;
+  list-style:none;
+  position:absolute;
 }
-.slider-text-box { 
-  width:8%;
-  float:left;
-  display:none;
+li.slider-text-box { 
+  min-width:8%;
+  max-width:8%;
+  float:left;  
   height:80px; 
   text-align:center;
   margin:1%;
-  border-radius:10px; 
-  position:absolute;
+  border-radius:10px;   
   opacity:.7;
   background:#3B1345;
+  -webkit-animation: spin 2s infinite; /*Safari and Chrome*/
+  -webkit-animation-iteration-count: 1;  /* Safari and Chrome */
+  animation: spin 2s infinite;
+  animation-iteration-count: 1;  
 }
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+/*Safari and Chrome*/
+@-webkit-keyframes mymove {
+    from {top: 20%; }
+    to {top: 30%; }
+    
+}
+
+@keyframes mymove {
+    from {top: 20%; }
+    to {top: 30%;}
+    
+}
+.animate-paused { 
+  -webkit-animation-play-state: paused; /* Safari and Chrome */
+    animation-play-state: paused;}
+
 .slider-text-box:hover { margin-top: 1.5%; cursor: pointer}
 
 .slide-descript {  
@@ -781,7 +822,11 @@ padding: 13%;}
   padding:1%;
   color:#fff;
   height:40px; width:40%;
-  margin-top:-20%;
+  top:30%;
+   -webkit-animation: mymove 2s infinite; /*Safari and Chrome*/
+    animation: mymove 2s infinite;
+  -webkit-animation-iteration-count: 1;  /* Safari and Chrome */  
+  animation-iteration-count: 1;
 }
 
 
