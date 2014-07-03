@@ -557,7 +557,9 @@ fieldset legend span {color:#F8F85F;}
 #content form.new_category {height:400px}
 .edi-slider-holder {margin-right:-11% }
 .show-slider {width:1286px; height:441px; margin-right: -10%;}
-.index-slider {width:100%;}
+.index-slider {width:123%;
+margin-right: -10%;
+}
 .admin_menu {
 top:0;
 right:1px;
