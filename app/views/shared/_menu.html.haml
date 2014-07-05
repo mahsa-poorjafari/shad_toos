@@ -29,8 +29,10 @@
     
 :javascript 
   $('#contact').click(function(){
+    $('.submenu.category').hide();
     $('.submenu.contact').slideToggle('slow');
   });
   $('#category').click(function(){
+    $('.submenu.contact').hide();
     $('.submenu.category').slideToggle('slow');
   });
