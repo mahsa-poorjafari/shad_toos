@@ -3,16 +3,20 @@
     = link_to new_haram_path, :class => "admin-access" do
       .admin-edit-del
         %i= 'تعریف آیتم جدید'
+  %br
   %p
     %i= 'این تصاویر در قسمت اسلایدر حرم نمایش داده می شوند'
+    %br
+    سایز استاندارد برای این تصاویر ۲۸۰*۲۸۰ و حجم کمتر از ۵۰ کیلوبایت می باشد
+    %br
   %h1= 'مدیریت اسلایدر حرم مطهر'
 
   .col-sm-12
     - @harams.each do |haram|
-      .col-sm-3{:style => "margin:1%"}
+      .col-sm-3{:style => "margin:1%; height:300px"}
         = image_tag haram.image(:small)
         %p{:style => "margin:1%"}= haram.description        
-        %p{:style => "margin:1%"}
+        .admin-edit-del-small{:style => "width: 100%"}
           = link_to 'مشاهده', haram
           \|
           = link_to 'ویرایش', edit_haram_path(haram)

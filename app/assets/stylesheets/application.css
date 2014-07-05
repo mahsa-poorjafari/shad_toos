@@ -228,7 +228,7 @@ text-align:center;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin-left: 4px;
-  width: 12%;
+  width: 10%;
   height: 372px;
   transition: all 0.5s ease;
 }
@@ -285,7 +285,7 @@ text-align:center;
   height:50px;
   }
 .haram-pic  .item {text-align:center;}
-.haram-pic  .item img.slide{width:100%;}
+.haram-pic  .item img.slide{width:100%; height:100%;}
 
 .more{
   color:#FFA500;
@@ -310,6 +310,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
 }
 
 .more a{color:#FFFFFF;}
+.more:hover {cursor:pointer}
 .more .inside-border { width: 98%;
   height: 95%;
   border-radius: 3px;  
@@ -698,14 +699,31 @@ border:2px solid #4D4D4D;
 }
 .show-room img.border-top-left{float:left}
 
-.about-us { height:250px; overflow:hidden; text-align:center;}
+.about-us { height:400px; overflow:hidden; text-align:center;}
 .about-us img{width:90%}
-.about-us p{height:25%}
+.about-us .show-about-text{
+  min-height:220px;
+  max-height:220px;
+  overflow:hidden;
+  line-height:1em;
+}
 .about-us h2{ padding-right:10%;}
 a.admin-access:hover .admin-edit-del {color:#FFA500}
-
+.admin-edit-del-small {background: rgb(169,3,41); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+ border-radius:5px; color:#fff;
+ width:22%;
+ height:20px;
+ padding:1%;
+ text-align:center;
+ font-size:1em;}
 .admin-edit-del {
-
 background: rgb(169,3,41); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
@@ -720,7 +738,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', end
  padding:1%;
  text-align:center;
  font-size:2em;
- 
  }
 .admin-edit-del a{color:#fff;}
 .admin-edit-del a:hover{color:#FFA500;}

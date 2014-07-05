@@ -11,6 +11,9 @@
   .form-group   
     = f.label "عنوان صفحه به انگلیسی", :class => "control-label"
     = @page.title
+  .form-group   
+    = f.label "عنوان صفحه به عربی", :class => "control-label"
+    = @page.title_ar
   
   .editor.form-group   
     = f.label "متن صفحه به فارسی:", :class => "control-label"
@@ -18,5 +21,8 @@
   .editor.form-group   
     = f.label "متن صفحه به انگلیسی:", :class => "control-label"
     = f.text_area :html_text, :class => "form-control ckeditor"
+  .editor.form-group   
+    = f.label "متن صفحه به عربی:", :class => "control-label"
+    = f.text_area :html_text_ar, :class => "form-control ckeditor"
   .form-group   
     = f.submit 'ثبت', :class=> "btn btn-default"

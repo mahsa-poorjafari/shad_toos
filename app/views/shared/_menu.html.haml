@@ -3,14 +3,14 @@
     %li#home.first{:class => ('active' if current_page?(root_path)) }
       = t('home')
   = link_to Category do
-    %li.gallery
+    %li.gallery{:class => ('active' if current_page?(categories_path)) }
       =t('section')
   = link_to '#' do
     %li= 'اخبار'
   = link_to Activity do
-    %li= 'فعالیت ها'
+    %li{:class => ('active' if current_page?(activities_path)) }= 'فعالیت ها'
   = link_to '#' do
-    %li#contact
+    %li#contact{:class => ('active' if current_page?(pages_path)) }
       = t('contact')
 .col-sm-6.submenu.contact
   - Page.all.each do |page|

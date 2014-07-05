@@ -10,6 +10,7 @@
     %b توضیحات عربی
     = @haram.description_ar
   - if is_admin?
-    = link_to 'ویرایش', edit_haram_path(@haram)
-    \|
-    = link_to 'بازگشت', harams_path
+    .admin-edit-del-small
+      = link_to 'ویرایش', edit_haram_path(@haram)
+      \|
+      = link_to 'بازگشت', harams_path

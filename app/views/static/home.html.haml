@@ -1,8 +1,17 @@
 .col-sm-3  
+  - if is_admin?
+    .admin-edit-del-small{:style => "width:50% "}
+      = link_to 'مشاهده', @about_us
+      \|
+      = link_to 'ویرایش', edit_page_path(@about_us)
   .about-us
-    = image_tag 'befor.png'
-    %h2= 'درباره شادتوس'    
-    %p= 'در این کارد متن مورد نظر برای معرفی  هتل آپارتمان شادتوس قرار خواهد گرفت'
+    = image_tag 'befor.png'    
+    %h2= 'درباره شادتوس'        
+    .show-about-text
+      = raw @about_us.html_text      
+    .more{:style => "margin-top:5%"}
+      .inside-border
+        = link_to t('more'), @about_us
     = image_tag '1212.png'
 .col-sm-9
   .AccordionBox

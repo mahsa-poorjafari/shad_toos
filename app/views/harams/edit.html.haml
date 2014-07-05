@@ -1,7 +1,7 @@
-%h1 Editing haram
+%h1 ویرایش اسلایدر حرم
 
 = render 'form'
-
-= link_to 'Show', @haram
-\|
-= link_to 'Back', harams_path
+- if is_admin?
+  = link_to 'مشاهده', @haram
+  \|
+  = link_to 'بازگشت', harams_path
