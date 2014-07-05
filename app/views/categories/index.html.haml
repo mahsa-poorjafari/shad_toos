@@ -8,11 +8,19 @@
   .AccordionBox
     %ul
       - @categories.each do |category|
-        = link_to category do
-          %li
-            = image_tag category.image(:large)
-            %div= category.title
-            %div= category.description
+        
+        %li            
+          -if is_admin? 
+            .admin-edit-del-small
+              = link_to 'ویرایش', edit_category_path(category)
+              \|
+              = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }       
+          = link_to category do
+            = image_tag category.image(:original), :class => "sample-image"        
+            .cat-title
+              .col-sm-3= image_tag category.font_image(:small)              
+              %p.col-sm-8= category.description
+        
 :javascript
 
   $('.AccordionBox ul li:first').addClass('active');

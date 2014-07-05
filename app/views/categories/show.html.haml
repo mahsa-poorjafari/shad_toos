@@ -1,6 +1,6 @@
 .main-bg
   -if is_admin? 
-    .admin-edit-del
+    .admin-edit-del-small
       = link_to 'ویرایش', edit_category_path(@category)
       \|
       = link_to 'بازگشت', categories_path
@@ -37,7 +37,7 @@
           .clr-float
           
             - if is_admin?
-              .admin-edit-del
+              .admin-edit-del-small
                 = link_to 'ویرایش', edit_product_path(item)
                 \|
                 = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
