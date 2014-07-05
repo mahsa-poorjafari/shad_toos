@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        format.html { redirect_to @page, msg: 'Page was successfully created.' }
         format.json { render action: 'show', status: :created, location: @page }
       else
         format.html { render action: 'new' }
@@ -72,6 +72,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :html_text, :title_fa, :html_text_fa, :title_ar, :html_text_ar)
+      params.require(:page).permit(:title, :html_text, :title_fa, :html_text_fa, :title_ar, :html_text_ar, :image)
     end
 end

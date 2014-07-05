@@ -4,6 +4,11 @@
     = link_to 'ویرایش صفحه', edit_page_path(@page)
 .col-sm-12
   %h1= @page.title
+  .col-sm-4
+    = image_tag @page.image(:medium)
+  
+  .col-sm-8
+    =raw @page.html_text
   %div
     -if @page.read_attribute("title") == "Contact us"
      

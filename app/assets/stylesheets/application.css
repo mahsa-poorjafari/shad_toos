@@ -204,9 +204,10 @@ text-align:center;
   text-align:center;
   display: none;  
   right:25%;    
-  padding:2%;
+  padding:1%;
 }
 .main #mainmenu  .submenu .submenu-item {text-align:center}
+.main #mainmenu  .submenu .submenu-item b{height:15px;}
 .main #mainmenu  .submenu .submenu-item:hover a{color:#FFA500; cursor:pointer}
 
 .background {margin-top:5%}
@@ -876,3 +877,4 @@ h1.cat-title {
 .product-info { padding:2%;
   margin:2%;
 }
+

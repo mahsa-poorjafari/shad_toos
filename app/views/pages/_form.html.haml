@@ -4,7 +4,9 @@
       %ul
         - @page.errors.each do |attr, msg|
           %li= msg
-
+  .form-group   
+    = f.label "تصویر موردنظر برای نمایش در زیر منوی ارتباط", :class => "control-label"
+    = f.file_field :image
   .form-group   
     = f.label "عنوان صفحه به فارسی", :class => "control-label"
     = @page.title_fa

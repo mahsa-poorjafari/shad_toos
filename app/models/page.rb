@@ -4,7 +4,9 @@ class Page < ActiveRecord::Base
   friendly_id :title_fa
   validates :title, :title_fa, :presence => {:message => 'عنوان صفحه متنی را وارد کنید.'}
   validates :title, :title_fa, :uniqueness => {:message => 'عنوان صفحه تکراری است'}
-  
+  has_attached_file :image, :styles => { :original => "500x500#" , :medium => "300x300#", :small => "150x150#" }
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
+                                            :message =>  "فرمت عکس صحیح نیست"
   def title
     if I18n.locale == :ar
       self.read_attribute("title_ar")

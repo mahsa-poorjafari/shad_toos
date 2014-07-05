@@ -15,9 +15,9 @@
 .col-sm-6.submenu.contact
   - Page.all.each do |page|
     .col-sm-3.submenu-item      
-      =link_to  page do
-        %i=page.title
-        = image_tag 'missing.png'
+      =link_to page do
+        %b=page.title
+        = image_tag page.image(:small)
   .clr-float
   
 :javascript 
