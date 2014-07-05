@@ -2,8 +2,8 @@
   = link_to root_path do
     %li#home.first{:class => ('active' if current_page?(root_path)) }
       = t('home')
-  = link_to Category do
-    %li.gallery{:class => ('active' if current_page?(categories_path)) }
+  = link_to '#' do
+    %li.gallery#category{:class => ('active' if current_page?(categories_path)) }
       =t('section')
   = link_to '#' do
     %li= 'اخبار'
@@ -14,13 +14,23 @@
       = t('contact')
 .col-sm-6.submenu.contact
   - Page.all.each do |page|
-    .col-sm-3.submenu-item      
+    .col-sm-4.submenu-item      
       =link_to page do
         %b=page.title
         = image_tag page.image(:small)
   .clr-float
-  
+.col-sm-6.submenu.category
+  - Category.all.each do |category|
+    .col-sm-3.submenu-item      
+      =link_to category do
+        %b=category.title
+        = image_tag category.image(:small)
+  .clr-float
+    
 :javascript 
   $('#contact').click(function(){
     $('.submenu.contact').slideToggle('slow');
+  });
+  $('#category').click(function(){
+    $('.submenu.category').slideToggle('slow');
   });
