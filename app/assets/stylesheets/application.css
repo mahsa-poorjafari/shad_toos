@@ -609,7 +609,7 @@ width:100%;
 footer .footer-menu { width:70%; height:100%; margin-top:-12%; position:absolute;
  margin-right:22%;
  margin-left:22%;
- padding-top:2%;
+ 
  }
 footer .footer-menu ul.total{width:90%; list-style:none;}
 footer .footer-menu ul.total li{width:30%; float:right}
@@ -785,8 +785,7 @@ padding: 13%;}
 ul.slider-boxes {
   top:50%;
   width:80%;
-  height:10%;
-  position:absolute;
+  height:10%;  
   left:10%;
   list-style:none;
   position:absolute;
@@ -801,22 +800,51 @@ li.slider-text-box {
   border-radius:10px;   
   opacity:.7;
   background:#3B1345;
-  -webkit-animation: mymove 2s infinite; /*Safari and Chrome*/
-  animation: mymove 2s infinite;
-  -webkit-animation-iteration-count: 1;  /* Safari and Chrome */  
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: rollIn;
+  animation-name: rollIn;
+ 
 }
 
-/*Safari and Chrome*/
-@-webkit-keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
 }
 
-@keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    -ms-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
 }
+
+
+
 
 /*Safari and Chrome*/
 @-webkit-keyframes moveup {

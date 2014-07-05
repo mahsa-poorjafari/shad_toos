@@ -44,10 +44,14 @@
             .clr-float
 
 :javascript
-  
+  window.DisableAccordionBox = false;
   $('.AccordionBox ul li').mouseover(function(){
     $('.AccordionBox ul li').removeClass( "active" );
     $(this).addClass('active');
+    window.DisableAccordionBox = true;
+  });
+  $('.AccordionBox ul li').mouseout(function(){
+    window.DisableAccordionBox = false;
   });
 
 
