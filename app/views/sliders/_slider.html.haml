@@ -16,10 +16,11 @@
             
             .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '
             %ul.slider-boxes.set-center    
-              - Category.all.each do |session|        
-                %li.slider-text-box{:style => "float:left"}    
-                  = image_tag session.slider_box(:small)
-                  %b= session.title
+              - Category.all.each do |category| 
+                = link_to "##{category.title_en}", :class => "item#{category.id}" do
+                  %li.slider-text-box{:style => "float:left"}    
+                    = image_tag category.slider_box(:small)
+                    %b= category.title
       -if sliders.count > 1          
         .carousel-controls
           .center

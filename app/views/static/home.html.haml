@@ -17,8 +17,8 @@
   .AccordionBox
     %ul
       - @category.each do |category|
-        = link_to category do
-          %li
+        = link_to category, :name => category.title_en do
+          %li{:id => "item#{category.id}" }
             = image_tag category.image(:original), :class => "sample-image"        
             .cat-title
               .col-sm-3= image_tag category.font_image(:small)              

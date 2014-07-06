@@ -12,3 +12,18 @@ function slideSwitch() {
 $(function() {   
   setInterval("slideSwitch()",3000);
 });
+
+
+$( document ).ready(function() {
+  $('ul.slider-boxes a').click(function(){
+    var BoxClass = $(this).attr("class");   
+    $('.AccordionBox ul li').removeClass('active');    
+    $('.AccordionBox ul li#'+ BoxClass).addClass('active');
+  });
+});  
+    
+   
+    
+  
+    
+  
