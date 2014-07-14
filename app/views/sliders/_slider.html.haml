@@ -20,6 +20,7 @@
                 = link_to "##{category.title_en}", :class => "item#{category.id}" do
                   %li.slider-text-box{:style => "float:left"}    
                     = image_tag category.slider_box(:small)
+                    %br
                     %b= category.title
       -if sliders.count > 1          
         .carousel-controls
