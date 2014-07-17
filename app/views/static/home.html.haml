@@ -42,6 +42,15 @@
               .inside-border
                 = link_to t('more'), activity
             .clr-float
+.col-sm-12
+  .col-sm-6  
+    %p= @contact_us.html_text
+    %div
+      = render 'shared/msg_form'
+    
+    
+  .col-sm-6
+    %div{:style => "border:#F1F164 1px solid; height:200px"}
 
 :javascript
   window.DisableAccordionBox = false;

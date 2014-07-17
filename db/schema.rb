@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140705113214) do
+ActiveRecord::Schema.define(version: 20140717125743) do
 
   create_table "activities", force: true do |t|
     t.string   "title_fa"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140705113214) do
     t.string   "slider_box_content_type"
     t.integer  "slider_box_file_size"
     t.datetime "slider_box_updated_at"
+    t.integer  "category_type"
   end
 
   create_table "harams", force: true do |t|

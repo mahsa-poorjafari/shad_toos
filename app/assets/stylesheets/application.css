@@ -607,7 +607,7 @@ width:100%;
 }
 #footer-bottom {
   height:100%;
-  background-image: linear-gradient(to top, #15001C, #15001C, #000000);
+  background-image: linear-gradient(to top, #330442, #15001C,  #190022);
 		opacity: .8;
 }
 footer .footer-menu { width:70%; height:100%; margin-top:-12%; position:absolute;
@@ -910,3 +910,6 @@ h1.cat-title {
   margin:2%;
 }
 
+form.contact input[type="text"], form.contact textarea, .send-msg {background:#13081D; color:#FDFD9F; border: 1px solid #FDFD9F }
+form.contact  .send-msg{ border-radius:5px; padding:2%}
+form.contact  .send-msg:hover{ background:#FDFD9F; color:#13081D; }

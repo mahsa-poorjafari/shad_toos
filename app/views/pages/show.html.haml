@@ -11,8 +11,8 @@
     =raw @page.html_text
   %div
     -if @page.read_attribute("title") == "Contact us"
-     
-      = render "shared/msg_form"
+      .col-sm-8
+        = render "shared/msg_form"
       
 
 

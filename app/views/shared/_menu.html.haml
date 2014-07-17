@@ -4,9 +4,10 @@
       = t('home')
   = link_to '#' do
     %li.gallery#category{:class => ('active' if current_page?(categories_path)) }
-      =t('section')
+      =t('shopping') 
   = link_to '#' do
-    %li= 'اخبار'
+    %li#hotel
+      = t('hotel')
   = link_to Activity do
     %li{:class => ('active' if current_page?(activities_path)) }= 'فعالیت ها'
   = link_to '#' do
@@ -20,19 +21,33 @@
         = image_tag page.image(:small)
   .clr-float
 .col-sm-6.submenu.category
-  - Category.all.each do |category|
-    .col-sm-3.submenu-item      
+  - @category = Category.where(category_type: 1)
+  - @category.each do |category|
+    .col-sm-4.submenu-item      
       =link_to category do
         %b=category.title
         = image_tag category.image(:small)
   .clr-float
+.col-sm-6.submenu.hotel
+  - @category = Category.find_by_category_type(2)
+  - @category.products.each do |room|
+    .col-sm-4.submenu-item      
+      =link_to room do
+        %b=room.title
+        - if room.pictures.present?
+          = image_tag room.pictures.first.image(:small)
+  .clr-float
     
 :javascript 
   $('#contact').click(function(){
-    $('.submenu.category').hide();
+    $('.submenu').hide();
     $('.submenu.contact').slideToggle('slow');
   });
   $('#category').click(function(){
-    $('.submenu.contact').hide();
+    $('.submenu').hide();
     $('.submenu.category').slideToggle('slow');
+  });
+  $('#hotel').click(function(){
+    $('.submenu').hide();
+    $('.submenu.hotel').slideToggle('slow');
   });

@@ -41,7 +41,8 @@ en:
   send-mail: "Email This Link To a Friend"
   
   more: More
-  session: Session
+  shopping: Shopping Center
+  hotel: Hotel
   ‌Rreserve: ‌Rreserve
   
   statistics: 'Site Statistics'
@@ -78,7 +79,7 @@ en:
     contact-msg: "Your Message:"    
     contact-date: "Date:"
     contact-btn: "Send"
-    contact-title: "Contact us"
+    contact-title: "Send Message"
   Required: "Required"
   
   
