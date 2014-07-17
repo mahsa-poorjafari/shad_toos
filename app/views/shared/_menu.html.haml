@@ -21,22 +21,23 @@
         = image_tag page.image(:small)
   .clr-float
 .col-sm-6.submenu.category
-  - @category = Category.where(category_type: 1)
-  - @category.each do |category|
+  - category = Category.where(category_type: 1)
+  - category.each do |category|
     .col-sm-4.submenu-item      
       =link_to category do
         %b=category.title
         = image_tag category.image(:small)
   .clr-float
 .col-sm-6.submenu.hotel
-  - @category = Category.find_by_category_type(2)
-  - @category.products.each do |room|
-    .col-sm-4.submenu-item      
-      =link_to room do
-        %b=room.title
-        - if room.pictures.present?
-          = image_tag room.pictures.first.image(:small)
-  .clr-float
+  - category = Category.find_by_category_type(2)
+  - if category.products.present?
+    - category.products.each do |room|
+      .col-sm-4.submenu-item      
+        =link_to room do
+          %b=room.title
+          - if room.pictures.present?
+            = image_tag room.pictures.first.image(:small)
+    .clr-float
     
 :javascript 
   $('#contact').click(function(){
