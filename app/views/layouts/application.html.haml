@@ -65,9 +65,13 @@
         .top-vin.set-center.slider-vintage            
         .slider          
           = render "sliders/slider", sliders:@sliders
-          .reserv
+          .site-link.reserv
             .text-box
-              %b= t('رزرو آنلاین')
+              %b= t('reserve')
+         
+          = link_to '/users/sign_in', :class => " site-link login-link" do
+            .text-box              
+              %b= t('login')
         .bottom-vin.set-center.slider-vintage        
       .clr-float
       .background 

@@ -43,8 +43,11 @@ en:
   more: More
   shopping: Shopping Center
   hotel: Hotel
-  ‌Rreserve: ‌Rreserve
+  reserve: ‌Reserve
   sights: Sights
+  login: Login
+  signin: 'Sign In'
+  signup: 'Sign Up'
   
   statistics: 'Site Statistics'
   visit_site: "Read the site"
