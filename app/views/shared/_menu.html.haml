@@ -49,7 +49,7 @@
       .col-sm-4.submenu-item           
         =link_to place do
           %b=place.title
-          = image_tag place.image(:small)
+          = image_tag place.pictures.first.image(:small)
   .clr-float
     
 :javascript 
