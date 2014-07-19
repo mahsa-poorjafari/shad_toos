@@ -140,10 +140,4 @@ ActiveRecord::Schema.define(version: 20140719091532) do
     t.string   "description_ar"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "user_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
