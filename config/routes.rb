@@ -21,8 +21,6 @@ scope "(:locale)", :locale => /en|fa|ar/ do  resources :resellers
   resources :feeds, :only => [:index]
 
 end
-  resources :users
-
   root :to => 'static#home'
   
   get "login" => "users#login"  

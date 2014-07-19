@@ -8,6 +8,9 @@
   = link_to '#' do
     %li#hotel
       = t('hotel')
+  = link_to '#' do
+    %li#sights
+      = t('sights')
   = link_to Activity do
     %li{:class => ('active' if current_page?(activities_path)) }= 'فعالیت ها'
   = link_to '#' do
@@ -31,7 +34,7 @@
   
 .col-sm-6.submenu.hotel
   - category = Category.find_by_category_type(2)
-  - if category.products.present?
+  - if category.present? && category.products.present?
     - category.products.each do |room|
       .col-sm-4.submenu-item      
         =link_to room do
@@ -39,6 +42,15 @@
           - if room.pictures.present?
             = image_tag room.pictures.first.image(:small)
     .clr-float
+.col-sm-6.submenu.sights
+  - category = Category.find_by_category_type(3)
+  - if category.present? && category.products.present?
+    - category.products.each do |place|
+      .col-sm-4.submenu-item           
+        =link_to place do
+          %b=place.title
+          = image_tag place.image(:small)
+  .clr-float
     
 :javascript 
   $('#contact').click(function(){
@@ -52,4 +64,8 @@
   $('#hotel').click(function(){
     $('.submenu').hide();
     $('.submenu.hotel').slideToggle('slow');
+  });
+  $('#sights').click(function(){
+    $('.submenu').hide();
+    $('.submenu.sights').slideToggle('slow');
   });

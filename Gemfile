@@ -15,6 +15,7 @@ gem 'jalalidate'
 gem "nested_form"
 gem "twitter-bootstrap-rails"
 gem 'i18n'
+gem 'devise'
 
 
 
