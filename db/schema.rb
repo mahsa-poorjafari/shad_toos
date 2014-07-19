@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719113018) do
+ActiveRecord::Schema.define(version: 20140719131218) do
 
   create_table "activities", force: true do |t|
     t.string   "title_fa"
@@ -117,6 +117,12 @@ ActiveRecord::Schema.define(version: 20140719113018) do
     t.text     "description_ar"
   end
 
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "send_links", force: true do |t|
     t.string   "sender_email"
     t.string   "receiver_email"
@@ -160,6 +166,7 @@ ActiveRecord::Schema.define(version: 20140719113018) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

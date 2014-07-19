@@ -9,8 +9,16 @@ namespace :db do
 
   desc "creates default users"
   task :create_default_users => :environment do
-    User.create(user_name:"admin", password:"123qwe", email:"web.development@raush.ir") if User.where(user_name:"admin").blank?
+    User.create(user_name:"admin", password:"123qwe") if User.where(user_name:"admin").blank?
     p "#{User.count} users created"
   end
+  
+  desc "creates default roles"
+  task :create_default_roles => :environment do
+    Role.create(name:"admin") if Role.where(name:"admin").blank?
+    Role.create(name:"colleague") if Role.where(name:"colleague").blank?
+    p "#{Role.count} roles created"
+  end
+
 
 end

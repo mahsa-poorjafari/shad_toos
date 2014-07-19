@@ -2,6 +2,8 @@ PrepareProject::Application.routes.draw do
 
   
 
+  resources :roles
+
   resources :harams
 
   resources :send_links

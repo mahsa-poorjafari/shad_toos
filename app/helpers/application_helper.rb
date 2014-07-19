@@ -1,10 +1,11 @@
 module ApplicationHelper
-  def is_admin? 
-    session[:admin].present?
+  def is_admin?
+    current_user.try(:is_admin?)
   end
-  def current_user
-    session[:admin]
+  def is_colleague? 
+    current_user.try(:is_colleague?)
   end
+  
   def url_with_protocol(url)
     /^http/.match(url) ? url : "http://#{url}"
   end  
