@@ -36,8 +36,8 @@ header {
 }
 #header-top {
   height:100%;
-  background-image: radial-gradient(circle, #15001C, #1B001C, #3B035C);
-		opacity: .8;
+  background-image: radial-gradient(circle, #3C0101, #2B0200, #4A0004);
+		opacity: .7;
     
 }
 header .language {height:40px; width:100px; 
@@ -78,8 +78,8 @@ width: 100%;
 		right: 0;
 		bottom: 0;
 		left: 0;    
-		background-image: radial-gradient(circle, #3D0C46,#15001C, #1B001C, #3B035C);
-		opacity: .8; 
+		background-image: radial-gradient(circle, #590000, #2B0200, #5C0308);
+		opacity: .7; 
 
 }
 .main #mainmenu {
@@ -609,8 +609,8 @@ width:100%;
 }
 #footer-bottom {
   height:100%;
-  background-image: linear-gradient(to top, #330442, #15001C,  #190022);
-		opacity: .8;
+  background-image: linear-gradient(to top, #5C0308, #450505, #2B0200);
+		opacity: .7;
 }
 footer .footer-menu { width:70%; height:100%; margin-top:-12%; position:absolute;
  margin-right:22%;
@@ -912,6 +912,6 @@ h1.cat-title {
   margin:2%;
 }
 
-form.contact input[type="text"], form.contact input[type="password"], form.contact textarea, .send-msg {background:#13081D; color:#FDFD9F; border: 1px solid #FDFD9F }
+form.contact input[type="text"], form.contact input[type="password"], form.contact textarea, .send-msg {background:#290406; color:#FDFD9F; border: 1px solid #FDFD9F }
 form.contact  .send-msg{ border-radius:5px; padding:2%}
 form.contact  .send-msg:hover{ background:#FDFD9F; color:#13081D; }
