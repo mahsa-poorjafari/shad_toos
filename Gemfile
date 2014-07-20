@@ -16,7 +16,7 @@ gem "nested_form"
 gem "twitter-bootstrap-rails"
 gem 'i18n'
 gem 'devise'
-
+gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
 
 
 group :production do

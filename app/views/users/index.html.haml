@@ -1,31 +1,60 @@
-%h1 Listing users
+%div  
+  %h1= 'لیست همکاران'
 
-%table
-  %tr
-    %th Colleague title
-    %th User name
-    %th Phone
-    %th Mobile
-    %th Address
-    %th Amount remains
-    %th Description
-    %th
-    %th
-    %th
+  %table.table.table-striped{id:"colleague_table"}
+    %thead
+      %tr
+        %th ردیف
+        %th عنوان شرکت
+        %th نام کاربری
+        %th تلفن ثابت
+        %th تلفن همراه
+        %th آدرس
+        %th مبلغ مانده
+        %th سایر توضیحات
+        - if is_admin?
+          %th عملیات
+        
+    %tbody
+      - @users.each_with_index do |user, i|
+        %tr
+          %td= (i+1)
+          %td= user.colleague_title
+          %td= user.user_name
+          %td= user.phone
+          %td= user.mobile
+          %td= user.address
+          %td= user.amount_remains
+          %td= user.description
+          - if is_admin?
+            %td
+              = link_to 'مشاهده', user
+              \|
+              = link_to 'ویرایش', edit_user_path(user)
+              \|
+              = link_to 'حذف', user, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
-  - @users.each do |user|
-    %tr
-      %td= user.colleague_title
-      %td= user.user_name
-      %td= user.phone
-      %td= user.mobile
-      %td= user.address
-      %td= user.amount_remains
-      %td= user.description
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+:coffeescript
+  window.reloadDataTable = ->
+    if !!window.oTable
+      window.oTable.fnDestroy(); 
+    window.oTable = $("#colleague_table").dataTable aoColumnDefs: [
+      bSearchable: false
+      aTargets: [0,8]
+    ,  
+      bSortable: false
+      aTargets: [0,8]
+    ],  oLanguage:
+      sSearch: "جستجو:"
+      sLengthMenu: "نمایش _MENU_ ردیف"
+      sInfo: "جمع ردیفها _TOTAL_ ردیف (_START_ از _END_)"
+      sZeroRecords: "هیچ داده ای وجود ندارد"
+      sInfoEmpty: "هیچ موردی یافت نشد"
+      sInfoFiltered: " - از بین _MAX_ داده موجود"
+      oPaginate:
+        sPrevious: "صفحه قبلی"
+        sNext: "صفحه بعدی"
 
-%br
+  window.reloadDataTable()
 
-= link_to 'New User', new_user_path
+
