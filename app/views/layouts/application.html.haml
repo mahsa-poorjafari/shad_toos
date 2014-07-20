@@ -58,24 +58,25 @@
           - else
             .menu_fa{:class => I18n.locale}
               = render "shared/menu"
-      - if is_admin?
-        %p.instead-slide-for-admin
       
-      - else        
-        .top-vin.set-center.slider-vintage                    
-        .slider 
-          - if @sliders.blank?
-            %p.instead-slide-for-admin
-          - else                   
-            = render "sliders/slider", sliders:@sliders
-          .site-link.reserv
-            .text-box
-              %b= t('reserve')
-         
-          = link_to '/users/sign_in', :class => " site-link login-link" do
-            .text-box              
-              %b= t('login')
-        .bottom-vin.set-center.slider-vintage        
+             
+      .top-vin.set-center.slider-vintage                    
+      .slider 
+        - if is_admin? || @sliders.blank?
+          %p.instead-slide-for-admin
+        - else                   
+          = render "sliders/slider", sliders:@sliders
+          
+        .site-link.reserv
+          .text-box
+            %b= t('reserve') 
+        - if current_user.blank?
+          .site-link.login-link
+            = link_to  user_session_path do
+              .text-box              
+                %b= t('login')
+              
+      .bottom-vin.set-center.slider-vintage        
       .clr-float
       .background         
         .col-sm-11.content.set-center{:class => I18n.locale, :style => "min-height:550px; margin-right: 7%;"}

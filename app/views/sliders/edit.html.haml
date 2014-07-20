@@ -10,6 +10,10 @@
       = f.hidden_field :crop_h
     .clr-float
     %div{:style => "margin:10%;"}
+      .form-group
+        = f.label "بخش مربوطه که می خواهید این اسلاید در آن نمایش داده شود انتخاب کنید.", :class => "col-sm-5 control-label"    
+        %i= 'در صورتی که می خواهید در این اسلاید در صفحه اصلی نمایش داده شود، هیچ بخشی را انتخاب نکنید.'
+        = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش  را انتخاب کنید.')  
       .form-group        
         = f.label "توضیحات به انگلیسی", :class => "control-label"
         = f.text_area :description_en, :class => "form-control"    
@@ -20,7 +24,8 @@
         
       .form-group        
         = f.label "توضیحات به عربی", :class => "control-label"
-        = f.text_area :description_ar, :class => "form-control"       
+        = f.text_area :description_ar, :class => "form-control"  
+      
       .form-group
         = f.submit 'ثبت', :class => "btn btn-default"
       .clr-float  

@@ -4,10 +4,14 @@
       %ul
         - @slider.errors.each do |attr, msg|
           %li= msg
-
+  
   .form-group
     .s-upload-img
       = f.file_field :image, :id => "slide_img"    
+  .form-group
+    = f.label "بخش مربوطه که می خواهید این اسلاید در آن نمایش داده شود انتخاب کنید.", :class => "col-sm-5 control-label"    
+    %i= 'در صورتی که می خواهید در این اسلاید در صفحه اصلی نمایش داده شود، هیچ بخشی را انتخاب نکنید.'
+    = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش  را انتخاب کنید.')  
   .form-group    
     = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"    
     = f.text_area :description_en, :id => "slide_des", :class => "form-control"
@@ -15,7 +19,8 @@
     = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"    
     = f.text_area :description_fa, :id => "slide_des", :class => "form-control"
   .form-group
-    = f.label "بخش مربوطه", :class => "col-sm-5 control-label"    
-    = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش  را انتخاب کنید.')  
+    = f.label "توضیحات به عربی", :class => "col-sm-5 control-label"    
+    = f.text_area :description_ar, :id => "slide_des", :class => "form-control"
+  
   .form-group
     = f.submit 'ثبت تصویر', :class => "btn btn-default"

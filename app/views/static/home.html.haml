@@ -6,7 +6,7 @@
       = link_to 'ویرایش', edit_page_path(@about_us)
   .about-us
     = image_tag 'befor.png'    
-    %h2= 'درباره شادتوس'        
+    %h2= t('about-shadtoos')      
     .show-about-text
       = raw @about_us.html_text      
     .more{:style => "margin-top:5%"}
@@ -43,13 +43,13 @@
                 = link_to t('more'), activity
             .clr-float
 .col-sm-12
-  .col-sm-6  
+  .col-sm-4  
     %p= @contact_us.html_text
     %div
       = render 'shared/msg_form'
     
     
-  .col-sm-6
+  .col-sm-8
     %div{:style => "border:#F1F164 1px solid; height:200px"}
 
 :javascript

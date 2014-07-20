@@ -4,9 +4,15 @@
       %ul
         - @page.errors.each do |attr, msg|
           %li= msg
-  .form-group   
-    = f.label "تصویر موردنظر برای نمایش در زیر منوی ارتباط", :class => "control-label"
-    = f.file_field :image
+  .form-group      
+    
+    - if @page.present?
+      .col-sm-4
+        = image_tag @page.image(:small)
+    .col-sm-5
+      = f.label "تصویر موردنظر برای نمایش در زیر منوی ارتباط", :class => "control-label"    
+      = f.file_field :image
+    .clr-float
   .form-group   
     = f.label "عنوان صفحه به فارسی", :class => "control-label"
     = @page.title_fa

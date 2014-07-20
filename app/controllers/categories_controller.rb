@@ -78,6 +78,6 @@ class CategoriesController < ApplicationController
 
     def load_slides
       @sliders = @category.sliders
-      #TODO use current categories slides and if it's nill then do somthing for it
+      
     end
 end

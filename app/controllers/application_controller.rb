@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   
   protected
     def check_autentication
-      redirect_to :root unless session[:admin].present?
+      redirect_to :root unless current_user.role_id == 1
     end
     def default_url_options
       { :locale => I18n.locale }

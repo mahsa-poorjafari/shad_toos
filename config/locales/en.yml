@@ -49,6 +49,8 @@ en:
   signin: 'Sign In'
   signup: 'Sign Up'
   session: Session
+  activity: Activities
+  about-shadtoos: About ShadToos
   
   statistics: 'Site Statistics'
   visit_site: "Read the site"
