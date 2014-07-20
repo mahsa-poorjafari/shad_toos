@@ -215,7 +215,7 @@ text-align:center;
 .main #mainmenu  .submenu .submenu-item b{height:15px;}
 .main #mainmenu  .submenu .submenu-item:hover a{color:#FFA500; cursor:pointer}
 
-.background {margin-top:5%}
+.background {}
 .AccordionBox ul { overflow: hidden;
     list-style: none;
     margin: 0;
@@ -478,7 +478,9 @@ span.Necessary {color:#F33535}
 
 .pro_wrapper .line b {color:#4D4D4D; margin-top:10px; }
 .line {width:100%;  text-align:center; }
-.slider {z-index:10}
+.slider {z-index:10;
+  
+}
 
 
 .slider  .cycle-overlay {
@@ -798,7 +800,9 @@ color:#1a1a1a;
 .see-more:hover .border-see-more a {color:#1a1a1a}
 .slide-haram ul {list-style:none; margin:1%; text-align:center; margin:0; padding:0;}
 .slide-haram ul li{list-style:none; margin:1%; width:90%}
-p.instead-slide-for-admin {color:#fff; background:#4D4D4D; text-align: center;
+p.instead-slide-for-admin {
+  color:#fff;background-image:url('slider-bg.jpg');
+  background-size:cover; text-align: center;
 font-size: large;
 height: 440px;
 padding: 13%;}
@@ -931,3 +935,4 @@ h1.cat-title {
 form.contact input[type="text"], form.contact input[type="password"], form.contact textarea, .send-msg {background:#290406; color:#FDFD9F; border: 1px solid #FDFD9F }
 form.contact  .send-msg{ border-radius:5px; padding:2%}
 form.contact  .send-msg:hover{ background:#FDFD9F; color:#13081D; }
+.set-bottom-space {height: 50px; position: relative}

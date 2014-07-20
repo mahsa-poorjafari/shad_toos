@@ -59,12 +59,15 @@
             .menu_fa{:class => I18n.locale}
               = render "shared/menu"
       - if is_admin?
-        %p.instead-slide-for-admin= 'اسلایدر در این مکان قرار می گیرد'
-      - else
-        .top-vin.set-center.slider-vintage       
-             
-        .slider          
-          = render "sliders/slider", sliders:@sliders
+        %p.instead-slide-for-admin
+      
+      - else        
+        .top-vin.set-center.slider-vintage                    
+        .slider 
+          - if @sliders.blank?
+            %p.instead-slide-for-admin
+          - else                   
+            = render "sliders/slider", sliders:@sliders
           .site-link.reserv
             .text-box
               %b= t('reserve')
