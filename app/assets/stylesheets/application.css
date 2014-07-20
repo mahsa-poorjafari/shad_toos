@@ -38,7 +38,7 @@ header {
 #header-top {
   height:100%;
   background-image: radial-gradient(circle, #3C0101, #2B0200, #4A0004);
-		opacity: .7;
+		opacity: .65;
     
 }
 header .language {height:40px; width:100px; 
@@ -80,7 +80,7 @@ width: 100%;
 		bottom: 0;
 		left: 0;    
 		background-image: radial-gradient(circle, #590000, #2B0200, #5C0308);
-		opacity: .7; 
+		opacity: .65; 
 
 }
 .main #mainmenu {
