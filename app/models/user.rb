@@ -3,11 +3,14 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:user_name]
          
          
   belongs_to :role
   before_save :set_role
+  def email_required?
+    false
+  end
          
   def is_admin?
     self.role_id == 1

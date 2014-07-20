@@ -5446,10 +5446,10 @@ button.close {
   opacity: .5;
 }
 .carousel-control.left {
-  
+  left:1%;
 }
 .carousel-control.right {
-  right: 0;
+  right: 3%;
   left: auto;
   
 }

@@ -97,7 +97,7 @@ width: 100%;
 }
 
 .main  .top-vin {background-image:url('top-slide.png');
-  margin-top:1%;
+  margin-top:.5%;
 }
 .main .slider-vintage {
   text-align:center;
@@ -114,8 +114,8 @@ width: 100%;
 
 
 .main #mainmenu  ul {list-style:none;
-  min-width:50%;
-  max-width:50%;  
+  min-width:80%;
+  max-width:80%;  
   margin-right:auto;
   margin-left:auto;
   text-align:center;
@@ -471,7 +471,7 @@ span.Necessary {color:#F33535}
 
 .pro_wrapper .line b {color:#4D4D4D; margin-top:10px; }
 .line {width:100%;  text-align:center; }
-.slider {height:40%; margin-top: 6%; z-index:10}
+.slider {height:400px;z-index:10}
 
 
 .slider  .cycle-overlay {
@@ -506,7 +506,8 @@ filter:alpha(opacity=80); /* For IE8 and earlier */}
   position: absolute;}
 .content-holder{ max-height: 540px; overflow: hidden;}
 .category-image{max-height: 300px; min-height:300px}
-.carousel-control img {margin-top: 200px}
+.carousel-control img {margin-top: 150px}
+
 table.table  tr {text-align:right;}
 table.table  tr th {max-width: 120px; text-align:right}
 table.table  tr th.count {width: 50px;}
@@ -725,7 +726,8 @@ background: -ms-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,r
 background: linear-gradient(to bottom,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
  border-radius:5px; color:#fff;
- width:22%;
+ width:100px;
+ position:absolute;
  height:20px;
  padding:1%;
  text-align:center;
@@ -797,8 +799,8 @@ ul.slider-boxes {
   position:absolute;
 }
 li.slider-text-box { 
-  min-width:8%;
-  max-width:8%;
+  min-width:10%;
+  max-width:10%;
   float:left;  
   height:90px; 
   text-align:center;

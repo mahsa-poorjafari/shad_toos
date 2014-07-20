@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       AdminMailer.send_user_mail.deliver      
-      flash[:notice] = 'کاربر گرامی پیام شما ارسال گردید.'
+      flash[:SendMsg] = 'کاربر گرامی پیام شما ارسال گردید.'
     end
     redirect_to :back
   end

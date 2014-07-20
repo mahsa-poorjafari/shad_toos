@@ -1,4 +1,5 @@
 -unless sliders.blank?
+  .top-vin.set-center.slider-vintage       
   .hero-unit
     #slider-carousel.carousel.slide
       .carousel-inner
@@ -33,9 +34,8 @@
           = image_tag 'next-icon.png'
         = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
           = image_tag 'prev-icon.png'      
-:javascript
-  
- 
+  .bottom-vin.set-center.slider-vintage        
+:javascript 
   $("#slider-carousel .item").first().addClass("active");
   $("#slider-carousel .slide-indicator").first().addClass("active");
   $('.carousel').carousel();

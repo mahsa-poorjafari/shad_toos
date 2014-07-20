@@ -9,4 +9,4 @@
   %p= link_to 'مدیریت صفحات متنی', Page  
   %p= link_to 'مشاهده ارسال لینکها', SendLink
   %p= link_to 'پروفایل مدیر', edit_user_path(current_user)
-  %p= link_to 'خروج', delete_session_path
+  %p= link_to "خروج", destroy_user_session_path, :method => :delete

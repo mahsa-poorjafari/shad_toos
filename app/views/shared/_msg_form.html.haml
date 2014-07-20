@@ -6,8 +6,8 @@
         - @message.errors.each do |attr, msg|
           %li= msg 
       
-  -if flash[:notice]        
-    .alert.alert-success= notice
+  -if flash[:SendMsg]        
+    .alert.alert-success= flash[:SendMsg]
       
   
   .form-group
