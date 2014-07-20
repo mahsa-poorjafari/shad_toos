@@ -83,24 +83,23 @@ width: 100%;
 
 }
 .main #mainmenu {
- 
+  width: 100%;
   height:60px;
   padding-top:1.1%;
-  position:relative;
+  position:absolute;
   z-index:100;
-  margin-top:-10%;  
+  top:-8%;  
   border-radius:2em;
   background-image:url('MENU.png');
   background-repeat:no-repeat;
   background-position:center; 
-  margin-bottom:3%;
+  
 }
 
 .main  .top-vin {background-image:url('top-slide.png');
-  margin-top:.5%;
+ top:-1.5%;
 }
-.main .slider-vintage {
-  text-align:center;
+.main .slider-vintage {  
   background-repeat:no-repeat;
   background-position:center; 
   width:100%; 
@@ -116,6 +115,7 @@ width: 100%;
 .main #mainmenu  ul {list-style:none;
   min-width:80%;
   max-width:80%;  
+  
   margin-right:auto;
   margin-left:auto;
   text-align:center;
@@ -240,7 +240,7 @@ text-align:center;
   transition: all .5s ease;
 }
 .AccordionBox ul li img.sample-image {height:370px; }
-.AccordionBox ul li.active {width:420px}
+.AccordionBox ul li.active {width:55%}
 .AccordionBox ul li .cat-title {margin-top:-75%; 
   height:40%;
  background:#1A1A1A; opacity:.7; 
@@ -287,7 +287,9 @@ text-align:center;
  .haram-description {background:#1A1A1A; opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */
   color:#fff;
-  margin-top:-13%;
+  position: absolute;
+  top:77%;
+  width: 100%;
   padding:4%;  
   height:50px;
   }
@@ -612,13 +614,14 @@ width:100%;
   height:100%;
   background-image: linear-gradient(to top, #5C0308, #450505, #2B0200);
 		opacity: .7;
+    position: relative;
 }
-footer .footer-menu { width:70%; height:100%; margin-top:-12%; position:absolute;
- margin-right:22%;
- margin-left:22%;
+footer .footer-menu { width:70%; height:100%; top:0; position:absolute;
+right:20%;
+left:20%;
  
  }
-footer .footer-menu ul.total{width:90%; list-style:none;}
+footer .footer-menu ul.total{width:100%; list-style:none; margin-top: 2%;}
 footer .footer-menu ul.total li{width:30%; float:right}
 footer .footer-menu ul.total li ul{width:100%; list-style:none;}
 footer .footer-menu ul.total li ul li{width:100%; margin:5px}
@@ -707,7 +710,7 @@ border:2px solid #4D4D4D;
 }
 .show-room img.border-top-left{float:left}
 
-.about-us { height:400px; overflow:hidden; text-align:center;}
+.about-us { height:415px; overflow:hidden; text-align:center;}
 .about-us img{width:90%}
 .about-us .show-about-text{
   min-height:220px;
@@ -715,7 +718,7 @@ border:2px solid #4D4D4D;
   overflow:hidden;
   line-height:1em;
 }
-.about-us h2{ padding-right:10%;}
+.about-us h2{}
 a.admin-access:hover .admin-edit-del {color:#FFA500}
 .admin-edit-del-small {background: rgb(169,3,41); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
