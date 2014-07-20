@@ -97,19 +97,22 @@ width: 100%;
 }
 
 .main  .top-vin {background-image:url('top-slide.png');
- top:-1.5%;
+ top:-1.5%; height:85px; 
 }
 .main .slider-vintage {  
   background-repeat:no-repeat;
   background-position:center; 
   width:100%; 
-  height:85px; 
+ 
   text-align:center; 
   position:absolute; 
   z-index:85;
   }
  
-.main  .bottom-vin {background-image:url('bottom-slider.png');  margin-top:-4.5%; }
+.main  .bottom-vin {background-image:url('bottom-slider.png');
+margin-top: -.5%; 
+ height:30px; 
+}
 
 
 .main #mainmenu  ul {list-style:none;
@@ -282,13 +285,15 @@ text-align:center;
 .haram-pic{
   position: relative;
   width:30%; 
-  float:right; border:#332B2B 2px solid; border-radius:2px; height:300px; padding:2px; margin:10px; overflow:hidden}
+  float:right;  
+   border:#332B2B 2px solid; border-radius:2px; height:240px;
+    padding:2px; margin:10px; overflow:hidden}
 .haram-pic .haram-box{width:95%; max-height:95%; min-height:95%; overflow:hidden}
  .haram-description {background:#1A1A1A; opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */
   color:#fff;
   position: absolute;
-  top:77%;
+  bottom:0;
   width: 100%;
   padding:4%;  
   height:50px;
@@ -473,7 +478,7 @@ span.Necessary {color:#F33535}
 
 .pro_wrapper .line b {color:#4D4D4D; margin-top:10px; }
 .line {width:100%;  text-align:center; }
-.slider {height:400px;z-index:10}
+.slider {z-index:10}
 
 
 .slider  .cycle-overlay {
@@ -508,7 +513,13 @@ filter:alpha(opacity=80); /* For IE8 and earlier */}
   position: absolute;}
 .content-holder{ max-height: 540px; overflow: hidden;}
 .category-image{max-height: 300px; min-height:300px}
-.carousel-control img {margin-top: 150px}
+.carousel-control img {
+position: absolute;
+
+right: 0%;
+left: 0;
+top: 30%;
+}
 
 table.table  tr {text-align:right;}
 table.table  tr th {max-width: 120px; text-align:right}

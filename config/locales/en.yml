@@ -48,6 +48,7 @@ en:
   login: Login
   signin: 'Sign In'
   signup: 'Sign Up'
+  session: Session
   
   statistics: 'Site Statistics'
   visit_site: "Read the site"
