@@ -25,10 +25,11 @@
             
             %td
               = link_to 'مشاهده', amount_remain
-              \|
-              = link_to 'ویرایش', edit_amount_remain_path(amount_remain)
-              \|
-              = link_to 'حذف', amount_remain, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+              - if is_admin?
+                \|
+                = link_to 'ویرایش', edit_amount_remain_path(amount_remain)
+                \|
+                = link_to 'حذف', amount_remain, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
   - else
     .alert.alert-warning= 'موردی وارد نشده است.'
     

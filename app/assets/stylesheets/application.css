@@ -605,11 +605,11 @@ z-index:150;
 position:fixed;
  }
 .admin_menu {min-width:30%; max-width:30%;}
-.colleague_menu {min-width:10%; max-width:10%;}
+.colleague_menu {min-width:20%; max-width:20%;}
 .colleague_menu:hover {height:150px;cursor:pointer;}
 .login_menu a {color:#FFA500; }
 .login_menu a:hover {color:#1A1A1A; text-shadow: 1px 1px 1px #000, 3px 3px 5px #F92323; }
-.admin_menu:hover {height:220px;cursor:pointer;}  
+.admin_menu:hover {height:260px;cursor:pointer;}  
 .login_menu h3 {text-align:center}
 .go-up {margin-top:-75px; z-index:10; width:90%; text-align:center; color:#4d4d4d; font-weight:bold; margin-bottom:75px}
 .cat-link { bottom:0}
