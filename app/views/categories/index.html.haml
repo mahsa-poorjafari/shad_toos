@@ -19,7 +19,7 @@
             = link_to category do
               = image_tag category.image(:original), :class => "sample-image"        
               .cat-title
-                .col-sm-3= image_tag category.font_image(:small)              
+                .col-sm-3= category.title
                 %p.col-sm-8= category.description
         
 :javascript

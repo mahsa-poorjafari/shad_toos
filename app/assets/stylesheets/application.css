@@ -124,8 +124,7 @@ margin-top: -.5%;
   margin-left:auto;
   text-align:center;
   padding-top:5px}
-.main #mainmenu  ul li{display:inline; min-width:150px; padding:5px;
-  
+.main #mainmenu  ul li{display:inline; min-width:150px; padding:5px;  
   font-size:15px;font-weight:bold;
   margin:10px;
   -webkit-transition: all .5s ease;
@@ -739,7 +738,7 @@ border:2px solid #4D4D4D;
   overflow:hidden;
   line-height:1em;
 }
-.about-us h2{}
+.about-us h2{font-family:'IranNastaligh'; font-size:3em }
 a.admin-access:hover .admin-edit-del {color:#FFA500}
 .admin-edit-del-small {background: rgb(169,3,41); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
