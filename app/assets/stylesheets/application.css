@@ -251,10 +251,14 @@ text-align:center;
   filter:alpha(opacity=70); /* For IE8 and earlier */
   transition: all 0.5s ease;
 }
+.AccordionBox ul li .cat-title .font-style {font-family:'IranNastaligh'; font-size:3em}
 .AccordionBox ul li .cat-title p {
   padding:1%;
-  margin:4%;
+  height:20px;
+  overflow:hidden;
+  line-height:15px;
   }
+.AccordionBox ul li a {color:#fff}
 .AccordionBox ul li.active .cat-title { margin-top:-30%}
 /* style for actitviteis*/
 

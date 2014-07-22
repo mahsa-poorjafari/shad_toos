@@ -61,10 +61,9 @@
           .text-box
             %b= t('reserve') 
         - if current_user.blank?
-          .site-link.login-link
-            = link_to  user_session_path do
-              .text-box              
-                %b= t('login')
+          = link_to  user_session_path , :class => "site-link login-link" do            
+            .text-box              
+              %b= t('login')
               
       .bottom-vin.set-center.slider-vintage        
       .clr-float
