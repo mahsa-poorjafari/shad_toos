@@ -199,7 +199,7 @@ text-align:center;
   max-height:470px;    
   
 }
-
+.AccordionBox .font-style {}
 .main #mainmenu  .submenu {
   background:#1A1A1A;
   opacity:.8; 
@@ -523,7 +523,7 @@ right: 0%;
 left: 0;
 top: 30%;
 }
-
+table.table {margin-top:5%}
 table.table  tr {text-align:right;}
 table.table  tr th {max-width: 120px; text-align:right}
 table.table  tr th.count {width: 50px;}
@@ -609,7 +609,7 @@ position:fixed;
 .colleague_menu:hover {height:150px;cursor:pointer;}
 .login_menu a {color:#FFA500; }
 .login_menu a:hover {color:#1A1A1A; text-shadow: 1px 1px 1px #000, 3px 3px 5px #F92323; }
-.admin_menu:hover {height:200px;cursor:pointer;}  
+.admin_menu:hover {height:220px;cursor:pointer;}  
 .login_menu h3 {text-align:center}
 .go-up {margin-top:-75px; z-index:10; width:90%; text-align:center; color:#4d4d4d; font-weight:bold; margin-bottom:75px}
 .cat-link { bottom:0}
@@ -944,8 +944,13 @@ form.contact .form-group .form-control{width:100%}
 .show-colleague   p{ font-size:1.5em; line-height:1.5em;}
 .show-colleague   h2{border-bottom:1px dotted #FBFBAD}
 .dataTables_wrapper label{color:#F6F67D;}
-
-#colleague_table tr{background:#fff;}
-#colleague_table td{color:#240000;}
-#colleague_table th{background:#240000;}
-#colleague_table a{color:#240000;}
+.dataTables_wrapper select{color:#3A0303;}
+.dataTables_wrapper input{color:#3A0303; height:30px; width:200px}
+.dataTables_wrapper {margin-top:5%}
+.dataTables_wrapper tr.first{background:#1A0000;}
+.dataTables_wrapper tr{background:#310808;}
+.dataTables_wrapper td{color:#240000;}
+.dataTables_wrapper th{background:#240000;}
+.dataTables_wrapper a{color:#240000;}
+.title-page {margin-bottom:5%;}
+.show-amount-remain {font-size:1.5em}

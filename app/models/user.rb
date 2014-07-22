@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          
   belongs_to :role
   before_save :set_role
+  has_many :amount_remains
   def email_required?
     false
   end

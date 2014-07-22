@@ -2,13 +2,20 @@ PrepareProject::Application.routes.draw do
 
   
 
+  resources :amount_remains
+
   resources :roles
 
   resources :harams
 
   resources :send_links
   devise_for :users
-  resources :users
+  resources :users do 
+    collection do 
+      post "create_colleague" => "users#create"
+    end
+  end
+  
 
 scope "(:locale)", :locale => /en|fa|ar/ do  resources :resellers
  

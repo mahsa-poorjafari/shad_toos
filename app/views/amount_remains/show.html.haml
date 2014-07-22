@@ -1,0 +1,23 @@
+.show-amount-remain
+  -if notice        
+    .alert.alert-success= notice
+  %p
+    %b نام کاربر:
+    = @amount_remain.user.user_name
+  %p
+    %b نام شرکت:
+    = @amount_remain.user.colleague_title
+  %p
+    %b تاریخ ثبت :
+    = @amount_remain.created_at
+  %p
+    %b مبلغ مانده:
+    = @amount_remain.amount
+  
+  %p
+    %b سایر توضیحات
+    = @amount_remain.description
+  - if is_admin?
+    = link_to 'مشاهده', edit_amount_remain_path(@amount_remain)
+    \|
+    = link_to 'بازگشت', :back

@@ -1,0 +1,59 @@
+%div
+  .title
+    %h1 لیست مبالغ مانده حساب ها
+    -if is_admin?    
+      = link_to  new_amount_remain_path , :class => "admin-access" do
+        .admin-edit-del
+          %i=  'ثبت مانده حساب جدید'
+    .clr-float
+  - if @amount_remains.present?
+    %table.table.table-striped{id:"amount_table"}
+      %thead
+        %tr.first
+          %th ردیف
+          %th نام کاربر
+          %th مبلغ مانده
+          %th توضیحات
+          %th عملیات
+      %tbody
+        - @amount_remains.each_with_index do |amount_remain, i|
+          %tr
+            %td= (i+1)          
+            %td= amount_remain.user.user_name
+            %td= amount_remain.amount
+            %td= amount_remain.description
+            
+            %td
+              = link_to 'مشاهده', amount_remain
+              \|
+              = link_to 'ویرایش', edit_amount_remain_path(amount_remain)
+              \|
+              = link_to 'حذف', amount_remain, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+  - else
+    .alert.alert-warning= 'موردی وارد نشده است.'
+    
+:coffeescript
+  window.reloadDataTable = ->
+    if !!window.oTable
+      window.oTable.fnDestroy(); 
+    window.oTable = $("#amount_table").dataTable aoColumnDefs: [
+      bSearchable: false
+      aTargets: [0,4]
+    ,  
+      bSortable: false
+      aTargets: [0,4]
+    ],  oLanguage:
+      sSearch: "جستجو:"
+      sLengthMenu: "نمایش _MENU_ ردیف"
+      sInfo: "جمع ردیفها _TOTAL_ ردیف (_START_ از _END_)"
+      sZeroRecords: "هیچ داده ای وجود ندارد"
+      sInfoEmpty: "هیچ موردی یافت نشد"
+      sInfoFiltered: " - از بین _MAX_ داده موجود"
+      oPaginate:
+        sPrevious: "صفحه قبلی"
+        sNext: "صفحه بعدی"
+
+  window.reloadDataTable()
+  
+
+  

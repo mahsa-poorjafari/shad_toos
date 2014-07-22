@@ -40,6 +40,9 @@ en:
   send-msg: "Leave a Message"
   send-mail: "Email This Link To a Friend"
   
+  user_name: User Name
+  password: Password
+  
   more: More
   shopping: Shopping Center
   hotel: Hotel

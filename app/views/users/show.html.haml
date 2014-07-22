@@ -22,14 +22,21 @@
   .col-sm-6
     %h2= 'اطلاعات مالی '
     %p
-      %b مبلغ مانده:
-      = @user.amount_remains
+      %h4= 'آخرین صورت حساب'
+      - if @user.amount_remains.present?
+        %b مبلغ مانده:
+        = @user.amount_remains.last.amount
+        %br
+        %b تاریخ صورت حساب:
+        = @user.amount_remains.last.created_at
+      - else
+        %b موردی وارد نشده است.
     %p
       %b سایر توضیحات:
       = @user.description
   .col-sm-12
     - if @user.id == current_user.id || is_admin?
       .admin-edit-del
-        = link_to 'ویرایش', edit_user_path(@user)
-        \|
-        = link_to 'بازگشت', users_path
+        = link_to 'ویرایش اطلاعات کاربری', edit_user_path(@user)
+        
+    = link_to 'بازگشت', users_path

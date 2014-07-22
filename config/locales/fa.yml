@@ -19,6 +19,9 @@ fa:
   messages: "پیام ها"
   downloads: "دانلودها"
   
+  user_name: 'نام کاربری:'
+  password: 'رمزعبور:'
+  
   more: 'جزئیات بیشتر'
   shopping: 'مرکز خرید'
   hotel: 'هتل'

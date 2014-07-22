@@ -3,14 +3,14 @@
 
   %table.table.table-striped{id:"colleague_table"}
     %thead
-      %tr
+      %tr.first
         %th ردیف
         %th عنوان شرکت
         %th نام کاربری
         %th تلفن ثابت
         %th تلفن همراه
         %th آدرس
-        %th مبلغ مانده
+        %th آخرین صورت حساب
         %th سایر توضیحات
         - if is_admin?
           %th عملیات
@@ -23,8 +23,10 @@
           %td= user.user_name
           %td= user.phone
           %td= user.mobile
-          %td= user.address
-          %td= user.amount_remains
+          %td= user.address          
+          %td
+            - if user.amount_remains.present?
+              = user.amount_remains.last.amount
           %td= user.description
           - if is_admin?
             %td
