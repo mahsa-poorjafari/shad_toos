@@ -29,7 +29,7 @@
 header {
 	position: relative;
 	width: 100%;
-	height: 400px;
+	height: 350px;
 	left: 0;
 	top: 0;
 	z-index: 15;  
@@ -266,11 +266,20 @@ text-align:center;
 .new-box  .activities {
   width:200%;  
   margin-left:1%; 
+  margin-right:4%; 
   overflow:hidden; 
   min-height:300px;  
   color:#fff; 
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   max-height:300px}
-.new-box  .activities ul.slides {list-style:none; width:60%; overflow:hidden; height:300px;}
+.new-box  img.control-act{position:absolute; top:25%; opacity: .8}
+.new-box  img.control-act:hover{ opacity: 1; cursor:pointer}
+.new-box  img#next {right:0}
+.new-box  img#prev {left:0}
+.new-box  .activities ul.slides {list-style:none; width:730px; overflow:hidden; height:300px; }
 .new-box  .activities ul.slides li{float:right; width:30%; padding:.5%; height:100%;
   text-align:center;
   -webkit-transition: all 1s ease;

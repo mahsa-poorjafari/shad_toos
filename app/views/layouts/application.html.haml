@@ -30,14 +30,7 @@
           #logo.set-center
             = image_tag 'logo2.png'
             
-      - if is_admin?
-        .admin_menu.login_menu
-          %h3= 'منوی مدیرسایت'
-          = render 'shared/admin_menu'
-      - elsif is_colleague?
-        .colleague_menu.login_menu
-          %h3= 'منوی همکاران'
-          = render 'shared/colleague_menu'
+      
         
     .main       
       #mainmenu.set-center
@@ -70,7 +63,14 @@
       .background         
         .col-sm-11.content.set-center{:class => I18n.locale, :style => "min-height:550px; margin-right: 7%;"}
           = yield
-      
+      - if is_admin?
+        .admin_menu.login_menu
+          %h3= 'منوی مدیرسایت'
+          = render 'shared/admin_menu'
+      - elsif is_colleague?
+        .colleague_menu.login_menu
+          %h3= 'منوی همکاران'
+          = render 'shared/colleague_menu'
       .clr-float
     %footer{:class => I18n.locale}
       #footer-bottom 

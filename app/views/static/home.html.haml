@@ -30,7 +30,7 @@
     = render 'harams/slider_haram'
   
     
-  .new-box.col-sm-8
+  .new-box.col-sm-8   
     .activities
       %ul.slides
         - @activities.each do |activity|
@@ -42,6 +42,8 @@
               .inside-border
                 = link_to t('more'), activity
             .clr-float
+    = image_tag 'btn_next.gif', :class => "control-act", :id => "next"
+    = image_tag 'btn_prev.gif', :class => "control-act", :id => "prev"
 .col-sm-12
   .col-sm-4  
     %p= @contact_us.html_text
@@ -62,8 +64,20 @@
   $('.AccordionBox ul li').mouseout(function(){
     window.DisableAccordionBox = false;
   });
-
-
+  
+  
+  var Active = $('.activities');
+  
+  
+  $("img#next").click(function(){    
+    Active.css({"margin-right": "-=250px"});  
+    
+  });
+  
+  $("img#prev").click(function(){    
+    Active.css({"margin-right": "+=250px"});  
+    
+  });
 
  
   
