@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require ckeditor-jquery
-
 //= require colorbox-rails
 //= require jquery_nested_form
 //= require dataTables/jquery.dataTables
