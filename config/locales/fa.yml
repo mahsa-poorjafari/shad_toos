@@ -22,6 +22,10 @@ fa:
   user_name: 'نام کاربری:'
   password: 'رمزعبور:'
   
+  
+  pro-titr: 'محصولات'
+  subpro-titr: 'غرفه'
+  
   more: 'جزئیات بیشتر'
   shopping: 'مرکز خرید'
   hotel: 'هتل'

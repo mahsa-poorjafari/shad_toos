@@ -4,6 +4,11 @@
     %title 
       = t("shadtoos") 
       = ',' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
+      
+    %link{href: "http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css", rel: "stylesheet"}/
+    %link{href: "http://fonts.googleapis.com/css?family=Amaranth:400,700", rel: "stylesheet", type: "text/css"}/    
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'

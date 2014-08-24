@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722063318) do
+ActiveRecord::Schema.define(version: 20140824080441) do
 
   create_table "activities", force: true do |t|
     t.string   "title_fa"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140722063318) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "admin_description"
   end
 
   create_table "categories", force: true do |t|
@@ -49,10 +50,6 @@ ActiveRecord::Schema.define(version: 20140722063318) do
     t.text     "description_en"
     t.string   "title_ar"
     t.text     "description_ar"
-    t.string   "font_image_file_name"
-    t.string   "font_image_content_type"
-    t.integer  "font_image_file_size"
-    t.datetime "font_image_updated_at"
     t.string   "slider_box_file_name"
     t.string   "slider_box_content_type"
     t.integer  "slider_box_file_size"
@@ -123,6 +120,7 @@ ActiveRecord::Schema.define(version: 20140722063318) do
     t.text     "description_fa"
     t.string   "title_ar"
     t.text     "description_ar"
+    t.integer  "sub_group_id"
   end
 
   create_table "roles", force: true do |t|
@@ -152,6 +150,22 @@ ActiveRecord::Schema.define(version: 20140722063318) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
     t.string   "description_ar"
+  end
+
+  create_table "sub_groups", force: true do |t|
+    t.string   "title_en"
+    t.string   "title_fa"
+    t.string   "title_ar"
+    t.string   "description_en"
+    t.string   "description_fa"
+    t.string   "description_ar"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: true do |t|

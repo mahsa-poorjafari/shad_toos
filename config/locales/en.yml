@@ -43,6 +43,9 @@ en:
   user_name: User Name
   password: Password
   
+  pro-titr: 'products'
+  subpro-titr: 'booth'  
+  
   more: More
   shopping: Shopping Center
   hotel: Hotel

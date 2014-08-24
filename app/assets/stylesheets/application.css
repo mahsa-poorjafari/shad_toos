@@ -264,7 +264,7 @@ text-align:center;
 .show {margin-right:-40%;}
 .new-box {width:100%; padding:10px; border-top:#BFBFBF; border-bottom:#BFBFBF; overflow:hidden;}
 .new-box  .activities {
-  width:200%;  
+  
   margin-left:1%; 
   margin-right:4%; 
   overflow:hidden; 
@@ -535,9 +535,11 @@ right: 0%;
 left: 0;
 top: 30%;
 }
-table.table {margin-top:5%}
-table.table  tr {text-align:right;}
-table.table  tr th {max-width: 120px; text-align:right}
+table.table {margin-top:5%; direction:rtl}
+table.table  tr {text-align:right; }
+table.table  tr th {max-width: 120px; text-align:right; }
+table.table  tr td {max-width: 120px; text-align:right}
+table.table  tr td a:hover {color:#BD0404;}
 table.table  tr th.count {width: 50px;}
 table.table tr.visited {font-weight:bold}
 .footer-admin {
@@ -666,8 +668,8 @@ footer .footer-admin {float:right; width:30%; height:100px}
 }
 .show-item img.resize-img {
   border-radius:5px;
-  width:100%;
-  height:50%;
+  width:200px;
+  height:200px;
   border:2px solid #4D4D4D;
   padding:2%;
   -moz-box-shadow:    3px 3px 15px 0px #444;
@@ -744,8 +746,11 @@ border:2px solid #4D4D4D;
 .about-us .show-about-text{
   min-height:220px;
   max-height:220px;
+  text-align:justify;
   overflow:hidden;
-  line-height:1em;
+  line-height:2em;
+  font-size:14px;  
+  
 }
 .about-us h2{font-family:'IranNastaligh'; font-size:3em }
 a.admin-access:hover .admin-edit-del {color:#FFA500}
@@ -760,7 +765,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', end
  border-radius:5px; color:#fff;
  width:100px;
  position:absolute;
- height:20px;
+ height:40px;
  padding:1%;
  text-align:center;
  font-size:1em;}
@@ -953,6 +958,7 @@ form.contact  .send-msg{ border-radius:5px; padding:2%}
 form.contact  .send-msg:hover{ background:#FDFD9F; color:#13081D; }
 .set-bottom-space {height: 50px; position: relative}
 form.contact .form-group .form-control{width:100%}
+.form-group input[type="text"], .form-group input[type="password"]{height:40px}
 .show-colleague   p{ font-size:1.5em; line-height:1.5em;}
 .show-colleague   h2{border-bottom:1px dotted #FBFBAD}
 .dataTables_wrapper label{color:#F6F67D;}
@@ -966,3 +972,7 @@ form.contact .form-group .form-control{width:100%}
 .dataTables_wrapper a{color:#240000;}
 .title-page {margin-bottom:5%;}
 .show-amount-remain {font-size:1.5em}
+
+.category-show-description {height: 100px; overflow: hidden}
+/* sub_group style */
+.sub_group_title {text-align:center}

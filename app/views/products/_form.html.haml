@@ -4,10 +4,21 @@
       %ul
         - @product.errors.each do |attr, msg|
           %li= msg
-  .col-sm-6
+  .col-sm-7
     .form-group 
       = f.label "بخش مربوطه" , :class => "col-sm-4 control-label"      
-      = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش را انتخاب کنید.')        
+      - if @category.present?
+        %h3= @category.title
+        = f.hidden_field :category_id, :value => @category.id
+      - else
+        = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش را انتخاب کنید.')        
+    .form-group 
+      = f.label "زیرگروه مربوطه" , :class => "col-sm-4 control-label"      
+      - if @sub_group.present?
+        %h3= @sub_group.title
+        = f.hidden_field :sub_group_id, :value => @sub_group.id
+      - else
+        = f.select(:sub_group_id, SubGroup.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' زیرگروه را انتخاب کنید.')        
     .form-group  
       = f.label "عنوان به فارسی:", :class => "col-sm-4 control-label"      
       = f.text_field :title_fa, :class => "form-control"
@@ -17,7 +28,7 @@
     .form-group 
       = f.label "عنوان به عربی:", :class => "col-sm-4 control-label"      
       = f.text_field :title_ar, :class => "form-control"
-  .col-sm-12
+  
     .form-group.editor 
       = f.label "توضیحات به فارسی:", :class => "control-label"      
       = f.text_area :description_fa, :class => "form-control ckeditor"
@@ -27,8 +38,8 @@
     .form-group.editor 
       = f.label "توضیحات به عربی:", :class => "control-label"      
       = f.text_area :description_ar, :class => "form-control ckeditor"
-  .clr-float
-  .col-sm-12
+  
+  .col-sm-5
     .form-group 
       = f.fields_for :pictures do |picture|  
         = render "shared/upload_image_form", :picture => picture

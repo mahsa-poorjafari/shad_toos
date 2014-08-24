@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   
   has_many :pictures
   accepts_nested_attributes_for :pictures, :allow_destroy => true
+  belongs_to :sub_groups
   belongs_to :category
   validates :title, :title_fa, :presence => {:message => 'عنوان محصول را وارد کنید.'}
   validates :title, :title_fa, :uniqueness => {:message => 'عنوان محصول تکراری است'}

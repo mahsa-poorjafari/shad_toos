@@ -2,6 +2,8 @@ PrepareProject::Application.routes.draw do
 
   
 
+  resources :sub_groups
+
   resources :amount_remains
 
   resources :roles

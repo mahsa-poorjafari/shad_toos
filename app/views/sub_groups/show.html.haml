@@ -1,0 +1,51 @@
+-if notice        
+  .alert.alert-success= notice
+
+- if is_admin?
+  .admin-edit-del.col-sm-3
+    = link_to 'افزودن آیتم جدید', new_product_path(:category_id => @sub_group.category_id, :sub_group_id => @sub_group.id)
+  .col-sm-5  
+  .admin-edit-del-small.col-sm-2
+    = link_to 'حذف', edit_sub_group_path(@sub_group)
+    \|
+    = link_to 'بازگشت', :back
+.clr-float
+.col-sm-12.category-define
+  .set-center              
+    %h1.cat-title
+      %span= t('pro-titr')
+      = @sub_group.category.title
+    %h2.cat-title
+      .col-sm-4
+      .col-sm-7        
+        %span= t('subpro-titr')
+        = @sub_group.title      
+    %p.cat-des= @sub_group.description          
+  
+  -if I18n.locale == :en 
+    = image_tag 'en-line.png', :class => "gold-line"
+  - else 
+    = image_tag 'line.png', :class => "gold-line"
+.col-sm-12
+  - @sub_group.products.each do |item|                
+    .show-item{:class => I18n.locale}                  
+      .col-sm-5
+        - if item.pictures.present?
+          = image_tag item.pictures.first.image(:medium), :class => "resize-img"
+        - else 
+          = image_tag 'missing.png', :class => "resize-img"
+      = link_to product_path(item, :category_id => @sub_group.id) do
+        .col-sm-7.category-show-description
+          %b= item.title
+          %p=raw item.description
+      
+      .see-more
+        .border-see-more.set-center
+          = link_to 'مشاهده بیشتر', product_path(item, :category_id => @sub_group.id)
+      .clr-float      
+      - if is_admin?
+        .admin-edit-del-small
+          = link_to 'ویرایش', edit_product_path(item)
+          \|
+          = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+

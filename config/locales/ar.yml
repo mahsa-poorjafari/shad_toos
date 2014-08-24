@@ -19,7 +19,8 @@ ar:
   
   messages: "پیام ها"
   downloads: "دانلودها"
-  
+  pro-titr: 'المنتجات'
+  subpro-titr: 'كشك'
   more: 'أكثر'
   
   send-msg: "ارسال پیام به مدیر"

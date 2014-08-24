@@ -3,6 +3,7 @@
   %p
     %i= 'در این قسمت می توانید به هر بخش زیر گروه مربوطه را اضافه کنید.  '
   %hr
-  .width80
-    = render 'form'
+  - if flash[:SubValidate].present?
+    .alert.alert-danger = flash[:SubValidate]
+  = render 'form'
 

@@ -1,11 +1,15 @@
 .main-bg
   -if is_admin? 
-    .admin-edit-del-small
+    .admin-edit-del.col-sm-3
+      = link_to 'افزودن آیتم جدید', new_product_path
+    .col-sm-5  
+      .col-sm-7.admin-edit-del
+        = link_to 'افزودن زیرگروه', new_sub_group_path(:category_id => @category.id)
+    .admin-edit-del-small.col-sm-2
       = link_to 'ویرایش', edit_category_path(@category)
       \|
       = link_to 'بازگشت', categories_path
-    .admin-edit-del
-      = link_to 'افزودن آیتم جدید', new_product_path
+    .clr-float
   
   
   .col-sm-12
@@ -19,26 +23,40 @@
       - else 
         = image_tag 'line.png', :class => "gold-line"
     .col-sm-12.index-category
-      - @category.products.each do |item|                
-        .show-item{:class => I18n.locale}                  
-          .col-sm-5
-            - if item.pictures.present?
-              = image_tag item.pictures.first.image(:medium), :class => "resize-img"
-            - else 
-              = image_tag 'missing.png', :class => "resize-img"
-          = link_to product_path(item, :category_id => @category.id) do
-            .col-sm-7.category-show-description
-              %b= item.title
-              %p=raw item.description
-          
-          .see-more
-            .border-see-more.set-center
-              = link_to 'مشاهده بیشتر', product_path(item, :category_id => @category.id)
-          .clr-float
-          
-            - if is_admin?
-              .admin-edit-del-small
-                = link_to 'ویرایش', edit_product_path(item)
-                \|
-                = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+      - if @category.sub_groups.present?
+        - @category.sub_groups.each do |item|                
+          .show-item{:class => I18n.locale}                  
+            .col-sm-4
+              = link_to sub_group_path(item, :category_id => @category.id) do
+                .sub_group_title
+                  %h3= item.title
+                  - if item.image.present?
+                    = image_tag item.image(:small), :class => "resize-img"
+                  - else 
+                    = image_tag 'missing.png', :class => "resize-img"
+            .clr-float            
+              - if is_admin?
+                .admin-edit-del-small
+                  = link_to 'ویرایش', edit_product_path(item)
+                  \|
+                  = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+                  
+      - elsif  @category.products.present?
+        - @category.products.each do |item|                
+          .show-item{:class => I18n.locale}                  
+            .col-sm-4              
+              = link_to sub_group_path(item, :category_id => @category.id) do
+                .sub_group_title
+                  %h3= item.title
+                  - if item.pictures.present?                  
+                    = image_tag item.pictures.first.image(:small), :class => "resize-img"
+                  - else 
+                    = image_tag 'missing.png', :class => "resize-img"
 
+            .clr-float
+            
+              - if is_admin?
+                .admin-edit-del-small
+                  = link_to 'ویرایش', edit_product_path(item)
+                  \|
+                  = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }

@@ -7,7 +7,7 @@
   .about-us
     = image_tag 'befor.png'    
     %h2= t('about-shadtoos')      
-    .show-about-text
+    .show-about-text{:class => I18n.locale}
       = raw @about_us.html_text      
     .more{:style => "margin-top:5%"}
       .inside-border
@@ -32,18 +32,14 @@
     
   .new-box.col-sm-8   
     .activities
-      %ul.slides
-        - @activities.each do |activity|
-          %li          
-            = image_tag activity.image(:small), :id => activity.image_file_name, :alt => activity.image_file_name, :class => "act-pic"
-            .activity-title= activity.title
-            .set-center.activity-des{:class => I18n.locale}= activity.description
-            .col-gl-3.more{:style => "margin-top:5%"}
-              .inside-border
-                = link_to t('more'), activity
-            .clr-float
-    = image_tag 'btn_next.gif', :class => "control-act", :id => "next"
-    = image_tag 'btn_prev.gif', :class => "control-act", :id => "prev"
+      %ul.slides 
+        - Activity.all.each do |act|
+          %li
+            = link_to act do
+              = image_tag act.image(:small)
+              
+                  
+    
 .col-sm-12
   .col-sm-4  
     %p= @contact_us.html_text
@@ -66,18 +62,6 @@
   });
   
   
-  var Active = $('.activities');
-  
-  
-  $("img#next").click(function(){    
-    Active.css({"margin-right": "-=250px"});  
-    
-  });
-  
-  $("img#prev").click(function(){    
-    Active.css({"margin-right": "+=250px"});  
-    
-  });
 
  
   

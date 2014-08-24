@@ -4,17 +4,35 @@
       %ul
         - @amount_remain.errors.each do |attr, msg|
           %li= msg
-          
-  .form-group.col-sm-6
-    = f.label 'نام کاربر:', :class => "col-sm-5 control-label"        
-    = f.select :user_id, options_for_select( User.offset(1).collect{ |u| [u.user_name, u.id] }), prompt: "کاربر را انتخاب کنید."
-  .clr-float
-  .form-group
-    = f.label 'مبلغ مانده:', :class => "col-sm-5 control-label"    
-    = f.text_field :amount, :class => "form-control"
-  
-  .form-group
-    = f.label 'سایر توضیحات:', :class => "col-sm-5 control-label"    
-    = f.text_field :description, :class => "form-control"
+        
+  - if is_admin? 
+    - if @amount_remain.present?
+      %br
+      .form-group
+        %b= 'نام کاربر:'
+        - if @amount_remain.user.present?  
+          %span= @amount_remain.user.user_name        
+      .form-group
+        %b= 'مبلغ قید شده:'
+        %span= @amount_remain.amount
+      .form-group
+        %b= 'توضیحات همکار:'
+        %span= @amount_remain.description
+      .form-group
+        = f.label 'توضیحات مدیر:', :class => "col-sm-5 control-label"    
+        = f.text_field :admin_description, :class => "form-control"
+      
+  - else
+    .form-group.col-sm-6      
+      = f.label 'نام کاربر:', :class => "col-sm-5 control-label"        
+      = f.select :user_id, options_for_select( User.offset(1).collect{ |u| [u.user_name, u.id] }), prompt: "کاربر را انتخاب کنید."
+    .clr-float
+    .form-group
+      = f.label 'مبلغ مانده:', :class => "col-sm-5 control-label"    
+      = f.text_field :amount, :class => "form-control"
+    
+    .form-group
+      = f.label 'سایر توضیحات:', :class => "col-sm-5 control-label"    
+      = f.text_field :description, :class => "form-control"
   .form-group
     = f.submit 'ثبت', :class => "btn btn-default"

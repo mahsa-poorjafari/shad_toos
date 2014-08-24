@@ -9,14 +9,18 @@
     = @amount_remain.user.colleague_title
   %p
     %b تاریخ ثبت :
-    = @amount_remain.created_at
+    = JalaliDate.new(@amount_remain.created_at)       
+    
   %p
     %b مبلغ مانده:
     = @amount_remain.amount
   
   %p
-    %b سایر توضیحات
+    %b سایر توضیحات همکار:
     = @amount_remain.description
+  %p
+    %b توضیحات مدیر:
+    = @amount_remain.admin_description
   - if is_admin?
     = link_to 'مشاهده', edit_amount_remain_path(@amount_remain)
     \|

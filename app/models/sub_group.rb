@@ -1,27 +1,16 @@
 # encoding: UTF-8
-class Category < ActiveRecord::Base
+class SubGroup < ActiveRecord::Base
   extend FriendlyId  
   friendly_id :title_en
   has_attached_file :image, :styles => { :original => "500x500>" , :medium => "300x300>", :small => "150x150#" }
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
                                             :message =>  "فرمت عکس صحیح نیست"
-                                            
-  has_attached_file :font_image, :styles => { :original => "300x300>", :small => "100x100>" }
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
-                                            :message =>  "فرمت عکس صحیح نیست"
-                                            
-  has_attached_file :slider_box, :styles => { :original => "300x300>", :small => "100x100>" }
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"],
-                                            :message =>  "فرمت عکس صحیح نیست"
-                                            
   has_many :products
-  has_many :sub_groups
-  has_many :sliders
-  
+  belongs_to :category
   
   validates :title_fa, :title_ar,  :title_en, :uniqueness => {:message => 'عنوان گروه را تکراری است.'}
   validates :title_fa, :title_en, :title_ar,  :presence => {:message => 'عنوان گروه را وارد کنید.'}
-  validates :category_type, :presence => {:message => 'نوع بخش را انتخاب کنید.'}
+  
   
   def title
     if I18n.locale == :ar
@@ -42,6 +31,4 @@ class Category < ActiveRecord::Base
       self.read_attribute("description_fa")
     end    
   end
-  
-  
 end

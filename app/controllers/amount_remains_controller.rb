@@ -77,6 +77,6 @@ class AmountRemainsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def amount_remain_params
-      params.require(:amount_remain).permit(:amount, :user_id, :description)
+      params.require(:amount_remain).permit(:amount, :user_id, :description, :admin_description)
     end
 end

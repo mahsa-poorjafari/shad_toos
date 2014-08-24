@@ -31,26 +31,22 @@
       = f.label "توضیحات به عربی", :class => "col-sm-5 control-label"      
       = f.text_area :description_ar, :class => "form-control"       
     .clr-float
+    
     .col-sm-6
       .form-group        
         = f.label " تصویر نمونه:", :class => "control-label"      
         = f.file_field :image     
         -if @category.image.present?              
           = image_tag @category.image(:small) 
-    .col-sm-6
-      .form-group.col-sm-6        
-        = f.label " تصویر عنوان با فونت", :class => "control-label"      
-        = f.file_field :font_image     
-        -if @category.font_image.present?              
-          = image_tag @category.font_image(:original) 
-      .form-group.col-sm-6        
+    
+      .form-group       
         = f.label " آیکنی که برای باکس این بخش روی اسلایدر اصلی قرار می گیرد.", :class => "control-label"      
         = f.file_field :slider_box     
         -if @category.font_image.present?              
           = image_tag @category.slider_box(:original) 
     
     
-    .col-sm-4
+    .col-sm-6
       = f.submit 'ثبت', :class=> "btn btn-default"
   
 

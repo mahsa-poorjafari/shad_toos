@@ -24,6 +24,15 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @sub_group_id = params[:sub_group_id]
+    if @sub_group_id.present?
+      @sub_group = SubGroup.find(@sub_group_id)
+    end
+    
+    @category_id = params[:category_id]
+    if @category_id.present?
+      @category = Category.find(@category_id)
+    end
   end
 
   # GET /products/1/edit
@@ -34,10 +43,10 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
+    
     respond_to do |format|
       if @product.save
-        format.html { redirect_to :back, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product, notice: 'محصول جدید اضافه شد.' }
         format.json { render action: 'show', status: :created, location: @product }
       else
         format.html { render action: 'new' }
@@ -51,7 +60,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: 'ویرایش انجام شد.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -78,7 +87,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :title_fa, :description_fa, :title_ar, :description_ar, :category_id, pictures_attributes: [:image, :title_fa, :title_ar, :title, :description_fa, :description_ar, :description, :_destroy, :id])
+      params.require(:product).permit(:title, :description, :title_fa, :description_fa, :title_ar, :description_ar, :sub_group_id, :category_id, pictures_attributes: [:image, :title_fa, :title_ar, :title, :description_fa, :description_ar, :description, :_destroy, :id])
     end
     def load_slides
       @category_id = params[:category_id]

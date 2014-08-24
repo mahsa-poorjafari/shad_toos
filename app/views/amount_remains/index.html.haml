@@ -13,7 +13,8 @@
           %th ردیف
           %th نام کاربر
           %th مبلغ مانده
-          %th توضیحات
+          %th توضیحات همکار
+          %th توضیحات مدیر
           %th عملیات
       %tbody
         - @amount_remains.each_with_index do |amount_remain, i|
@@ -22,14 +23,14 @@
             %td= amount_remain.user.user_name
             %td= amount_remain.amount
             %td= amount_remain.description
-            
+            %td= amount_remain.admin_description            
             %td
               = link_to 'مشاهده', amount_remain
-              - if is_admin?
+              - if is_admin? 
                 \|
-                = link_to 'ویرایش', edit_amount_remain_path(amount_remain)
+                = link_to 'افزودن توضیحات مدیر', edit_amount_remain_path(amount_remain)
                 \|
-                = link_to 'حذف', amount_remain, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+                = link_to 'حذف', amount_remain, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }                
   - else
     .alert.alert-warning= 'موردی وارد نشده است.'
     
