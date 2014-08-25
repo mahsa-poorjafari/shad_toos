@@ -1,5 +1,5 @@
-#haram-slide-show.slide
-  .carousel-inner
+#haram-slide-show.slide{:style => "height:100%"}
+  .carousel-inner{:style => "height:100%"}
     - @sliders_haram = Haram.all
     - @sliders_haram.each do |slide|
       .item-row.item          
@@ -14,7 +14,7 @@
               %i= 'حذف'
   -if @sliders_haram.count > 1                
     = link_to "#haram-slide-show", :class => "carousel-control left", "data-slide" => "prev" do
-      = image_tag 'banner_go_left.png', :class => "haram-arrow", :style => "margin-right:-130%"
+      = image_tag 'banner_go_left.png', :class => "haram-arrow"
     = link_to "#haram-slide-show", :class => "carousel-control right", "data-slide" => "next" do
       = image_tag 'banner_go_right.png', :class => "haram-arrow"
       

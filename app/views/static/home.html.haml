@@ -30,14 +30,21 @@
     = render 'harams/slider_haram'
   
     
-  .new-box.col-sm-8   
-    .activities
-      %ul.slides 
-        - Activity.all.each do |act|
-          %li
-            = link_to act do
-              = image_tag act.image(:small)
-              
+  .col-sm-8.container   
+    .body-content
+      #demo5.scroll-img
+        %ul
+          - Activity.all.each do |act|
+            %li
+              = link_to act do
+                = image_tag act.image(:small)
+      #demo5-btn.text-center
+        %button#demo5-backward.btn
+          %i.icon-chevron-left
+          بعدی
+        %button#demo5-forward.btn
+          قبلی
+          %i.icon-chevron-right
                   
     
 .col-sm-12
@@ -61,6 +68,16 @@
     window.DisableAccordionBox = false;
   });
   
+  $('#demo5').scrollbox({
+    direction: 'h',
+    distance: 140
+  });
+  $('#demo5-backward').click(function () {
+    $('#demo5').trigger('backward');
+  });
+  $('#demo5-forward').click(function () {
+    $('#demo5').trigger('forward');
+  });
   
 
  

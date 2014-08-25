@@ -4,9 +4,11 @@
     %title 
       = t("shadtoos") 
       = ',' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag  "demo", media: "all"
     
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
     = csrf_meta_tags
     %meta{:charset => "utf-8"}    
@@ -76,10 +78,10 @@
     %footer{:class => I18n.locale}
       #footer-bottom 
       = render "shared/footer"
-
+ 
   
-:javascript 
-  $(".item").first().addClass("active");
-  $(".slide-indicator").first().addClass("active");
-  $('.carousel').carousel();
-
+  :javascript 
+    $(".item").first().addClass("active");
+    $(".slide-indicator").first().addClass("active");
+    $('.carousel').carousel();
+  = javascript_include_tag "jquery.scrollbox"
