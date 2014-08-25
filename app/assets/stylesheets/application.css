@@ -189,7 +189,7 @@ text-align:center;
   transition: all .5s ease;
 }
 .reserv {top:25%}
-.login-link {top:40%}
+.login-link {top:43%}
 .main .slider  .site-link:hover { cursor:pointer; left:-25px;}
 .main .slider  .site-link  a{ color:#000;}
 .AccordionBox {width:100%;
@@ -639,7 +639,7 @@ footer {
 position:absolute;
 width:100%;
  background: url('bg.png');
- height:150px;
+ height:170px;
 }
 #footer-bottom {
   height:100%;

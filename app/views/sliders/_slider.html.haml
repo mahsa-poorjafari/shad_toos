@@ -31,7 +31,7 @@
                 -  sliders.each_with_index do |slide, index|
                   %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
         = link_to "#slider-carousel", :class => "carousel-control left", "data-slide" => "prev" do
-          = image_tag 'next-icon.png'
+          = image_tag 'next-icon.png', :style => "right:45%"
         = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
           = image_tag 'prev-icon.png'      
   
