@@ -17,7 +17,9 @@
         
         = @product.title      
       .clr-float
-    %p.cat-des=raw @product.description          
+    .clr-float
+    %p.cat-des
+      =raw @product.description          
   
   -if I18n.locale == :en 
     = image_tag 'en-line.png', :class => "gold-line"
