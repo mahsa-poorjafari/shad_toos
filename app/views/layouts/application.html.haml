@@ -4,9 +4,6 @@
     %title 
       = t("shadtoos") 
       = ',' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
-      
-    
-    
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     
     = javascript_include_tag "application", "data-turbolinks-track" => true
@@ -18,7 +15,7 @@
     = yield(:refresh_meta) if content_for?(:refresh_meta)
     
           
-  %body     
+  %body{:class => I18n.locale}    
     
     %header
       #header-top        
