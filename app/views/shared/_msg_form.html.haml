@@ -35,7 +35,7 @@
     = f.submit t('msg.contact-btn'), :class=> "send-msg"
 
 :javascript   
-  $(':submit').click(function(e) {
+  $(':submit.send-msg').click(function(e) {
     $(':text.needed, textarea.needed').each(function() {
       if ($(this).val().length == 0) {
         $(this).css('border', '2px solid red');

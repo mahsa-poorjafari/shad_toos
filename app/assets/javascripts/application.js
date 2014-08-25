@@ -16,4 +16,5 @@
 //= require colorbox-rails
 //= require jquery_nested_form
 //= require dataTables/jquery.dataTables
+//= require jquery.scrollbox
 //= require_tree .
