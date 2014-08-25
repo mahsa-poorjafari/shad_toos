@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.order("title_fa")
   end
 
   # GET /products/1
@@ -24,11 +24,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    @sub_group_id = params[:sub_group_id]
-    if @sub_group_id.present?
-      @sub_group = SubGroup.find(@sub_group_id)
-    end
-    
+        
     @category_id = params[:category_id]
     if @category_id.present?
       @category = Category.find(@category_id)
@@ -84,7 +80,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :title_fa, :description_fa, :title_ar, :description_ar, :sub_group_id, :category_id, pictures_attributes: [:image, :title_fa, :title_ar, :title, :description_fa, :description_ar, :description, :_destroy, :id])
+      params.require(:product).permit(:title, :description, :title_fa, :description_fa, :title_ar, :description_ar, :category_id, pictures_attributes: [:image, :title_fa, :title_ar, :title, :description_fa, :description_ar, :description, :_destroy, :id])
     end
     def load_slides
       @category_id = params[:category_id]

@@ -8,12 +8,9 @@ class CategoriesController < ApplicationController
   def index
     
     @sliders = Slider.all
-    @products_show = params[:products]
-    if @products_show.present?
-      @categories = Category.where(category_type: 1)
-    else
-      @categories = Category.all  
-    end
+    
+    @categories = Category.all  
+    
   end
 
   # GET /categories/1
