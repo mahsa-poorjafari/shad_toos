@@ -12,13 +12,14 @@
         = f.hidden_field :category_id, :value => @category.id
       - else
         = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش را انتخاب کنید.')        
-    .form-group 
-      = f.label "زیرگروه مربوطه" , :class => "col-sm-4 control-label"      
-      - if @sub_group.present?
-        %h3= @sub_group.title
-        = f.hidden_field :sub_group_id, :value => @sub_group.id
-      - else
-        = f.select(:sub_group_id, SubGroup.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' زیرگروه را انتخاب کنید.')        
+    -#
+      .form-group 
+        = f.label "زیرگروه مربوطه" , :class => "col-sm-4 control-label"      
+        - if @sub_group.present?
+          %h3= @sub_group.title
+          = f.hidden_field :sub_group_id, :value => @sub_group.id
+        - else
+          = f.select(:sub_group_id, SubGroup.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' زیرگروه را انتخاب کنید.')        
     .form-group  
       = f.label "عنوان به فارسی:", :class => "col-sm-4 control-label"      
       = f.text_field :title_fa, :class => "form-control"

@@ -15,7 +15,7 @@ class Category < ActiveRecord::Base
                                             :message =>  "فرمت عکس صحیح نیست"
                                             
   has_many :products
-  has_many :sub_groups
+  
   has_many :sliders
   
   

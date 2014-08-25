@@ -147,6 +147,10 @@ color:#1A1A1A;
 }
 .main #mainmenu  ul a {color:#F6F694}
 .main #mainmenu  ul a:hover {color:#1A1A1A; margin-top:-1px }
+
+.act-title {text-align:center; font-weight:bold;}
+.act-des {font-size:12px; height:100px; overflow:hidden; width:170px; text-align:justify }
+
 /* AccordionBox  */
 
 .main .slider  .site-link {
@@ -734,10 +738,13 @@ a.button > span {
  position: absolute;
 margin-right: 77%;
 margin-top: -3%;}
+
 .show-room img.show-room-pic{ 
 width:90%;  border-radius:9px;
 padding:2%;
 border:2px solid #4D4D4D;
+height:200px
+
 }
 .show-room img.border-top-left{float:left}
 
@@ -943,7 +950,7 @@ h1.cat-title {
   margin-top:-1%;}
 .show-room p {width:90%;
   min-height:20%;
-  max-height:20%;
+  
   text-align:justify;
   margin:5%;
   line-height: 1.5em;
@@ -976,3 +983,7 @@ form.contact .form-group .form-control{width:100%}
 .category-show-description {height: 100px; overflow: hidden}
 /* sub_group style */
 .sub_group_title {text-align:center}
+
+
+
+

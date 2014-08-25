@@ -1,10 +1,12 @@
 .main-bg
   -if is_admin? 
     .admin-edit-del.col-sm-3
-      = link_to 'افزودن آیتم جدید', new_product_path
+      = link_to 'افزودن آیتم جدید', new_product_path(:category_id => @category.id)
+    
     .col-sm-5  
-      .col-sm-7.admin-edit-del
-        = link_to 'افزودن زیرگروه', new_sub_group_path(:category_id => @category.id)
+      -#
+        .col-sm-7.admin-edit-del
+          = link_to 'افزودن زیرگروه', new_sub_group_path(:category_id => @category.id)
     .admin-edit-del-small.col-sm-2
       = link_to 'ویرایش', edit_category_path(@category)
       \|
@@ -22,36 +24,20 @@
         = image_tag 'en-line.png', :class => "gold-line"
       - else 
         = image_tag 'line.png', :class => "gold-line"
-    .col-sm-12.index-category
-      - if @category.sub_groups.present?
-        - @category.sub_groups.each do |item|                
-          .show-item{:class => I18n.locale}                  
-            .col-sm-4
-              = link_to sub_group_path(item, :category_id => @category.id) do
-                .sub_group_title
-                  %h3= item.title
-                  - if item.image.present?
-                    = image_tag item.image(:small), :class => "resize-img"
-                  - else 
-                    = image_tag 'missing.png', :class => "resize-img"
-            .clr-float            
-              - if is_admin?
-                .admin-edit-del-small
-                  = link_to 'ویرایش', edit_product_path(item)
-                  \|
-                  = link_to 'حذف', item, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+    
+    .col-sm-12.index-category      
                   
-      - elsif  @category.products.present?
+      - if  @category.products.present?
         - @category.products.each do |item|                
-          .show-item{:class => I18n.locale}                  
-            .col-sm-4              
-              = link_to sub_group_path(item, :category_id => @category.id) do
-                .sub_group_title
-                  %h3= item.title
-                  - if item.pictures.present?                  
-                    = image_tag item.pictures.first.image(:small), :class => "resize-img"
-                  - else 
-                    = image_tag 'missing.png', :class => "resize-img"
+          .show-item.col-sm-3{:class => I18n.locale}                  
+            
+            = link_to product_path(item, :category_id => @category.id) do
+              .sub_group_title
+                %h3= item.title
+                - if item.pictures.present?                  
+                  = image_tag item.pictures.first.image(:small), :class => "resize-img"
+                - else 
+                  = image_tag 'missing.png', :class => "resize-img"
 
             .clr-float
             

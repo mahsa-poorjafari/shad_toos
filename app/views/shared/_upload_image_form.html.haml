@@ -18,13 +18,13 @@
       = picture.text_field :title, :class => "form-control"
   
     .form-group
-      = picture.label "توضیحات عکس به فارسی", :class => "col-sm-3 control-label"   
+      = picture.label "توضیحات عکس به فارسی", :class => "control-label"   
       = picture.text_area :description_fa, :rows => 2, :class => "form-control"
     .form-group
-      = picture.label "توضیحات عکس به عربی", :class => "col-sm-3 control-label"   
-      = picture.text_area :description_ar, :rows => 2, :class => "form-control3"
+      = picture.label "توضیحات عکس به عربی", :class => "control-label"   
+      = picture.text_area :description_ar, :rows => 2, :class => "form-control"
     .form-group
-      = picture.label "توضیحات عکس به انگلیسی", :class => "col-sm-3 control-label"   
+      = picture.label "توضیحات عکس به انگلیسی", :class => "control-label"   
       = picture.text_area :description, :rows => 2, :class => "form-control"
     
     = picture.link_to_remove image_tag ("Delete_Icon.png"), :class => "remove-task "

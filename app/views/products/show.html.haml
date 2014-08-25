@@ -1,23 +1,36 @@
 
 -if is_admin?  
-  .admin-edit-del-small
+  .admin-edit-del
     = link_to 'ویرایش', edit_product_path(@product)       
     \|
     = link_to 'بازگشت', products_path 
       
 
-    
-.col-sm-12.product-info
-  %h2= @product.category.title   
-  %h3= @product.title
-  %p=raw @product.description
+.col-sm-12.category-define
+  .set-center              
+    %h1.cat-title
+      %span= t('pro-titr')
+      = @product.category.title
+    %h2.cat-title
+      .col-sm-4
+      .col-sm-7        
+        %span= t('subpro-titr')
+        = @product.title      
+    %p.cat-des= @product.description          
   
-  
+  -if I18n.locale == :en 
+    = image_tag 'en-line.png', :class => "gold-line"
+  - else 
+    = image_tag 'line.png', :class => "gold-line"    
+
   
 .col-sm-12{:style => "height:350px"}
   - @product.pictures.each do |pic|    
-    .col-sm-4.show-room                
-      =link_to (image_tag pic.image(:medium), :class => "show-room-pic"  ), pic.image(:large), :data => { :colorbox => true }, :title => pic.description, :class => "show-rooms"         
+    .col-sm-4.show-room  
+      %b= pic.title
+      %br
+      %p.pro-pic=link_to (image_tag pic.image(:medium), :class => "show-room-pic"  ), pic.image(:large), :data => { :colorbox => true }, :title => pic.description, :class => "show-rooms"         
+      .clr-float
       %p{:class => I18n.locale}= pic.description
       
       

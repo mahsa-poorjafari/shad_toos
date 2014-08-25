@@ -37,7 +37,9 @@
           - Activity.all.each do |act|
             %li
               = link_to act do
-                = image_tag act.image(:small)
+                %p.act-title= act.title
+                = image_tag act.image(:small)                
+                %p.act-des{:class => I18n.locale}= act.description
       #demo5-btn.text-center
         %button#demo5-backward.btn
           %i.icon-chevron-left
