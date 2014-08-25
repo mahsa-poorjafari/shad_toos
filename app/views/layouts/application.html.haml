@@ -4,10 +4,8 @@
     %title 
       = t("shadtoos") 
       = ',' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
-    = stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true
-      
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    
+    = stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true      
+    = javascript_include_tag "application", "data-turbolinks-track" => true    
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
     = csrf_meta_tags
     %meta{:charset => "utf-8"}    
