@@ -639,7 +639,7 @@ footer {
 position:absolute;
 width:100%;
  background: url('bg.png');
- height:170px;
+ height:150px;
 }
 #footer-bottom {
   height:100%;
@@ -655,7 +655,7 @@ left:14%;
 footer .footer-menu ul.total{width:100%; list-style:none; margin-top: 2%;}
 footer .footer-menu ul.total li{width:30%; float:right}
 footer .footer-menu ul.total li ul{width:100%; list-style:none;}
-footer .footer-menu ul.total li ul li{width:100%; margin:5px}
+footer .footer-menu ul.total li ul li{width:100%;}
 footer .footer-menu ul.total li ul li.head{margin-bottom:15px}
 footer .footer-admin {float:right; width:30%; height:100px}
 
