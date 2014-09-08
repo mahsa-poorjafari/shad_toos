@@ -17,22 +17,28 @@
     %li#contact{:class => ('active' if current_page?(pages_path)) }
       = t('contact')
 .col-sm-6.submenu.contact
+  .close.pull-right 
+    X
   - Page.all.each do |page|
     .col-sm-4.submenu-item      
       =link_to page do
         %b=page.title
-        = image_tag page.image(:small)
+        .submenu-image= image_tag page.image(:small)
   .clr-float
 .col-sm-6.submenu.category
+  .close.pull-right 
+    X
   - category = Category.where(category_type: 1)
   - category.each do |category|
     .col-sm-4.submenu-item      
       =link_to category do
         %b=category.title
-        = image_tag category.image(:small)
+        .submenu-image= image_tag category.image(:small)
   .clr-float
   
 .col-sm-6.submenu.hotel
+  .close.pull-right 
+    X
   - category = Category.find_by_category_type(2)
   - if category.present? && category.products.present?
     - category.products.each do |room|
@@ -40,9 +46,11 @@
         =link_to room do
           %b=room.title
           - if room.pictures.present?
-            = image_tag room.pictures.first.image(:small)
+            .submenu-image= image_tag room.pictures.first.image(:small)
     .clr-float
 .col-sm-6.submenu.sights
+  .close.pull-right 
+    X
   - category = Category.find_by_category_type(3)
   - if category.present? && category.products.present?
     - category.products.each do |place|
@@ -50,7 +58,7 @@
         =link_to place do
           %b=place.title
           - if place.pictures.present?
-            = image_tag place.pictures.first.image(:small)
+            .submenu-image= image_tag place.pictures.first.image(:small)
   .clr-float
     
 :javascript 
@@ -69,4 +77,7 @@
   $('#sights').click(function(){
     $('.submenu').hide();
     $('.submenu.sights').slideToggle('slow');
+  });
+  $('.close').click(function(){
+    $('.submenu').slideUp(500);
   });

@@ -17,4 +17,8 @@
 //= require jquery_nested_form
 //= require dataTables/jquery.dataTables
 //= require jquery.scrollbox
-//= require_tree .
+//= require bootstrap
+//= require jquery_002
+//= require jquery_003
+//= require accordion
+//= require jquery.scrollbox

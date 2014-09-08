@@ -6,7 +6,7 @@
       = link_to 'ویرایش', edit_page_path(@about_us)
   .about-us
     = image_tag 'befor.png'    
-    %h2= t('about-shadtoos')      
+    %h2{:class => I18n.locale}= t('about-shadtoos')      
     .show-about-text{:class => I18n.locale}
       = raw @about_us.html_text      
     .more{:style => "margin-top:5%"}
@@ -31,22 +31,8 @@
   
     
   .col-sm-8.container   
-    .body-content
-      #demo5.scroll-img
-        %ul
-          - Activity.all.each do |act|
-            %li
-              = link_to act do
-                %p.act-title= act.title
-                = image_tag act.image(:small)                
-                %p.act-des{:class => I18n.locale}= act.description
-      #demo5-btn.text-center
-        %button#demo5-backward.btn
-          %i.icon-chevron-left
-          بعدی
-        %button#demo5-forward.btn
-          قبلی
-          %i.icon-chevron-right
+    = render "activities/active_slide"
+            
                   
     
 .col-sm-12
@@ -58,7 +44,7 @@
     
   .col-sm-8
     #google-map
-      %iframe{:height => "480", :src => "https://mapsengine.google.com/map/embed?mid=zbDi3iZxywyM.k9GXrZmanuVw", :width => "640"}
+      %iframe{:height => "450", :src => "https://mapsengine.google.com/map/embed?mid=zbDi3iZxywyM.k9GXrZmanuVw", :width => "640"}
 
 :javascript
   window.DisableAccordionBox = false;
@@ -71,16 +57,6 @@
     window.DisableAccordionBox = false;
   });
   
-  $('#demo5').scrollbox({
-    direction: 'h',
-    distance: 140
-  });
-  $('#demo5-backward').click(function () {
-    $('#demo5').trigger('backward');
-  });
-  $('#demo5-forward').click(function () {
-    $('#demo5').trigger('forward');
-  });
   
 
  

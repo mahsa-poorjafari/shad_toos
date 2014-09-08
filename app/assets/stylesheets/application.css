@@ -218,7 +218,10 @@ text-align:center;
 .main #mainmenu  .submenu .submenu-item {text-align:center}
 .main #mainmenu  .submenu .submenu-item b{height:15px;}
 .main #mainmenu  .submenu .submenu-item:hover a{color:#FFA500; cursor:pointer}
-
+.submenu-image { width:150px; height:150px; overflow:hidden; border:1px solid #fff }
+.submenu-image img{ width:100%; height:100%; }
+.submenu .close  {background:#1A1A1A; color:#fff;  width:3%; margin-top:-2%; margin-right:-5%; padding:.5%;}
+.submenu .close:hover  {background:#fff; color:#000; cursor:pointer;}
 .background {margin-top:5%}
 .AccordionBox ul { overflow: hidden;
     list-style: none;
@@ -254,7 +257,7 @@ text-align:center;
   filter:alpha(opacity=70); /* For IE8 and earlier */
   transition: all 0.5s ease;
 }
-.AccordionBox ul li .cat-title .font-style {font-family:'IranNastaligh'; font-size:3em}
+.AccordionBox ul li .cat-title .font-style.fa {font-family:'IranNastaligh'; font-size:3em}
 .AccordionBox ul li .cat-title p {
   padding:1%;
   height:20px;
@@ -643,7 +646,7 @@ footer {
 position:absolute;
 width:100%;
  background: url('bg.png');
- height:150px;
+ height:160px;
 }
 #footer-bottom {
   height:100%;
@@ -759,7 +762,7 @@ height:200px
   font-size:14px;  
   
 }
-.about-us h2{font-family:'IranNastaligh'; font-size:3em }
+.about-us h2.fa{font-family:'IranNastaligh'; font-size:3em }
 a.admin-access:hover .admin-edit-del {color:#FFA500}
 .admin-edit-del-small {background: rgb(169,3,41); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
@@ -985,5 +988,11 @@ form.contact .form-group .form-control{width:100%}
 .sub_group_title {text-align:center}
 
 
+.body-content#active_slide {height:320px; overflow:hidden; margin-right: 3%; margin-left: 3%;}
 
 
+.act-item {width:30%; margin:1%; float:right; border-radius:5px; border:2px solid #4D4D4D; text-align:center; overflow:hidden; 
+height:300px; color:#fff}
+.act-item:hover {color:#F6F694}
+.act-item .act-img {text-align:center; height:140px; overflow:hidden}
+.act-item .act-img img{width:100%; height:100%}

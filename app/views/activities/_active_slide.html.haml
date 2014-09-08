@@ -1,0 +1,45 @@
+.body-content#active_slide.slide
+  -#
+    #demo5.scroll-img
+      %ul
+        - Activity.all.each do |act|
+          %li
+            = link_to act do
+              %p.act-title= act.title
+              = image_tag act.image(:small)                
+              %p.act-des{:class => I18n.locale}= act.description
+    #demo5-btn.text-center
+      %button#demo5-backward.btn
+        %i.icon-chevron-left
+        forward
+      %button#demo5-forward.btn          
+        backward
+        %i.icon-chevron-right
+      
+  .carousel-inner
+    - @sliders_active = Activity.all
+    - @sliders_active.each_slice(3) do |activity|
+      .act-row.item-row.item
+        - activity.each do |slide|
+          = link_to slide, :class => "act-item" do          
+            %p{:style => "font-size:18px"}=slide.title  
+            .act-img= image_tag slide.image(:small), :id =>  slide.id ,  :class => "slide"         
+            %p{:style => "text-align:justify; padding:2%"}=slide.description     
+        
+          -if is_admin?
+            .row-controls.admin-edit-del
+              = link_to edit_slider_path(slide) do
+                %i= 'ویرایش'
+                \|
+              = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
+                %i= 'حذف'
+  -if @sliders_active.count > 1                
+    = link_to "#active_slide", :class => "carousel-control left", :style => "background-image: none;width: 25px;", "data-slide" => "prev" do
+      = image_tag 'banner_go_left.png', :class => "haram-arrow"
+    = link_to "#active_slide", :class => "carousel-control right", :style => "background-image: none;width: 20px;", "data-slide" => "next" do
+      = image_tag 'banner_go_right.png', :class => "haram-arrow"
+      
+:javascript   
+ 
+  $("#active_slide .item").first().addClass("active");  
+  $('#active_slide').carousel();
