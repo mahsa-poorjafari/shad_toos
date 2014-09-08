@@ -16,7 +16,6 @@
 //= require colorbox-rails
 //= require jquery_nested_form
 //= require dataTables/jquery.dataTables
-//= require jquery.scrollbox
 //= require bootstrap
 //= require jquery_002
 //= require jquery_003
