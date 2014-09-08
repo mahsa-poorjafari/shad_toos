@@ -21,4 +21,4 @@
 //= require jquery_002
 //= require jquery_003
 //= require accordion
-//= require jquery.scrollbox
+
