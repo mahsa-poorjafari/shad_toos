@@ -4,7 +4,7 @@
     -if is_admin?    
       = link_to  new_amount_remain_path , :class => "admin-access" do
         .admin-edit-del
-          %i=  'ثبت مانده حساب جدید'
+          %i{:style=> "font-size:20px"}=  'ثبت مانده حساب جدید'
     .clr-float
   - if @amount_remains.present?
     %table.table.table-striped{id:"amount_table"}
@@ -20,7 +20,9 @@
         - @amount_remains.each_with_index do |amount_remain, i|
           %tr
             %td= (i+1)          
-            %td= amount_remain.user.user_name
+            %td
+              -if amount_remain.user.present?
+                = amount_remain.user.user_name
             %td= amount_remain.amount
             %td= amount_remain.description
             %td= amount_remain.admin_description            
@@ -31,6 +33,10 @@
                 = link_to 'افزودن توضیحات مدیر', edit_amount_remain_path(amount_remain)
                 \|
                 = link_to 'حذف', amount_remain, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }                
+              - elsif current_user.present?
+                \|
+                = link_to 'افزودن توضیحات همکار', edit_amount_remain_path(amount_remain)
+                
   - else
     .alert.alert-warning= 'موردی وارد نشده است.'
     

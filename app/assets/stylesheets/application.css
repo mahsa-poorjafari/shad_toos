@@ -627,7 +627,7 @@ position:fixed;
  }
 .admin_menu {min-width:30%; max-width:30%;}
 .colleague_menu {min-width:20%; max-width:20%;}
-.colleague_menu:hover {height:150px;cursor:pointer;}
+.colleague_menu:hover {height:175px;cursor:pointer;}
 .login_menu a {color:#FFA500; }
 .login_menu a:hover {color:#1A1A1A; text-shadow: 1px 1px 1px #000, 3px 3px 5px #F92323; }
 .admin_menu:hover {height:260px;cursor:pointer;}  
@@ -776,7 +776,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', end
  width:100px;
  position:absolute;
  height:40px;
- padding:1%;
+ 
  text-align:center;
  font-size:1em;}
 .admin-edit-del {
@@ -791,7 +791,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', end
  border-radius:5px; color:#fff;
  width:22%;
  height:40px;
- padding:1%;
+ 
  text-align:center;
  font-size:2em;
  }

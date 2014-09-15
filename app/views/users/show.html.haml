@@ -28,7 +28,8 @@
         = @user.amount_remains.last.amount
         %br
         %b تاریخ صورت حساب:
-        = @user.amount_remains.last.created_at
+        = JalaliDate.new(@user.amount_remains.last.created_at)
+        
       - else
         %b موردی وارد نشده است.
     %p
@@ -36,7 +37,7 @@
       = @user.description
   .col-sm-12
     - if @user.id == current_user.id || is_admin?
-      .admin-edit-del
+      .admin-edit-del-small
         = link_to 'ویرایش اطلاعات کاربری', edit_user_path(@user)
         
     = link_to 'بازگشت', users_path

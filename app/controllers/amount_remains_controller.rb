@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class AmountRemainsController < ApplicationController
   before_action :set_amount_remain, only: [:show, :edit, :update, :destroy]
-  before_filter :check_autentication, only: [ :edit, :update, :destroy]
+  before_filter :check_autentication, only: [  :destroy]
   # GET /amount_remains
   # GET /amount_remains.json
   def index
@@ -22,7 +22,7 @@ class AmountRemainsController < ApplicationController
   # GET /amount_remains/new
   def new
     @amount_remain = AmountRemain.new
-    
+    @users = User.where.not(user_name: 'admin')
   end
 
   # GET /amount_remains/1/edit
