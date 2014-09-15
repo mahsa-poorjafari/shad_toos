@@ -26,13 +26,6 @@
             .act-img= image_tag slide.image(:small), :id =>  slide.id ,  :class => "slide"         
             %p{:style => "text-align:justify; padding:2%"}=slide.description     
         
-          -if is_admin?
-            .row-controls.admin-edit-del
-              = link_to edit_slider_path(slide) do
-                %i= 'ویرایش'
-                \|
-              = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
-                %i= 'حذف'
   -if @sliders_active.count > 1                
     = link_to "#active_slide", :class => "carousel-control left", :style => "background-image: none;width: 25px;", "data-slide" => "prev" do
       = image_tag 'banner_go_left.png', :class => "haram-arrow"
