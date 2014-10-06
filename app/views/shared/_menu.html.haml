@@ -1,19 +1,19 @@
 %ul.set-center
-  = link_to root_path do
+  = link_to root_path, :title => "هتل_مشهد_هتل_شادتوس" do
     %li#home.first{:class => ('active' if current_page?(root_path)) }
       = t('home')
-  = link_to '#' do
+  = link_to '#', :title => " هتل شادتوس_مرکز_خرید" do
     %li.gallery#category{:class => ('active' if current_page?(categories_path)) }
       =t('shopping') 
-  = link_to '#' do
+  = link_to '#', :title => " هتل شادتوس_هتل" do
     %li#hotel
       = t('hotel')
-  = link_to '#' do
+  = link_to '#', :title => " هتل شادتوس_نقاط_دیدنی_مشهد" do
     %li#sights
       = t('sights')
-  = link_to Activity do
+  = link_to Activity, :title => " هتل شادتوس_مرکز_فعالیتها" do
     %li{:class => ('active' if current_page?(activities_path)) }= t('activity')
-  = link_to '#' do
+  = link_to '#', :title => " هتل شادتوس_ارتباط_با_شادتوس" do
     %li#contact{:class => ('active' if current_page?(pages_path)) }
       = t('contact')
 .col-sm-6.submenu.contact
@@ -21,9 +21,9 @@
     X
   - Page.all.each do |page|
     .col-sm-4.submenu-item      
-      =link_to page do
+      =link_to page, :title => " هتل شادتوس_"+ page.title do
         %b=page.title
-        .submenu-image= image_tag page.image(:small)
+        .submenu-image= image_tag page.image(:small), :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"
   .clr-float
 .col-sm-6.submenu.category
   .close.pull-right 
@@ -31,9 +31,9 @@
   - category = Category.where(category_type: 1)
   - category.each do |category|
     .col-sm-4.submenu-item      
-      =link_to category do
+      =link_to category, :title => " هتل شادتوس_"+ category.title do
         %b=category.title
-        .submenu-image= image_tag category.image(:small)
+        .submenu-image= image_tag category.image(:small), :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"
   .clr-float
   
 .col-sm-6.submenu.hotel
@@ -43,10 +43,10 @@
   - if category.present? && category.products.present?
     - category.products.each do |room|
       .col-sm-4.submenu-item      
-        =link_to room do
+        =link_to room, :title => " هتل شادتوس_"+ room.title  do
           %b=room.title
           - if room.pictures.present?
-            .submenu-image= image_tag room.pictures.first.image(:small)
+            .submenu-image= image_tag room.pictures.first.image(:small), :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"
     .clr-float
 .col-sm-6.submenu.sights
   .close.pull-right 
@@ -55,10 +55,10 @@
   - if category.present? && category.products.present?
     - category.products.each do |place|
       .col-sm-4.submenu-item           
-        =link_to place do
+        =link_to place, :title => " هتل شادتوس_"+ place.title  do
           %b=place.title
           - if place.pictures.present?
-            .submenu-image= image_tag place.pictures.first.image(:small)
+            .submenu-image= image_tag place.pictures.first.image(:small), :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"
   .clr-float
     
 :javascript 

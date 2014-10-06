@@ -3,13 +3,14 @@
   %head
     %title 
       = t("shadtoos") 
+      = t('mashhad_hotel')
       = ',' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
     = stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true      
     = javascript_include_tag "application"  
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
     = csrf_meta_tags
     %meta{:charset => "utf-8"}    
-    %meta{:name => "description", :content => "hotel, shadtoos, مجتمع تجاری-اقامتی شادتوس"}
+    %meta{:name => "description", :content => "hotel, shadtoos, مجتمع تجاری-اقامتی شادتوس, هتل در مشهد, هتل های مشهد,  هتل مشهد, هتلهای مشهد"}
     %meta{content: "no", "http-equiv" => "imagetoolbar"}
     = yield(:refresh_meta) if content_for?(:refresh_meta)
     
@@ -21,14 +22,14 @@
       
       .language
         .lan-title= 'LANGUAGE'
-        = link_to (image_tag 'flag/en.png'), locale: :en          
-        = link_to (image_tag 'flag/fa.png'), locale: :fa
-        = link_to (image_tag 'flag/ar.png'), locale: :ar
+        = link_to (image_tag 'flag/en.png'), locale: :en, :title => 'Mashhad Hotel'       
+        = link_to (image_tag 'flag/fa.png'), locale: :fa, :title =>  'مشهد للشقق الفندقية'
+        = link_to (image_tag 'flag/ar.png'), locale: :ar, :title => 'هتل مشهد'       
       
       #logo-menu.set-center   
-        = link_to root_path do
+        = link_to root_path, :title => "هتل مشهد - هتل شادتوس" do
           #logo.set-center
-            = image_tag 'logo2.png'
+            = image_tag 'logo2.png', :alt => "هتل مشهد - هتل شادتوس", :title => "هتل مشهد - هتل شادتوس"
             
       
         
@@ -54,7 +55,7 @@
           .text-box
             %b= t('reserve') 
         - if current_user.blank?
-          = link_to  user_session_path , :class => "site-link login-link" do            
+          = link_to  user_session_path , :class => "site-link login-link", :title => "هتل مشهد - هتل شادتوس" do            
             .text-box              
               %b= t('login')
               

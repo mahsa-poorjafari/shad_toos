@@ -13,14 +13,14 @@
                 = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
                   %i= 'حذف'
         
-            = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide"
+            = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide", :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"
             
             .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '
             %ul.slider-boxes.set-center    
               - Category.all.each do |category| 
                 = link_to "##{category.title_en}", :class => "item#{category.id}" do
                   %li.slider-text-box{:style => "float:left"}    
-                    = image_tag category.slider_box(:small)
+                    = image_tag category.slider_box(:small), :title => "هتل_مشهد_هتل_شادتوس_"+category.title, :alt => "هتل_مشهد_هتل_شادتوس_"+category.title
                     %br
                     %b= category.title
       -if sliders.count > 1          
@@ -31,9 +31,9 @@
                 -  sliders.each_with_index do |slide, index|
                   %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
         = link_to "#slider-carousel", :class => "carousel-control left", "data-slide" => "prev" do
-          = image_tag 'next-icon.png', :style => "right:45%"
+          = image_tag 'next-icon.png', :style => "right:45%", :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"
         = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
-          = image_tag 'prev-icon.png'      
+          = image_tag 'prev-icon.png', :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"     
   
 :javascript 
   $("#slider-carousel .item").first().addClass("active");
