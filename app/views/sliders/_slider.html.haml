@@ -6,7 +6,7 @@
         - sliders.each do |slide|
           .item-row.item          
             -if is_admin?
-              .row-controls.admin-edit-del
+              .row-controls.admin-edit-del{:style => "margin-right:40%"}
                 = link_to edit_slider_path(slide) do
                   %i= 'ویرایش'
                   \|
@@ -14,8 +14,8 @@
                   %i= 'حذف'
         
             = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide", :title => "هتل_مشهد_هتل_شادتوس", :alt => "هتل_مشهد_هتل_شادتوس"
-            
-            .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '
+            - if slide.description.present?
+              .slide-descript.animation-target= slide.description
             %ul.slider-boxes.set-center    
               - Category.all.each do |category| 
                 = link_to "##{category.title_en}", :class => "item#{category.id}" do

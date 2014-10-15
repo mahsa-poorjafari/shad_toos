@@ -2,8 +2,8 @@
 .edi-slider-holder.fa  
   %h2= 'تنظیم اندازه تصویر'
   = form_for @slider, :html => {:multipart => true} do |f| 
-    %div
-      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "440", :width => "1286", :style => "margin-right:-10%"
+    %div{:style => "margin-right:-10%;"}
+      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "440", :width => "1296px"
       = f.hidden_field :crop_x
       = f.hidden_field :crop_y
       = f.hidden_field :crop_w
