@@ -7,13 +7,10 @@
       = link_to 'بازگشت', activities_path
   
   
-  %div= image_tag @activity.image(:large)
-  
-  .col-gl-12   
-    %h4= @activity.title
-    
-    %p  
+  .col-sm-6
+    %h4.cat-title= @activity.title    
+    .show-activity-description
       = @activity.description
-  
+  .col-sm-6= image_tag @activity.image(:large)
 
   

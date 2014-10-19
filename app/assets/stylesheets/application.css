@@ -301,6 +301,8 @@ padding-top: 5%;
 
 .new-box  .activities ul.slides li .activity-title {width:95%; height:10%; padding:1%; color:#FFA500; margin-top:1%; text-align:center; font-size:16px}
 .new-box  .activities ul.slides li .activity-des {width:95%; height:25%; margin-top:5%; padding:1%; line-height:1.5em; overflow:hidden; text-align:justify}
+table.table tr td.activity-des { height:100px; margin-top:5%; padding:1%; line-height:1.5em; overflow:hidden; text-align:justify; width: 50%;}
+.show-activity-description {text-align:justify; line-height:2em; margin-top:5%}
 .new-box  .activities ul.slides li img.act-pic {width:95%; height:50%; border:#4D4D4D 2px solid;
   border-radius:9px;
   padding:2%;
@@ -946,7 +948,7 @@ li.slider-text-box b {font-family: 'khat_khati'; font-size:13px}
 .hero-unit .carousel.slide .carousel-inner{height:100%}
 .carousel-contro  img.haram-arrow {margin-top:100px}
 .category-define img.gold-line {margin-top:-1%}
-h1.cat-title {
+h1.cat-title, h4.cat-title {
   margin-right:10%;
   margin-left:10%;
 font-family:'IranNastaligh'; font-size:3em

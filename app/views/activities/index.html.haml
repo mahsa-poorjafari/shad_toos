@@ -13,7 +13,7 @@
       %tr
         %td= image_tag activity.image(:small)
         %td= activity.title     
-        %td= activity.description     
+        %td.activity-des= truncate( activity.description, length: 125    )
       %tr
         %td.more          
           = link_to 'جزئیات بیشتر', activity
