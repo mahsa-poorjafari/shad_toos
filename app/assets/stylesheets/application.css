@@ -256,6 +256,10 @@ text-align:center;
  background:#1A1A1A; opacity:.7; 
   filter:alpha(opacity=70); /* For IE8 and earlier */
   transition: all 0.5s ease;
+  
+}
+.AccordionBox ul li .cat-title .box-title {font-family:'IranNastaligh'; font-size:3em;
+padding-top: 5%;
 }
 .AccordionBox ul li .cat-title .font-style.fa {font-family:'IranNastaligh'; font-size:3em}
 .AccordionBox ul li .cat-title p {
@@ -945,12 +949,16 @@ li.slider-text-box b {font-family: 'khat_khati'; font-size:13px}
 h1.cat-title {
   margin-right:10%;
   margin-left:10%;
-
+font-family:'IranNastaligh'; font-size:3em
 }
+.product-title {font-family:'IranNastaligh'; font-size:2em}
 .cat-des {
-  margin-right:20%;
-  margin-left:20%;
-  margin-top:-1%;}
+  margin-right:5%;
+  margin-left:5%;
+  margin-top:2%;
+  text-align:justify;
+  line-height:2em;
+  }
 .show-room p {width:90%;
   min-height:20%;
   

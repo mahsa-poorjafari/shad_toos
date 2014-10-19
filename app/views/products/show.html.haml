@@ -8,23 +8,22 @@
 
 .col-sm-12.category-define
   .set-center              
-    %h1.cat-title
-      
+    %h1.cat-title      
       = @product.category.title
     %h2.cat-title
       .col-sm-4
-      .col-sm-7        
-        
+      .col-sm-7.product-title        
         = @product.title      
       .clr-float
+    -if I18n.locale == :en 
+      = image_tag 'en-line.png', :class => "gold-line"
+    - else 
+      = image_tag 'line.png', :class => "gold-line"    
     .clr-float
-    %p.cat-des
+    .cat-des
       =raw @product.description          
   
-  -if I18n.locale == :en 
-    = image_tag 'en-line.png', :class => "gold-line"
-  - else 
-    = image_tag 'line.png', :class => "gold-line"    
+  
 
   
 .col-sm-12{:style => "height:350px"}

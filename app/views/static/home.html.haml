@@ -21,7 +21,7 @@
           %li{:id => "item#{category.id}" }
             = image_tag category.image(:original), :class => "sample-image"        
             .cat-title
-              .col-sm-10.font-style=  category.title
+              .col-sm-12.font-style.box-title=  category.title
               %p.col-sm-12= truncate(category.description, lenght: 80){ link_to t('Continue'), category }
             
 .col-sm-12          
@@ -37,7 +37,7 @@
     
 .col-sm-12
   .col-sm-4  
-    %p= @contact_us.html_text
+    %p{:class => I18n.locale}= raw @contact_us.html_text
     %div
       = render 'shared/msg_form'
     
