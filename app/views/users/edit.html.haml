@@ -1,8 +1,8 @@
-%div
-  %h1 ویرایش پروفایل 
+%div{:style => "position:relative"}
+  %h1= 'ویرایش پروفایل ' + @user.user_name
   .col-sm-6
     = render 'form'
-
-  = link_to 'مشاهده حساب', @user
-  \|
-  = link_to 'بازگشت', :back
+  .col-sm-6
+    .admin-edit-del-small
+      = link_to 'مشاهده حساب', @user
+  

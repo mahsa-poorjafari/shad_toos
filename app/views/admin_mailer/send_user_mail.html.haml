@@ -1,12 +1,20 @@
 
 %h3
-  = @message.email
-  = @message.name
-  = @message.phone
-  
+  %p  
+    %b= 'ایمیل کاربر'    
+    = @message.email
+  %p
+    %b= 'نام کاربر'
+    = @message.name
+  %p
+    %b= 'تلفن تماس'
+    = @message.phone
+    
 %br
 %h4
+  %b= 'پیام کاربر'
   = @message.text
+%p
   %b
     تاریخ ارسال
     = JalaliDate.new(@message.created_at).strftime("%y/%m/%e %X")

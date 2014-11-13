@@ -51,7 +51,7 @@
         - else                   
           = render "sliders/slider", sliders:@sliders
           
-        .site-link.reserv
+        = link_to url_with_protocol('booking.shadtoos.com') ,:class => "site-link reserv", :title => "هتل مشهد - هتل شادتوس", :target => "_blank" do
           .text-box
             %b= t('reserve') 
         - if current_user.blank?

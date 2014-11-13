@@ -20,21 +20,20 @@
       %th ایمیل
       %th نام
       %th تلفن
-      %th متن    
-      %th
-      %th
-      %th
+      %th متن         
+      %th 
 
     - @messages.each_with_index do |message, i| 
-      %tr{:class => ('visited' if message.visited == true)}
+      %tr{:class => ('unvisited' if message.visited == false)}
         %td= (i+1)        
         %td= message.email
         %td= message.name
         %td= message.phone
         %td= truncate(strip_tags(message.text), :length => 30)
-        %td= link_to 'Show', message
-        %td= link_to 'Edit', edit_message_path(message)
-        %td= link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+        %td
+          = link_to 'مشاهده', message
+          \|
+          = link_to 'حذف پیام', message, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
 
 

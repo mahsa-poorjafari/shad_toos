@@ -1,14 +1,14 @@
 # encoding: UTF-8
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_filter :check_autentication
+  
   # GET /messages
   # GET /messages.json
   def index
     @messages = Message.order(" created_at desc")
     @num_msg = Message.count
     @read_msg = Message.where(visited: true).count
-    @unread_msg = Message.count(:conditions => "visited is null")
+    @unread_msg = Message.where(visited: false).count
   end
 
   # GET /messages/1
@@ -33,8 +33,9 @@ class MessagesController < ApplicationController
     if @message.save
       AdminMailer.send_user_mail.deliver      
       flash[:SendMsg] = 'کاربر گرامی پیام شما ارسال گردید.'
+      
     end
-    redirect_to :back
+    redirect_to root_path
   end
 
   # PATCH/PUT /messages/1
@@ -64,7 +65,7 @@ class MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = Message.friendly.find(params[:id])
+      @message = Message.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

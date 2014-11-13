@@ -554,7 +554,7 @@ table.table  tr th {max-width: 120px; text-align:right; }
 table.table  tr td {max-width: 120px; text-align:right}
 table.table  tr td a:hover {color:#BD0404;}
 table.table  tr th.count {width: 50px;}
-table.table tr.visited {font-weight:bold}
+table.table tr.unvisited td{font-weight:bold; font-size:18px; color:#fff}
 .footer-admin {
   float:right; 
   direction:rtl; 
