@@ -6,7 +6,7 @@
       = link_to 'ویرایش', edit_page_path(@about_us)
   .about-us
     = image_tag 'befor.png'    
-    %h2{:class => I18n.locale}= t('about-shadtoos')      
+    %h2{:class => I18n.locale, :style => "text-align:center"}= t('about-shadtoos')      
     .show-about-text{:class => I18n.locale}
       = raw @about_us.html_text      
     .more{:style => "margin-top:5%"}
