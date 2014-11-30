@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   
   belongs_to :category
   validates :title, :title_fa, :presence => {:message => 'عنوان محصول را وارد کنید.'}
-  validates :title, :title_fa, :uniqueness => {:message => 'عنوان محصول تکراری است'}
+  
   
   def title
     if I18n.locale == :ar

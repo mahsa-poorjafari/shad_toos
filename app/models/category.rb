@@ -17,9 +17,6 @@ class Category < ActiveRecord::Base
   has_many :products
   
   has_many :sliders
-  
-  
-  validates :title_fa, :title_ar,  :title_en, :uniqueness => {:message => 'عنوان گروه را تکراری است.'}
   validates :title_fa, :title_en, :title_ar,  :presence => {:message => 'عنوان گروه را وارد کنید.'}
   validates :category_type, :presence => {:message => 'نوع بخش را انتخاب کنید.'}
   
