@@ -80,7 +80,6 @@ class CategoriesController < ApplicationController
     end
 
     def load_slides
-      @sliders = @category.sliders
-      
+      @sliders = @category.sliders      
     end
 end
