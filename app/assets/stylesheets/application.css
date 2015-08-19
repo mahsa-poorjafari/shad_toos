@@ -62,6 +62,7 @@ right: 30%;
 position:absolute;
  }
 header #logo-menu #logo{ float:left; width:100%; padding-top:5%; }
+header #logo-menu #logo p{margin-bottom:0}
 header #logo-menu .title-site{ float:left; width:70%; color:#FFFF00; text-align:center; 
 text-shadow: 1px 1px 1px #000, 3px 3px 5px #FFA500;
 
