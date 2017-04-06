@@ -8,7 +8,8 @@ gem "html2haml"
 gem 'haml-rails'
 
 gem 'colorbox-rails'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'activesupport', '~> 4.0', '>= 4.0.4'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'ckeditor_rails'
 gem "friendly_id", "~> 5.0.1"
 gem 'jalalidate'
