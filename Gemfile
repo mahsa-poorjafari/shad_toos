@@ -8,7 +8,9 @@ gem "html2haml"
 gem 'haml-rails'
 
 gem 'colorbox-rails'
+
 gem 'activesupport', '~> 4.0', '>= 4.0.4'
+gem 'mysql2', '~> 0.3.10'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'ckeditor_rails'
 gem "friendly_id", "~> 5.0.1"
@@ -21,12 +23,12 @@ gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
 
 
 group :production do
-  gem 'mysql2'
+  
   gem 'rails_12factor'
 end
 
 group :development, :test do
-  gem 'mysql2'
+  
 end
 
 # Use SCSS for stylesheets
